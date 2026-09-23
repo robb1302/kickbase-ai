@@ -810,7 +810,6 @@ def main() -> None:
             "spieler",
             "team",
             "marktwert",
-            "trend",
             "maik_score",
             "maik_kaderscore_team",
         ]
@@ -1020,23 +1019,6 @@ def main() -> None:
         )
     else:
         st.caption("Keine ungespeicherten Änderungen.")
-
-    # --------------------------------------------------------
-    # Debug / Spalteninfo
-    # --------------------------------------------------------
-    with st.expander("CSV-Spalten anzeigen"):
-        st.write(list(df.columns))
-
-        st.write("Erkannte Score-Spalten:")
-
-        st.write(
-            {
-                "MAIK Score": "maik_score" in df.columns,
-                "Kickbase Punkte": "punkte" in df.columns,
-                "Durchschnitt Punkte": "durchschnitt_pts" in df.columns,
-            }
-        )
-
 
 if __name__ == "__main__":
     main()
