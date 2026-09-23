@@ -18,6 +18,7 @@ CSV_PATH = BASE_DIR / "data" / "final" / "ht.csv"
 SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "maik_score_overrides.csv"
 TEAM_SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "team_score_overrides.csv"
 ROSTER_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "roster_overrides.csv"
+PLAYER_ADDITIONS_PATH = BASE_DIR / "data" / "processed" / "player_additions.csv"
 GITHUB_API = "https://api.github.com"
 
 
@@ -44,6 +45,7 @@ def load_csv() -> pd.DataFrame:
     )
 
     df = apply_score_overrides(df)
+    df = apply_player_additions(df)
     df = apply_team_score_overrides(df)
     return apply_roster_overrides(df)
 
@@ -58,6 +60,132 @@ def normalize_key_part(value: object) -> str:
 def score_key(player: object, team: object) -> str:
     """Verwendet Spieler plus Team als stabilen Schlüssel ohne Spieler-ID."""
     return f"{normalize_key_part(player)}|{normalize_key_part(team)}"
+
+
+def load_player_additions() -> pd.DataFrame:
+    """Lädt manuell hinzugefügte Spieler aus lokalem Speicher oder GitHub."""
+    try:
+        if github_configured():
+            repo = github_setting("GITHUB_REPO")
+            branch = github_setting("GITHUB_BRANCH", "main")
+            path = github_setting(
+                "GITHUB_PLAYER_ADDITIONS_PATH",
+                "data/processed/player_additions.csv",
+            )
+            response = requests.get(
+                f"{GITHUB_API}/repos/{repo}/contents/{path}",
+                headers=github_headers(),
+                params={"ref": branch},
+                timeout=10,
+            )
+            if response.status_code == 404:
+                return pd.DataFrame()
+            response.raise_for_status()
+            content = base64.b64decode(response.json()["content"]).decode("utf-8")
+            return pd.read_csv(io.StringIO(content), sep=";")
+
+        if not PLAYER_ADDITIONS_PATH.exists():
+            return pd.DataFrame()
+        return pd.read_csv(PLAYER_ADDITIONS_PATH, sep=";", encoding="utf-8")
+    except (OSError, UnicodeDecodeError, pd.errors.ParserError, requests.RequestException) as exc:
+        st.error(f"Manuelle Spieler konnten nicht geladen werden: {exc}")
+        return pd.DataFrame()
+
+
+def apply_player_additions(df: pd.DataFrame) -> pd.DataFrame:
+    """Fügt manuell angelegte Spieler hinzu, ohne Importdaten zu verändern."""
+    additions = load_player_additions()
+    required = {"spieler", "team", "maik_score"}
+    if additions.empty or not required.issubset(additions.columns):
+        return df
+
+    result = df.copy()
+    existing_keys = {
+        score_key(row["spieler"], row["team"])
+        for _, row in result.iterrows()
+    }
+    rows = []
+    for _, addition in additions.iterrows():
+        key = score_key(addition["spieler"], addition["team"])
+        if key in existing_keys:
+            continue
+        row = {column: pd.NA for column in result.columns}
+        row.update(
+            {
+                "spieler": addition["spieler"],
+                "team": addition["team"],
+                "position": addition.get("position", "Unbekannt"),
+                "maik_score": pd.to_numeric(
+                    addition["maik_score"], errors="coerce"
+                ),
+                "maik_match": "manual_addition",
+                "im_kader": False,
+            }
+        )
+        rows.append(row)
+    if not rows:
+        return result
+    return pd.concat([result, pd.DataFrame(rows, columns=result.columns)], ignore_index=True)
+
+
+def save_player_addition(player: str, team: str, score: float) -> bool:
+    """Speichert oder aktualisiert einen manuell hinzugefügten Spieler."""
+    additions = load_player_additions()
+    if additions.empty:
+        additions = pd.DataFrame(columns=["spieler", "team", "maik_score", "position"])
+    for column in ["spieler", "team", "maik_score", "position"]:
+        if column not in additions.columns:
+            additions[column] = pd.NA
+
+    key = score_key(player, team)
+    matches = additions.apply(
+        lambda row: score_key(row["spieler"], row["team"]) == key,
+        axis=1,
+    )
+    row = {"spieler": player, "team": team, "maik_score": score, "position": "Unbekannt"}
+    if matches.any():
+        additions.loc[matches, list(row)] = list(row.values())
+    else:
+        additions = pd.concat([additions, pd.DataFrame([row])], ignore_index=True)
+
+    try:
+        content = additions[["spieler", "team", "maik_score", "position"]].to_csv(
+            index=False, sep=";"
+        ).encode("utf-8")
+        if github_configured():
+            repo = github_setting("GITHUB_REPO")
+            branch = github_setting("GITHUB_BRANCH", "main")
+            path = github_setting(
+                "GITHUB_PLAYER_ADDITIONS_PATH",
+                "data/processed/player_additions.csv",
+            )
+            endpoint = f"{GITHUB_API}/repos/{repo}/contents/{path}"
+            current = requests.get(
+                endpoint,
+                headers=github_headers(),
+                params={"ref": branch},
+                timeout=10,
+            )
+            payload = {
+                "message": "Add manual player",
+                "content": base64.b64encode(content).decode("ascii"),
+                "branch": branch,
+            }
+            if current.status_code == 200:
+                payload["sha"] = current.json()["sha"]
+            requests.put(
+                endpoint,
+                headers=github_headers(),
+                json=payload,
+                timeout=10,
+            ).raise_for_status()
+        else:
+            PLAYER_ADDITIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
+            PLAYER_ADDITIONS_PATH.write_bytes(content)
+        return True
+    except (OSError, requests.RequestException) as exc:
+        st.error(f"Spieler konnte nicht gespeichert werden: {exc}")
+        return False
 
 
 def load_roster_overrides() -> dict[str, bool]:
@@ -790,6 +918,37 @@ def main() -> None:
         )
 
         st.divider()
+
+        st.subheader("Spieler schnell hinzufügen")
+        team_options = sorted(
+            str(team)
+            for team in st.session_state.df["team"].dropna().unique()
+        )
+        with st.form("add_player_form", clear_on_submit=True):
+            new_player = st.text_input("Spielername")
+            new_team = st.selectbox("Team", team_options)
+            new_score = st.number_input(
+                "MAIK Score",
+                min_value=0.0,
+                max_value=10000.0,
+                step=0.1,
+                value=0.0,
+            )
+            add_player = st.form_submit_button(
+                "Spieler hinzufügen",
+                use_container_width=True,
+            )
+
+        if add_player:
+            if not new_player.strip():
+                st.warning("Bitte einen Spielernamen eingeben.")
+            elif save_player_addition(new_player.strip(), new_team, new_score):
+                fresh = ensure_score_columns(load_csv())
+                st.session_state.df = fresh
+                st.session_state.original_df = fresh.copy()
+                st.session_state.pop("player_editor", None)
+                st.success(f"{new_player.strip()} wurde hinzugefügt.")
+                st.rerun()
 
         if st.button(
             "CSV neu laden",
