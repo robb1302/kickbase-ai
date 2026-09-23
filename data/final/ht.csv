@@ -1,0 +1,411 @@
+spieler;team;position;marktwert;trend_24h;trend;ki_trend;punkte;durchschnitt_punkte;median;status;maik_team;maik_kaderscore;maik_rang;maik_spieler;maik_position;maik_score;maik_fmv_mio;maik_fmv_original;maik_match;punkte_num;marktwert_num;maik_score_num;team_team;durchschnitt_pts;maik_kaderscore_team
+Harry Kane;FC Bayern München;Sturm;64844724.0;+8.777 €;↑;+10.564 €;294;174;3;"🔥;HOT;DEAL";Bayern;5391.0;5.0;Harry Kane;ANG;;61.72;61,72 Mio.;exact_name;294.0;648447240.0;56080.0;FC Bayern München;153.95;35871.0
+Michael Olise;FC Bayern München;Mittelfeld;64677706.0;-261.028 €;↓;-291.028 €;663;317;3;"🔒;DEAL";Bayern;5391.0;2.0;Michael Olise;ANG;6699.0;283.92;283,92 Mio.;exact_name;663.0;646777060.0;66990.0;FC Bayern München;153.95;35871.0
+Joshua Kimmich;FC Bayern München;Mittelfeld;59533999.0;+12.938 €;↑;+14.051 €;216;216;3;"🔒;DEAL";Bayern;5391.0;1.0;Joshua Kimmich;MF;6855.0;64.07;64,07 Mio.;exact_name;216.0;595339990.0;68550.0;FC Bayern München;153.95;35871.0
+Luis Díaz;FC Bayern München;Sturm;48551995.0;-430.199 €;↘;-406.887 €;116;134;3;"🔒;DEAL";Bayern;5391.0;8.0;Luis Díaz;ANG;5320.0;102.33;102,33 Mio.;exact_name;116.0;485519950.0;53200.0;FC Bayern München;153.95;35871.0
+Aleix García;Bayer 04 Leverkusen;Mittelfeld;37720032.0;-33.327 €;↘;-3.327 €;137;154;4;"🔒;🔥;HOT;DEAL";Leverkusen;4908.0;1.0;Aleix García;MF;6169.0;37.01;37,01 Mio.;exact_name;137.0;377200320.0;61690.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Aleksandar Pavlović;FC Bayern München;Mittelfeld;34365868.0;+90.542 €;↑;+95.724 €;163;210;4;"🔒;●";Bayern;5391.0;12.0;Aleksandar Pavlović;MF;5161.0;79.3;79,30 Mio.;exact_name;163.0;343658680.0;51610.0;FC Bayern München;153.95;35871.0
+Waldemar Anton;Borussia Dortmund;Abwehr;34031304.0;+30.704 €;↑;+32.964 €;123;177;4;"🔒;●";Dortmund;4754.0;4.0;Waldemar Anton;ABW;5432.0;28.96;28,96 Mio.;exact_name;123.0;340313040.0;54320.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Dayot Upamecano;FC Bayern München;Abwehr;33691880.0;+3.637 €;↑;+4.880 €;97;178;4;"🔒;🔥;HOT";Bayern;5391.0;11.0;Dayot Upamecano;ABW;5197.0;49.09;49,09 Mio.;exact_name;97.0;336918800.0;51970.0;FC Bayern München;153.95;35871.0
+Serhou Guirassy;Borussia Dortmund;Sturm;32213721.0;+86.487 €;↑;+88.456 €;75;161;4;"🔒;●";Dortmund;4754.0;5.0;Serhou Guirassy;ANG;5018.0;34.22;34,22 Mio.;exact_name;75.0;322137210.0;50180.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Nadiem Amiri;1. FSV Mainz 05;Mittelfeld;32069093.0;-552.879 €;↓;-582.879 €;107;106;4;"🔒;DEAL";;;;;;;;;;107.0;320690930.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+David Raum;RB Leipzig;Abwehr;30968993.0;-339.904 €;↓;-369.904 €;71;127;4;"🔒;DEAL";Leipzig;4687.0;2.0;David Raum;ABW;5490.0;21.81;21,81 Mio.;exact_name;71.0;309689930.0;54900.0;RB Leipzig;19.043478260869566;23180.0
+Deniz Undav;VfB Stuttgart;Sturm;30403483.0;-494.990 €;↓;-591.456 €;-15;5;3;"🔒;DEAL";Stuttgart;4750.0;6.0;Deniz Undav;ANG;5032.0;17.75;17,75 Mio.;exact_name;-15.0;304034830.0;50320.0;VfB Stuttgart;19.375;24748.33333333333
+Ibrahim Maza;Bayer 04 Leverkusen;Mittelfeld;29971691.0;+56.183 €;↑;+83.850 €;194;173;4;"🔒;🔥;HOT";Leverkusen;4908.0;10.0;Ibrahim Maza;MF;4762.0;75.14;75,14 Mio.;exact_name;194.0;299716910.0;47620.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Jonathan Tah;FC Bayern München;Abwehr;29532890.0;+69.818 €;↑;+71.977 €;182;150;2;"🔒;DEAL";Bayern;5391.0;10.0;Jonathan Tah;ABW;5203.0;37.22;37,22 Mio.;exact_name;182.0;295328900.0;52030.0;FC Bayern München;153.95;35871.0
+Patrik Schick;Bayer 04 Leverkusen;Sturm;29040721.0;+7.735 €;↑;+37.735 €;157;166;3;"🔒;🔥;HOT";Leverkusen;4908.0;11.0;Patrik Schick;ANG;4760.0;30.41;30,41 Mio.;exact_name;157.0;290407210.0;47600.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Willi Orban;RB Leipzig;Abwehr;27764732.0;+69.390 €;↑;+70.270 €;84;168;4;"🔒;DEAL";Leipzig;4687.0;1.0;Willi Orbán;ABW;6074.0;11.86;11,86 Mio.;exact_name;84.0;277647320.0;60740.0;RB Leipzig;19.043478260869566;23180.0
+Antonio Nusa;RB Leipzig;Mittelfeld;27709231.0;+57.627 €;↗;+47.433 €;44;169;4;"🔒;●";Leipzig;4687.0;5.0;Antonio Nusa;ANG;4868.0;75.58;75,58 Mio.;exact_name;44.0;277092310.0;48680.0;RB Leipzig;19.043478260869566;23180.0
+Ismael Saibari;FC Bayern München;Sturm;27620010.0;+20.506 €;↑;+21.250 €;182;145;2;"🔒;●";;;;;;;;;;182.0;276200100.0;0.0;FC Bayern München;153.95;35871.0
+Maximilian Mittelstädt;VfB Stuttgart;Abwehr;27472106.0;+70.283 €;↑;+73.206 €;155;168;4;"🔒;DEAL";Stuttgart;4750.0;1.0;Maximilian Mittelstädt;ABW;6852.0;14.88;14,88 Mio.;exact_name;155.0;274721060.0;68520.0;VfB Stuttgart;19.375;24748.33333333333
+Matthias Ginter;SC Freiburg;Abwehr;27333505.0;+49.800 €;↗;+46.250 €;78;187;4;"🔒;●";Freiburg;4305.0;1.0;Matthias Ginter;ABW;5293.0;12.72;12,72 Mio.;exact_name;78.0;273335050.0;52930.0;SC Freiburg;48.40909090909091;20032.727272727272
+Christopher Nkunku;RB Leipzig;Sturm;26663729.0;+57.857 €;↗;+46.546 €;24;106;2;"🔒;●";;;;;;;;;;24.0;266637290.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Nico Schlotterbeck;Borussia Dortmund;Abwehr;26338065.0;+147.370 €;↑;+149.456 €;149;143;2;"🔒;DEAL";Dortmund;4754.0;2.0;Nico Schlotterbeck;ABW;6552.0;46.46;46,46 Mio.;exact_name;149.0;263380650.0;65520.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Angelo Stiller;VfB Stuttgart;Mittelfeld;26155534.0;+40.461 €;↑;+44.562 €;81;59;4;"🔒;DEAL";Stuttgart;4750.0;2.0;Angelo Stiller;MF;6143.0;34.35;34,35 Mio.;exact_name;81.0;261555340.0;61430.0;VfB Stuttgart;19.375;24748.33333333333
+Jamal Musiala;FC Bayern München;Mittelfeld;26015096.0;+70.058 €;↗;+40.058 €;333;149;1;"🔒;●";Bayern;5391.0;4.0;Jamal Musiala;MF;5670.0;100.22;100,22 Mio.;exact_name;333.0;260150960.0;56700.0;FC Bayern München;153.95;35871.0
+Felix Nmecha;Borussia Dortmund;Mittelfeld;25961468.0;+97.970 €;↑;+102.360 €;167;154;3;"🔒;●";Dortmund;4754.0;9.0;Felix Nmecha;MF;4320.0;45.9;45,90 Mio.;exact_name;167.0;259614680.0;43200.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Can Uzun;Eintracht Frankfurt;Mittelfeld;25770316.0;+44.290 €;↑;+44.828 €;73;119;4;"🔒;●";Frankfurt;4254.0;3.0;Can Uzun;MF;5001.0;47.99;47,99 Mio.;exact_name;73.0;257703160.0;50010.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Edmond Tapsoba;Bayer 04 Leverkusen;Abwehr;25439623.0;+82.431 €;↑;+89.107 €;119;102;4;"🔒;DEAL";Leverkusen;4908.0;6.0;Edmond Tapsoba;ABW;5110.0;37.24;37,24 Mio.;exact_name;119.0;254396230.0;51100.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Jonathan Burkardt;Eintracht Frankfurt;Sturm;25137225.0;+111.357 €;↗;+81.357 €;148;139;4;"🔒;●";Frankfurt;4254.0;9.0;Jonathan Burkardt;ANG;4332.0;29.57;29,57 Mio.;exact_name;148.0;251372250.0;43320.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Robin Koch;Eintracht Frankfurt;Abwehr;25095290.0;+45.938 €;↗;+30.202 €;149;143;4;"🔒;●";Frankfurt;4254.0;4.0;Robin Koch;ABW;4983.0;18.57;18,57 Mio.;exact_name;149.0;250952900.0;49830.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Konrad Laimer;FC Bayern München;Abwehr;24733894.0;-712.503 €;↘;-750.000 €;0;118;2;"🔒;DEAL";Bayern;5391.0;15.0;Konrad Laimer;MF;4917.0;36.65;36,65 Mio.;exact_name;0.0;247338940.0;49170.0;FC Bayern München;153.95;35871.0
+Igor Matanović;SC Freiburg;Sturm;24539464.0;+208.746 €;↑;+216.603 €;46;201;4;"🔒;●";Freiburg;4305.0;6.0;Igor Matanović;ANG;4471.0;22.12;22,12 Mio.;exact_name;46.0;245394640.0;44710.0;SC Freiburg;48.40909090909091;20032.727272727272
+Ozan Kabak;TSG Hoffenheim;Abwehr;24172285.0;+48.567 €;↗;+28.959 €;85;129;4;"🔒;●";Hoffenheim;4403.0;2.0;Ozan Kabak;ABW;5258.0;15.01;15,01 Mio.;exact_name;85.0;241722850.0;52580.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Miguel Gutiérrez;Bayer 04 Leverkusen;Abwehr;24057555.0;+149.882 €;↑;+176.844 €;309;200;4;"🔒;●";;;;;;4419.0;;;;309.0;240575550.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Konstantinos Karetsas;Borussia Dortmund;Mittelfeld;24005342.0;+60.849 €;↑;+66.550 €;59;103;2;"🔒;●";;;;;;;;;;59.0;240053420.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Said El Mala;1. FC Köln;Mittelfeld;23599113.0;+28.781 €;↑;+36.403 €;68;76;2;"🔒;🔥;HOT";;;;;;;;;;68.0;235991130.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Vladimír Coufal;TSG Hoffenheim;Abwehr;22444760.0;-320.890 €;↓;-350.890 €;103;112;4;"🔒;DEAL";Hoffenheim;4403.0;5.0;Vladimír Coufal;ABW;4799.0;4.39;4,39 Mio.;exact_name;103.0;224447600.0;47990.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Joane Gadou;Borussia Dortmund;Abwehr;21715837.0;-185.848 €;↓;-191.868 €;80;97;4;"🔒;●";;;;;;;;;;80.0;217158370.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Ridle Baku;RB Leipzig;Abwehr;21512161.0;-349.955 €;↓;-379.955 €;13;137;3;"🔒;●";Leipzig;4687.0;6.0;Ridle Baku;ABW;4864.0;21.62;21,62 Mio.;exact_name;13.0;215121610.0;48640.0;RB Leipzig;19.043478260869566;23180.0
+Moussa Diaby;Bayer 04 Leverkusen;Sturm;21285229.0;+91.161 €;↑;+121.161 €;79;84;2;"🔒;🔥;HOT";;;;;;;;;;79.0;212852290.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Nathaniel Brown;FC Bayern München;Abwehr;21036655.0;-446.942 €;↘;-435.282 €;32;61;3;"🔒;●";;;;;;;;;;32.0;210366550.0;0.0;FC Bayern München;153.95;35871.0
+Daniel Svensson;Borussia Dortmund;Abwehr;20976053.0;+66.875 €;↗;+62.876 €;76;126;4;"🔒;●";Dortmund;4754.0;14.0;Daniel Svensson;ABW;4147.0;33.2;33,20 Mio.;exact_name;76.0;209760530.0;41470.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Julian Ryerson;Borussia Dortmund;Abwehr;20183876.0;-503.373 €;↘;-579.979 €;67;82;4;"🔒;DEAL";Dortmund;4754.0;8.0;Julian Ryerson;ABW;4574.0;33.68;33,68 Mio.;exact_name;67.0;201838760.0;45740.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Brajan Gruda;RB Leipzig;Mittelfeld;19890754.0;-415.758 €;↓;-520.122 €;-2;83;3;"🔒;●";Leipzig;4687.0;7.0;Brajan Gruda;ANG;4841.0;37.47;37,47 Mio.;exact_name;-2.0;198907540.0;48410.0;RB Leipzig;19.043478260869566;23180.0
+Jobe Bellingham;Borussia Dortmund;Mittelfeld;19744024.0;-215.456 €;↓;-245.456 €;97;125;3;"🔒;●";Dortmund;4754.0;10.0;Jobe Bellingham;MF;4237.0;56.71;56,71 Mio.;exact_name;97.0;197440240.0;42370.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Maximilian Beier;Borussia Dortmund;Sturm;19718830.0;+36.094 €;↑;+66.094 €;151;118;3;"🔒;🔥;HOT";Dortmund;4754.0;12.0;Maximilian Beier;ANG;4198.0;49.28;49,28 Mio.;exact_name;151.0;197188300.0;41980.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Maximilian Eggestein;SC Freiburg;Mittelfeld;19673763.0;+154.181 €;↗;+147.036 €;60;160;4;"🔒;●";Freiburg;4305.0;10.0;Maximilian Eggestein;MF;4100.0;19.12;19,12 Mio.;exact_name;60.0;196737630.0;41000.0;SC Freiburg;48.40909090909091;20032.727272727272
+Kaishu Sano;1. FSV Mainz 05;Mittelfeld;19643911.0;+151.981 €;↑;+168.167 €;169;145;4;"🔒;●";;;;;;;;;;169.0;196439110.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Jeff Chabot;VfB Stuttgart;Abwehr;19597792.0;-194.769 €;↘;-170.361 €;86;89;4;"🔒;DEAL";Stuttgart;4750.0;3.0;Jeff Chabot;ABW;5668.0;15.93;15,93 Mio.;exact_name;86.0;195977920.0;56680.0;VfB Stuttgart;19.375;24748.33333333333
+Lennart Karl;FC Bayern München;Mittelfeld;19517448.0;-477.301 €;↘;-456.864 €;0;93;2;"🔒;●";;;;;;;;;;0.0;195174480.0;0.0;FC Bayern München;153.95;35871.0
+Yuito Suzuki;SC Freiburg;Mittelfeld;18759108.0;+270.989 €;↑;+279.766 €;179;186;4;"🔒;●";;;;;;;;;;179.0;187591080.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Fabian Rieder;FC Augsburg;Mittelfeld;18473722.0;+173.867 €;↑;+184.160 €;103;162;4;"🔒;●";Augsburg;4251.0;12.0;Fabian Rieder;MF;3957.0;13.77;13,77 Mio.;exact_name;103.0;184737220.0;39570.0;FC Augsburg;25.714285714285715;18443.33333333333
+Wouter Burger;TSG Hoffenheim;Mittelfeld;18167712.0;+157.511 €;↑;+175.924 €;131;86;4;"🔒;🔥;HOT;DEAL";;;;;;;;;;131.0;181677120.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Afonso Moreira;Bayer 04 Leverkusen;Sturm;17928166.0;-255.051 €;↘;-234.380 €;84;74;4;"🔒;●";;;;;;;;;;84.0;179281660.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Bilal El Khannouss;VfB Stuttgart;Mittelfeld;17601586.0;-313.128 €;↓;-329.798 €;35;56;2;"🔒;DEAL";Stuttgart;4750.0;8.0;Bilal El Khannouss;MF;4876.0;39.5;39,50 Mio.;exact_name;35.0;176015860.0;48760.0;VfB Stuttgart;19.375;24748.33333333333
+Phillip Tietz;1. FSV Mainz 05;Sturm;17556698.0;+180.366 €;↑;+184.080 €;126;165;4;"🔒;●";;;;;;;;;;126.0;175566980.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Chris Führich;VfB Stuttgart;Mittelfeld;17434561.0;-369.362 €;↓;-386.894 €;26;60;3;"🔒;DEAL";Stuttgart;4750.0;5.0;Chris Führich;ANG;5036.0;24.53;24,53 Mio.;exact_name;26.0;174345610.0;50360.0;VfB Stuttgart;19.375;24748.33333333333
+Alphonso Davies;FC Bayern München;Abwehr;17405248.0;+172.683 €;↗;+142.683 €;320;191;3;"🔒;●";Bayern;5391.0;6.0;Alphonso Davies;ABW;5538.0;50.97;50,97 Mio.;exact_name;320.0;174052480.0;55380.0;FC Bayern München;153.95;35871.0
+Ritsu Dōan;Eintracht Frankfurt;Mittelfeld;17352219.0;+132.810 €;↑;+141.378 €;95;90;3;"🔒;●";Frankfurt;4254.0;5.0;Ritsu Doan;MF;4901.0;35.86;35,86 Mio.;exact_name;95.0;173522190.0;49010.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Tom Bischof;FC Bayern München;Mittelfeld;17189404.0;+126.317 €;↑;+131.416 €;201;99;1;"🔒;DEAL";Bayern;5391.0;13.0;Tom Bischof;MF;5109.0;84.47;84,47 Mio.;exact_name;201.0;171894040.0;51090.0;FC Bayern München;153.95;35871.0
+Ethan Nwaneri;Borussia Dortmund;Mittelfeld;17178598.0;-444.597 €;↓;-470.818 €;63;91;2;"🔒;●";;;;;;;;;;63.0;171785980.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Leon Avdullahu;TSG Hoffenheim;Mittelfeld;17144044.0;+62.986 €;↗;+55.060 €;59;88;4;"🔒;●";Hoffenheim;4403.0;15.0;Leon Avdullahu;MF;3924.0;23.76;23,76 Mio.;exact_name;59.0;171440440.0;39240.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Jarell Quansah;Bayer 04 Leverkusen;Abwehr;16900690.0;-179.119 €;↘;-149.119 €;114;100;3;"🔒;DEAL";Leverkusen;4908.0;5.0;Jarell Quansah;ABW;5172.0;37.53;37,53 Mio.;exact_name;114.0;169006900.0;51720.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Lukeba Castello Jr.;RB Leipzig;Abwehr;16761959.0;-531.161 €;↓;-652.835 €;0;140;2;"🔒;●;DEAL";;;;;;;;;;0.0;167619590.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Josip Stanišić;FC Bayern München;Abwehr;16440873.0;+137.676 €;↑;+152.808 €;158;106;2;"🔒;●;DEAL";Bayern;5391.0;7.0;Josip Stanišić;ABW;5461.0;41.38;41,38 Mio.;exact_name;158.0;164408730.0;54610.0;FC Bayern München;153.95;35871.0
+Younes Ebnoutalib;Eintracht Frankfurt;Sturm;16390963.0;+204.521 €;↑;+227.248 €;150;151;3;"🔒;●";;;;;;3271.0;;;;150.0;163909630.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Chrislain Matsima;FC Augsburg;Abwehr;16246587.0;+76.945 €;↗;+76.370 €;77;125;4;"🔒;●";Augsburg;4251.0;2.0;Chrislain Matsima;ABW;4612.0;12.95;12,95 Mio.;exact_name;77.0;162465870.0;46120.0;FC Augsburg;25.714285714285715;18443.33333333333
+Grischa Prömel;VfB Stuttgart;Mittelfeld;16017651.0;-380.395 €;↓;-410.395 €;35;86;4;"🔒;●";;;;;;;;;;35.0;160176510.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Philipp Lienhart;SC Freiburg;Abwehr;15916212.0;+227.150 €;↑;+236.272 €;104;127;4;"🔒;●";Freiburg;4305.0;7.0;Philipp Lienhart;ABW;4465.0;10.0;10,00 Mio.;exact_name;104.0;159162120.0;44650.0;SC Freiburg;48.40909090909091;20032.727272727272
+Joey Veerman;Borussia Dortmund;Mittelfeld;15881847.0;+156.919 €;↑;+180.434 €;107;80;2;"🔒;●";Dortmund;4754.0;1.0;Joey Veerman;MF;6992.0;16.9;16,90 Mio.;exact_name;107.0;158818470.0;69920.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Fisnik Asllani;TSG Hoffenheim;Sturm;15853270.0;+41.441 €;↗;+31.582 €;19;34;0;"🔒;●";Hoffenheim;4403.0;13.0;Fisnik Asllani;ANG;4036.0;29.08;29,08 Mio.;exact_name;19.0;158532700.0;40360.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Ermedin Demirović;VfB Stuttgart;Sturm;15781892.0;-470.312 €;↘;-469.185 €;-16;38;2;"🔒;●";;;;;;;;;;-16.0;157818920.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Sheraldo Becker;1. FSV Mainz 05;Sturm;15596471.0;+260.050 €;↑;+272.767 €;248;163;4;"🔒;DEAL;●";;;;;;;;;;248.0;155964710.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Finn Jeltsch;VfB Stuttgart;Abwehr;15534097.0;+7.859 €;↗;+2.500 €;24;74;4;"🔒;●";;;;;;;;;;24.0;155340970.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Jan-Niklas Beste;SC Freiburg;Mittelfeld;15383818.0;+141.016 €;↑;+142.560 €;93;108;4;"🔒;●";;;;;;;;;;93.0;153838180.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Michael Gregoritsch;FC Augsburg;Sturm;15247826.0;+111.685 €;↗;+96.396 €;16;137;4;"🔒;●";Augsburg;4251.0;4.0;Michael Gregoritsch;ANG;4558.0;3.72;3,72 Mio.;exact_name;16.0;152478260.0;45580.0;FC Augsburg;25.714285714285715;18443.33333333333
+Niclas Füllkrug;SV Werder Bremen;Sturm;14470938.0;+231.882 €;↑;+257.813 €;187;108;4;"🔒;DEAL;●";;;;;;;;;;187.0;144709380.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Tim Lemperle;TSG Hoffenheim;Sturm;14157392.0;-21.931 €;↘;-51.931 €;17;72;2;"🔒;DEAL;●";;;;;;;;;;17.0;141573920.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Hennes Behrens;FC Augsburg;Abwehr;14112890.0;+137.370 €;↗;+130.160 €;0;100;4;"🔒;DEAL;●";;;;;;;;;;0.0;141128900.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Serge Gnabry;FC Bayern München;Mittelfeld;14013391.0;+186.659 €;↑;+194.350 €;34;34;0;"🔒;DEAL";;;;;;;;;;34.0;140133910.0;0.0;FC Bayern München;153.95;35871.0
+Fabio Gruber;1. FSV Mainz 05;Abwehr;13986925.0;+76.894 €;↑;+72.506 €;118;117;4;"🔒;●";;;;;;;;;;118.0;139869250.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Soufiane El-Faouzi;FC Schalke 04;Mittelfeld;13904647.0;+126.757 €;↑;+140.078 €;68;82;4;"🔒;●";;;;;;;;;;68.0;139046470.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Adam Daghim;TSG Hoffenheim;Sturm;13701752.0;+282.544 €;↑;+286.519 €;120;156;4;"🔒;●";;;;;;;;;;120.0;137017520.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Fábio Vieira;Hamburger SV;Mittelfeld;13582436.0;-260.651 €;↘;-230.651 €;106;33;1;"🔒;●";;;;;;;;;;106.0;135824360.0;0.0;Hamburger SV;54.95454545454545;0.0
+Lilian Brassier;Eintracht Frankfurt;Abwehr;13381775.0;+94.559 €;↑;+110.392 €;103;103;3;"🔒;●";;;;;;;;;;103.0;133817750.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Jamie Leweling;VfB Stuttgart;Mittelfeld;13296536.0;-480.624 €;↓;-485.761 €;4;3;0;"🔒;DEAL";;;;;;;;;;4.0;132965360.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Derry Scherhant;SC Freiburg;Mittelfeld;13291964.0;+251.564 €;↑;+257.020 €;238;158;4;"🔒;●";Freiburg;4305.0;11.0;Derry Scherhant;ANG;3996.0;24.12;24,12 Mio.;exact_name;238.0;132919640.0;39960.0;SC Freiburg;48.40909090909091;20032.727272727272
+Amos Pieper;SV Werder Bremen;Abwehr;13267941.0;+193.033 €;↑;+204.620 €;105;118;4;"🔒;●";Bremen;4176.0;1.0;Amos Pieper;ABW;4890.0;6.1;6,10 Mio.;exact_name;105.0;132679410.0;48900.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Lukas Emanuel Petkov;SV Elversberg;Mittelfeld;13108661.0;+1.580 €;↗;-6.100 €;96;113;4;"🔒;●";;;;;;;;;;96.0;131086610.0;0.0;SV Elversberg;44.5;12801.363636363636
+Ezequiél Fernández;Bayer 04 Leverkusen;Mittelfeld;12956650.0;+182.290 €;↑;+212.290 €;125;123;4;"🔒;●";;;;;;;;;;125.0;129566500.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Albian Hajdari;TSG Hoffenheim;Abwehr;12940032.0;+54.201 €;↗;+51.018 €;70;58;3;"🔒;DEAL";;;;;;;;;;70.0;129400320.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Elias Baum;Eintracht Frankfurt;Abwehr;12886155.0;-606.418 €;↓;-636.418 €;18;89;4;"🔒;●";;;;;;;;;;18.0;128861550.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Nikola Katic;FC Schalke 04;Abwehr;12836137.0;+253.773 €;↑;+270.840 €;154;131;4;"🔒;●";;;;;;;;;;154.0;128361370.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Facundo Medina;Bayer 04 Leverkusen;Abwehr;12693695.0;+234.757 €;↑;+252.900 €;123;110;3;"🔒;●";Leverkusen;4908.0;8.0;Facundo Medina;ABW;4928.0;11.98;11,98 Mio.;exact_name;123.0;126936950.0;49280.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Nicolas Seiwald;RB Leipzig;Mittelfeld;12635944.0;-680.451 €;↓;-698.874 €;11;58;2;"🔒;DEAL";;;;;;;;;;11.0;126359440.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Adil Aouchiche;FC Schalke 04;Mittelfeld;12562712.0;+224.821 €;↑;+237.651 €;119;107;4;"🔒;●";Schalke;4193.0;5.0;Adil Aouchiche;MF;4566.0;3.83;3,83 Mio.;exact_name;119.0;125627120.0;45660.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Josha Vagnoman;VfB Stuttgart;Abwehr;12388561.0;+139.914 €;↑;+145.902 €;66;131;4;"🔒;●";;;;;;;;;;66.0;123885610.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Fábio Silva;Borussia Dortmund;Sturm;12316738.0;+221.184 €;↑;+223.012 €;23;100;1;"🔒;🔥;HOT;DEAL;●";;;;;;;;;;23.0;123167380.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Kim Minjae;FC Bayern München;Abwehr;12271183.0;-333.358 €;↓;-345.876 €;88;109;2;"🔒;DEAL";;;;;;;;;;88.0;122711830.0;0.0;FC Bayern München;153.95;35871.0
+Noahkai Banks;FC Augsburg;Abwehr;12137042.0;-12.636 €;↘;-36.756 €;37;100;4;"🔒;●";Augsburg;4251.0;7.0;Noahkai Banks;ABW;4436.0;11.89;11,89 Mio.;exact_name;37.0;121370420.0;44360.0;FC Augsburg;25.714285714285715;18443.33333333333
+Yannik Engelhardt;SC Freiburg;Mittelfeld;12120217.0;+208.730 €;↑;+212.502 €;73;149;4;"🔒;●";;;;;;;;;;73.0;121202170.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Han-Noah Massengo;FC Augsburg;Mittelfeld;12030641.0;-646.294 €;↓;-676.294 €;2;83;4;"🔒;●";Augsburg;4251.0;13.0;Han-Noah Massengo;MF;3926.0;10.04;10,04 Mio.;exact_name;2.0;120306410.0;39260.0;FC Augsburg;25.714285714285715;18443.33333333333
+Philipp Treu;SC Freiburg;Abwehr;11960860.0;+233.353 €;↑;+241.459 €;28;76;3;"🔒;🔥;HOT;DEAL;●";;;;;;;;;;28.0;119608600.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Jordy Makengo;SC Freiburg;Abwehr;11776789.0;+192.911 €;↑;+196.850 €;117;151;4;"🔒;●";Freiburg;4305.0;13.0;Jordy Makengo;ABW;3979.0;11.61;11,61 Mio.;exact_name;117.0;117767890.0;39790.0;SC Freiburg;48.40909090909091;20032.727272727272
+Lukas Pinckert;SV Elversberg;Abwehr;11722505.0;+106.774 €;↑;+136.774 €;173;129;4;"🔒;●";;;;;;;;;;173.0;117225050.0;0.0;SV Elversberg;44.5;12801.363636363636
+Marco Grüll;SV Werder Bremen;Mittelfeld;11656874.0;+253.778 €;↑;+254.001 €;266;185;4;"🔒;●";;;;;;;;;;266.0;116568740.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Leopold Querfeld;1. FC Union Berlin;Abwehr;11487334.0;+9.368 €;↑;+39.368 €;63;144;3;"🔒;●;🔥;HOT;DEAL";;;;;;;;;;63.0;114873340.0;0.0;1. FC Union Berlin;-1.25;0.0
+Maximilian Rohr;SV Elversberg;Abwehr;11254949.0;+94.118 €;↑;+119.942 €;151;116;4;"🔒;●";Elversberg;3774.0;1.0;Maximilian Rohr;ABW;4556.0;0.88;0,88 Mio.;exact_name;151.0;112549490.0;45560.0;SV Elversberg;44.5;12801.363636363636
+Olivier Deman;SV Werder Bremen;Abwehr;11236363.0;+198.963 €;↑;+221.498 €;101;101;4;"🔒;●";Bremen;4176.0;6.0;Olivier Deman;ABW;4330.0;5.89;5,89 Mio.;exact_name;101.0;112363630.0;43300.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Marco Friedl;SV Werder Bremen;Abwehr;11201217.0;+243.262 €;↑;+263.638 €;178;111;4;"🔒;●";Bremen;4176.0;3.0;Marco Friedl;ABW;4485.0;8.98;8,98 Mio.;exact_name;178.0;112012170.0;44850.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Chuki;SV Werder Bremen;Mittelfeld;11117601.0;+232.645 €;↑;+242.097 €;185;116;4;"🔒;●";;;;;;;;;;185.0;111176010.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Stefan Posch;1. FSV Mainz 05;Abwehr;10966087.0;+256.442 €;↑;+261.350 €;97;94;3;"🔒;●";;;;;;;;;;97.0;109660870.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Neil El Aynaoui;RB Leipzig;Mittelfeld;10937978.0;+186.516 €;↑;+192.246 €;56;85;3;"🔒;●";;;;;;;;;;56.0;109379780.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Jae-Sung Lee;1. FSV Mainz 05;Mittelfeld;10917165.0;-564.601 €;↘;-556.803 €;75;90;4;"🔒;●";;;;;;;;;;75.0;109171650.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Hasan Kuruçay;FC Schalke 04;Abwehr;10856577.0;+120.043 €;↑;+150.043 €;153;96;4;"🔒;🔥;HOT";;;;;;;;;;153.0;108565770.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Robin Gosens;FC Schalke 04;Abwehr;10766177.0;+220.231 €;↗;+214.006 €;62;80;3;"🔒;●";Schalke;4193.0;4.0;Robin Gosens;ABW;4664.0;3.29;3,29 Mio.;exact_name;62.0;107661770.0;46640.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Christian Kofane;Bayer 04 Leverkusen;Sturm;10738266.0;+8.984 €;↗;-21.016 €;19;78;1;"🔒;●";;;;;;;;;;19.0;107382660.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Calvin Brackelmann;FC Augsburg;Abwehr;10721871.0;+112.084 €;↗;+86.652 €;142;126;4;"🔒;●";;;;;;;;;;142.0;107218710.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Jahmai Simpson-Pusey;1. FC Köln;Abwehr;10651216.0;+182.237 €;↑;+193.814 €;76;76;4;"🔒;●";;;;;;;;;;76.0;106512160.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+David Mokwa;SV Elversberg;Sturm;10601530.0;+113.851 €;↗;+96.302 €;34;84;4;"🔒;●";;;;;;;;;;34.0;106015300.0;0.0;SV Elversberg;44.5;12801.363636363636
+Felix Keidel;SV Elversberg;Abwehr;10593017.0;+184.552 €;↑;+186.344 €;93;93;4;"🔒;●";;;;;;;;;;93.0;105930170.0;0.0;SV Elversberg;44.5;12801.363636363636
+Philipp Mwene;1. FSV Mainz 05;Abwehr;10556102.0;-306.267 €;↘;-276.267 €;84;115;4;"🔒;●";;;;;;;;;;84.0;105561020.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Ramy Bensebaini;Borussia Dortmund;Abwehr;10511459.0;-602.924 €;↓;-613.172 €;36;43;0;"🔒;DEAL";Dortmund;4754.0;3.0;Ramy Bensebaini;ABW;5652.0;20.73;20,73 Mio.;exact_name;36.0;105114590.0;56520.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Mats Rots;TSG Hoffenheim;Abwehr;10473671.0;+149.032 €;↗;+140.244 €;14;53;3;"🔒;●";Hoffenheim;4403.0;8.0;Mats Rots;ABW;4336.0;7.1;7,10 Mio.;exact_name;14.0;104736710.0;43360.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Tidiam Gomis;RB Leipzig;Sturm;10472809.0;+29.671 €;↗;+22.206 €;42;105;2;"🔒;●";;;;;;;;;;42.0;104728090.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Bambasé Conté;TSG Hoffenheim;Sturm;10423998.0;+122.052 €;↑;+131.923 €;99;74;3;"🔒;●";;;;;;;;;;99.0;104239980.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Tim Kleindienst;Borussia Mönchengladbach;Sturm;10416927.0;-423.169 €;↘;-399.900 €;0;3;3;"🔒;●";Gladbach;4346.0;9.0;T. Kleindienst;ANG;4341.0;3.3;3,30 Mio.;fuzzy_name_93;0.0;104169270.0;43410.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Kenan Karaman;FC Schalke 04;Sturm;10365128.0;+29.426 €;↗;+24.486 €;84;61;2;"🔒;●";Schalke;4193.0;13.0;Kenan Karaman;ANG;3817.0;2.32;2,32 Mio.;exact_name;84.0;103651280.0;38170.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Alexis Claude-Maurice;FC Augsburg;Mittelfeld;10357528.0;+154.642 €;↑;+156.402 €;48;75;0;"🔒;●";Augsburg;4251.0;3.0;Alexis Claude-Maurice;ANG;4590.0;15.05;15,05 Mio.;exact_name;48.0;103575280.0;45900.0;FC Augsburg;25.714285714285715;18443.33333333333
+Adam Hložek;TSG Hoffenheim;Sturm;10336949.0;+259.109 €;↗;+229.109 €;77;103;4;"🔒;●";Hoffenheim;4403.0;4.0;Adam Hložek;ANG;4990.0;11.55;11,55 Mio.;exact_name;77.0;103369490.0;49900.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Andrej Kramarić;TSG Hoffenheim;Mittelfeld;10306837.0;+167.781 €;↗;+138.346 €;3;0;0;"🔒;DEAL";Hoffenheim;4403.0;3.0;Andrej Kramarić;MF;5250.0;5.66;5,66 Mio.;exact_name;3.0;103068370.0;52500.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Rômulo;RB Leipzig;Sturm;10291600.0;+112.858 €;↑;+114.446 €;1;72;1;"🔒;DEAL";Leipzig;4687.0;13.0;Rômulo;ANG;4326.0;45.47;45,47 Mio.;exact_name;1.0;102916000.0;43260.0;RB Leipzig;19.043478260869566;23180.0
+Raphael Onyedika;Eintracht Frankfurt;Mittelfeld;10253630.0;+144.336 €;↗;+119.974 €;28;41;4;"🔒;●";;;;;;;;;;28.0;102536300.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Arijon Ibrahimović;FC Augsburg;Mittelfeld;10232000.0;-69.165 €;↘;-99.165 €;0;115;2;"🔒;●";;;;;;;;;;0.0;102320000.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Ezechiel Banzuzi;RB Leipzig;Mittelfeld;9997540.0;-69.578 €;↓;-99.578 €;44;85;4;"🔒;●";;;;;;;;;;44.0;99975400.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Mikey Moore;1. FC Köln;Mittelfeld;9882885.0;-499.658 €;↘;-469.658 €;44;47;2;"🔒;DEAL;●";;;;;;;;;;44.0;98828850.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Timo Becker;FC Schalke 04;Abwehr;9829422.0;+156.070 €;↑;+147.080 €;77;88;4;"🔒;●";;;;;;;;;;77.0;98294220.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Anton Kade;FC Augsburg;Sturm;9826485.0;+119.852 €;↑;+135.803 €;0;273;1;"🔒;🔥;HOT";Augsburg;4251.0;10.0;Anton Kade;MF;4283.0;15.89;15,89 Mio.;exact_name;0.0;98264850.0;42830.0;FC Augsburg;25.714285714285715;18443.33333333333
+Franck Honorat;Borussia Mönchengladbach;Mittelfeld;9751869.0;-738.489 €;↓;-750.000 €;13;65;3;"🔒;●";;;;;;;;;;13.0;97518690.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Christoph Baumgartner;RB Leipzig;Mittelfeld;9723847.0;+366.103 €;↑;+366.830 €;0;0;0;"🔒;●";;;;;;;;;;0.0;97238470.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Linton Maina;1. FC Köln;Sturm;9582624.0;+323.415 €;↑;+328.603 €;76;88;3;"🔒;●";;;;;;;;;;76.0;95826240.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Eren Sami Dinkçi;SV Werder Bremen;Mittelfeld;9572826.0;+347.946 €;↑;+359.412 €;63;51;3;"🔒;●";;;;;;;;;;63.0;95728260.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Ellyes Skhiri;1. FC Köln;Mittelfeld;9521773.0;+284.768 €;↑;+301.728 €;118;82;2;"🔒;●";;;;;;;;;;118.0;95217730.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Kacper Potulski;1. FSV Mainz 05;Abwehr;9519715.0;+60.628 €;↗;+57.645 €;88;61;3;"🔒;●";;;;;;;;;;88.0;95197150.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Kevin Diks;Borussia Mönchengladbach;Abwehr;9466870.0;-200.151 €;↓;-200.510 €;4;24;4;"🔒;DEAL";;;;;;;;;;4.0;94668700.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Robin Fellhauer;FC Augsburg;Mittelfeld;9415505.0;+85.895 €;↑;+115.895 €;121;93;4;"🔒;🔥;HOT";;;;;;;;;;121.0;94155050.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Tom Rothe;1. FC Union Berlin;Abwehr;9329924.0;+255.179 €;↑;+285.179 €;29;71;4;"🔒;●";;;;;;;;;;29.0;93299240.0;0.0;1. FC Union Berlin;-1.25;0.0
+Ragnar Ache;1. FC Köln;Sturm;9329207.0;-166.959 €;↘;-156.618 €;104;63;2;"🔒;●";;;;;;;;;;104.0;93292070.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Thijs Dallinga;1. FC Köln;Sturm;9288779.0;-371.880 €;↓;-389.017 €;37;86;2;"🔒;●";;;;;;;;;;37.0;92887790.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Lukasz Poreba;SV Elversberg;Mittelfeld;9257696.0;-319.057 €;↘;-289.057 €;97;81;4;"🔒;●";;;;;;;;;;97.0;92576960.0;0.0;SV Elversberg;44.5;12801.363636363636
+Anthony Caci;1. FSV Mainz 05;Abwehr;9220793.0;-193.363 €;↘;-185.696 €;118;84;4;"🔒;●";;;;;;;;;;118.0;92207930.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Keita Kosugi;Eintracht Frankfurt;Abwehr;9180729.0;+224.228 €;↑;+250.480 €;38;64;4;"🔒;●";;;;;;;;;;38.0;91807290.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Hugo Bolin;Borussia Mönchengladbach;Mittelfeld;9180422.0;-272.623 €;↓;-284.990 €;45;89;4;"🔒;●";;;;;;;;;;45.0;91804220.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Marius Wolf;FC Augsburg;Mittelfeld;9162288.0;-301.553 €;↓;-305.432 €;8;111;4;"🔒;●";Augsburg;4251.0;14.0;Marius Wolf;ABW;3922.0;3.27;3,27 Mio.;exact_name;8.0;91622880.0;39220.0;FC Augsburg;25.714285714285715;18443.33333333333
+Gideon Mensah;1. FC Köln;Abwehr;9136372.0;-389.674 €;↘;-382.864 €;51;58;4;"🔒;●";;;;;;;;;;51.0;91363720.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Felix Uduokhai;1. FC Union Berlin;Abwehr;9133789.0;+392.447 €;↑;+400.618 €;71;72;3;"🔒;●";;;;;;;;;;71.0;91337890.0;0.0;1. FC Union Berlin;-1.25;0.0
+Malik Tillman;Bayer 04 Leverkusen;Mittelfeld;9100753.0;-275.744 €;↘;-270.784 €;0;77;2;"🔒;DEAL";Leverkusen;4908.0;13.0;Malik Tillman;MF;4536.0;60.69;60,69 Mio.;exact_name;0.0;91007530.0;45360.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Maxime Estève;RB Leipzig;Abwehr;8995327.0;-88.203 €;↘;-58.203 €;70;93;2;"🔒;●";Leipzig;4687.0;14.0;Maxime Estève;ABW;4293.0;16.65;16,65 Mio.;exact_name;70.0;89953270.0;42930.0;RB Leipzig;19.043478260869566;23180.0
+Guéla Doué;Bayer 04 Leverkusen;Abwehr;8879039.0;-317.325 €;↘;-414.796 €;0;40;0;"🔒;●";;;;;;;;;;0.0;88790390.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Satoshi Tanaka;FC Schalke 04;Mittelfeld;8804477.0;-242.516 €;↓;-272.516 €;68;87;3;"🔒;●";;;;;;;;;;68.0;88044770.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Arthur;SV Werder Bremen;Abwehr;8650965.0;-96.389 €;↓;-126.389 €;117;73;3;"🔒;●";;;;;;;;;;117.0;86509650.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Santiago Castañeda;SC Paderborn 07;Mittelfeld;8509730.0;+25.862 €;↑;+55.862 €;235;124;4;"🔒;🔥;HOT";;;;;;;;;;235.0;85097300.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Philipp Sander;Borussia Mönchengladbach;Mittelfeld;8470420.0;+317.241 €;↑;+347.241 €;54;40;4;"🔒;DEAL";;;;;;;;;;54.0;84704200.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Luka Lochoshvili;1. FC Köln;Abwehr;8460358.0;-199.687 €;↓;-204.752 €;119;79;4;"🔒;●";;;;;;;;;;119.0;84603580.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Maurice Krattenmacher;SV Elversberg;Mittelfeld;8441489.0;+353.911 €;↗;+346.822 €;12;100;0;"🔒;●";Elversberg;3774.0;12.0;Maurice Krattenmacher;MF;3711.0;3.63;3,63 Mio.;exact_name;12.0;84414890.0;37110.0;SV Elversberg;44.5;12801.363636363636
+Nicolai Remberg;Hamburger SV;Mittelfeld;8394528.0;+305.068 €;↑;+335.068 €;71;41;4;"🔒;●";;;;;;;;;;71.0;83945280.0;0.0;Hamburger SV;54.95454545454545;0.0
+Dzenan Pejčinović;VfB Stuttgart;Sturm;8301458.0;-294.167 €;↘;-271.712 €;1;26;3;"🔒;●";Stuttgart;4750.0;15.0;Dzenan Pejcinovic;ANG;4083.0;15.17;15,17 Mio.;exact_name;1.0;83014580.0;40830.0;VfB Stuttgart;19.375;24748.33333333333
+Youri Regeer;SV Werder Bremen;Mittelfeld;8277966.0;+144.619 €;↑;+174.619 €;186;114;3;"🔒;🔥;HOT";;;;;;;;;;186.0;82779660.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Ludovit Reis;SV Werder Bremen;Mittelfeld;7849935.0;-220.841 €;↘;-214.924 €;78;66;4;"🔒;●";;;;;;;;;;78.0;78499350.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Rocco Reitz;RB Leipzig;Mittelfeld;7842557.0;+362.447 €;↑;+366.693 €;0;208;1;"🔒;DEAL";Leipzig;4687.0;3.0;Rocco Reitz;MF;4899.0;22.18;22,18 Mio.;exact_name;0.0;78425570.0;48990.0;RB Leipzig;19.043478260869566;23180.0
+Albert Grønbæk;Hamburger SV;Mittelfeld;7820838.0;+107.572 €;↑;+137.572 €;170;56;4;"🔒;🔥;HOT";;;;;;;;;;170.0;78208380.0;0.0;Hamburger SV;54.95454545454545;0.0
+Jan Gyamerah;SV Elversberg;Abwehr;7775428.0;-482.608 €;↓;-596.999 €;48;55;4;"🔒;●";Elversberg;3774.0;3.0;Jan Gyamerah;ABW;4263.0;0.51;0,51 Mio.;exact_name;48.0;77754280.0;42630.0;SV Elversberg;44.5;12801.363636363636
+Ísak Jóhannesson;1. FC Köln;Mittelfeld;7723198.0;-352.014 €;↘;-348.448 €;16;54;2;"🔒;●";;;;;;;;;;16.0;77231980.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Tom Krauß;1. FC Köln;Mittelfeld;7688028.0;+138.062 €;↑;+159.554 €;21;52;4;"🔒;●";;;;;;;;;;21.0;76880280.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Cole Campbell;SV Elversberg;Mittelfeld;7663308.0;-221.072 €;↘;-211.946 €;112;69;4;"🔒;●";;;;;;;;;;112.0;76633080.0;0.0;SV Elversberg;44.5;12801.363636363636
+Francis Onyeka;SV Elversberg;Mittelfeld;7610682.0;-318.687 €;↓;-320.966 €;1;48;3;"🔒;●";;;;;;;;;;1.0;76106820.0;0.0;SV Elversberg;44.5;12801.363636363636
+Ransford Königsdörffer;1. FSV Mainz 05;Sturm;7417204.0;+308.616 €;↑;+329.101 €;18;50;0;"🔒;●";;;;;;;;;;18.0;74172040.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Albert Sambi Lokonga;Hamburger SV;Mittelfeld;7311014.0;+244.570 €;↑;+274.570 €;64;35;3;"🔒;🔥;HOT";;;;;;;;;;64.0;73110140.0;0.0;Hamburger SV;54.95454545454545;0.0
+Vincenzo Grifo;SC Freiburg;Mittelfeld;7310472.0;+322.599 €;↑;+350.243 €;38;59;0;"🔒;DEAL";Freiburg;4305.0;2.0;Vincenzo Grifo;ANG;5273.0;10.74;10,74 Mio.;exact_name;38.0;73104720.0;52730.0;SC Freiburg;48.40909090909091;20032.727272727272
+Josip Juranović;1. FC Union Berlin;Abwehr;7304256.0;-262.595 €;↘;-304.109 €;0;100;3;"🔒;●";;;;;;;;;;0.0;73042560.0;0.0;1. FC Union Berlin;-1.25;0.0
+Laurin Curda;SC Paderborn 07;Abwehr;7194290.0;-71.129 €;↘;-41.129 €;159;99;4;"🔒;DEAL";;;;;;4219.0;;;;159.0;71942900.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Nathan De Cat;TSG Hoffenheim;Mittelfeld;7063810.0;-369.835 €;↓;-399.835 €;0;-6;0;"🔒;●";;;;;;;;;;0.0;70638100.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Jordan Torunarigha;Hamburger SV;Abwehr;7049148.0;+256.728 €;↑;+286.728 €;112;39;4;"🔒;🔥;HOT";;;;;;;;;;112.0;70491480.0;0.0;Hamburger SV;54.95454545454545;0.0
+Assan Ouédraogo;RB Leipzig;Mittelfeld;6998010.0;-354.941 €;↘;-473.464 €;0;61;1;"🔒;DEAL";;;;;;;;;;0.0;69980100.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Nnamdi Collins;Eintracht Frankfurt;Abwehr;6997742.0;+328.338 €;↑;+347.350 €;16;16;0;"🔒;●";Frankfurt;4254.0;10.0;Nnamdi Collins;ABW;4282.0;23.01;23,01 Mio.;exact_name;16.0;69977420.0;42820.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Moussa Sylla;FC Schalke 04;Sturm;6953648.0;-401.148 €;↓;-412.465 €;4;16;2;"🔒;●";;;;;;;;;;4.0;69536480.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Danny Da Costa;1. FSV Mainz 05;Abwehr;6909062.0;-194.546 €;↓;-201.292 €;168;86;1;"🔒;DEAL";;;;;;;;;;168.0;69090620.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Marcel Sabitzer;Borussia Dortmund;Mittelfeld;6884377.0;-350.844 €;↘;-340.314 €;17;42;0;"🔒;DEAL";;;;;;;;;;17.0;68843770.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Éric Dina Ebimbe;FC Schalke 04;Mittelfeld;6854465.0;+353.985 €;↑;+381.288 €;119;53;2;"🔒;●";;;;;;;;;;119.0;68544650.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Jano ter Horst;SC Paderborn 07;Abwehr;6848179.0;-83.620 €;↘;-53.620 €;161;102;4;"🔒;●";;;;;;;;;;161.0;68481790.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Tjark Scheller;SC Paderborn 07;Abwehr;6796470.0;-195.904 €;↘;-165.904 €;116;92;4;"🔒;●";Paderborn;3728.0;9.0;Tjark Scheller;ABW;3720.0;2.86;2,86 Mio.;exact_name;116.0;67964700.0;37200.0;SC Paderborn 07;63.11538461538461;8950.0
+Raphael Obermair;SC Paderborn 07;Mittelfeld;6794777.0;-306.699 €;↓;-307.526 €;62;65;4;"🔒;DEAL";Paderborn;3728.0;1.0;Raphael Obermair;ABW;4381.0;1.07;1,07 Mio.;exact_name;62.0;67947770.0;43810.0;SC Paderborn 07;63.11538461538461;8950.0
+Nicolás Capaldo;Hamburger SV;Abwehr;6762614.0;+115.034 €;↑;+145.034 €;206;65;4;"🔒;🔥;HOT";;;;;;;;;;206.0;67626140.0;0.0;Hamburger SV;54.95454545454545;0.0
+Benjamin Henrichs;RB Leipzig;Abwehr;6761860.0;+242.578 €;↗;+242.380 €;-23;41;1;"🔒;●";Leipzig;4687.0;4.0;Benjamin Henrichs;ABW;4873.0;7.0;7,00 Mio.;exact_name;-23.0;67618600.0;48730.0;RB Leipzig;19.043478260869566;23180.0
+Jens Stage;SV Werder Bremen;Mittelfeld;6659673.0;-378.919 €;↓;-508.535 €;0;0;0;"🔒;●";Bremen;4176.0;4.0;Jens Stage;MF;4470.0;8.2;8,20 Mio.;exact_name;0.0;66596730.0;44700.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Ko Itakura;Borussia Mönchengladbach;Abwehr;6612708.0;-261.503 €;↘;-239.722 €;58;36;4;"🔒;●";Gladbach;4346.0;13.0;K. Itakura;ABW;4052.0;8.76;8,76 Mio.;fuzzy_name_95;58.0;66127080.0;40520.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Lasse Günther;SV Elversberg;Abwehr;6595407.0;-307.691 €;↓;-310.736 €;54;49;4;"🔒;●";;;;;;;;;;54.0;65954070.0;0.0;SV Elversberg;44.5;12801.363636363636
+Tim Skarke;1. FC Union Berlin;Mittelfeld;6562002.0;-379.918 €;↘;-379.868 €;-23;66;0;"🔒;●";;;;;;;;;;-23.0;65620020.0;0.0;1. FC Union Berlin;-1.25;0.0
+Patrick Wimmer;TSG Hoffenheim;Mittelfeld;6561943.0;-268.309 €;↓;-298.309 €;40;56;2;"🔒;●";Hoffenheim;4403.0;9.0;Patrick Wimmer;ANG;4270.0;15.31;15,31 Mio.;exact_name;40.0;65619430.0;42700.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Mitchell Weiser;SV Werder Bremen;Abwehr;6453708.0;+330.978 €;↑;+351.484 €;128;71;0;"🔒;●";Bremen;4176.0;2.0;Mitchell Weiser;ABW;4879.0;9.4;9,40 Mio.;exact_name;128.0;64537080.0;48790.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Noël Aséko;Eintracht Frankfurt;Mittelfeld;6414039.0;+336.920 €;↑;+346.993 €;21;40;2;"🔒;●";;;;;;;;;;21.0;64140390.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Farès Chaïbi;Eintracht Frankfurt;Mittelfeld;6344909.0;-346.974 €;↓;-354.260 €;0;54;1;"🔒;DEAL";Frankfurt;4254.0;8.0;Farès Chaïbi;ANG;4371.0;36.52;36,52 Mio.;exact_name;0.0;63449090.0;43710.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Joseph Scally;Borussia Mönchengladbach;Abwehr;6110959.0;-401.538 €;↘;-395.406 €;40;37;3;"🔒;●";;;;;;;;;;40.0;61109590.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Giannis Konstantelias;Borussia Dortmund;Mittelfeld;6031399.0;-391.653 €;↘;-522.793 €;0;181;1;"🔒;●";;;;;;;;;;0.0;60313990.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Mattes Hansen;SC Paderborn 07;Abwehr;6016078.0;-382.201 €;↘;-381.663 €;93;63;4;"🔒;●";;;;;;;;;;93.0;60160780.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Zakaria El Ouahdi;Hamburger SV;Abwehr;6007982.0;-251.824 €;↓;-257.598 €;70;20;3;"🔒;●";;;;;;;;;;70.0;60079820.0;0.0;Hamburger SV;54.95454545454545;0.0
+Ramon Hendriks;VfB Stuttgart;Abwehr;5763095.0;-331.724 €;↘;-321.648 €;0;18;2;"🔒;DEAL";Stuttgart;4750.0;14.0;Ramon Hendriks;ABW;4138.0;16.24;16,24 Mio.;exact_name;0.0;57630950.0;41380.0;VfB Stuttgart;19.375;24748.33333333333
+Noah Darvich;SV Elversberg;Mittelfeld;5743261.0;+369.884 €;↑;+376.384 €;30;24;1;"🔒;●";;;;;;;;;;30.0;57432610.0;0.0;SV Elversberg;44.5;12801.363636363636
+Samuele Inácio;Borussia Dortmund;Mittelfeld;5678757.0;+117.264 €;↑;+143.667 €;0;-60;0;"🔒;●";;;;;;;;;;0.0;56787570.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Koki Machida;TSG Hoffenheim;Abwehr;5660149.0;+123.644 €;↑;+153.644 €;99;74;1;"🔒;●";;;;;;;;;;99.0;56601490.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Marius Bülter;1. FC Köln;Sturm;5652549.0;+366.109 €;↗;+364.672 €;-11;26;1;"🔒;●";;;;;;;;;;-11.0;56525490.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Mario Götze;Eintracht Frankfurt;Mittelfeld;5573461.0;-422.388 €;↘;-420.212 €;2;51;1;"🔒;●";Frankfurt;4254.0;13.0;Mario Götze;MF;3710.0;3.77;3,77 Mio.;exact_name;2.0;55734610.0;37100.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Nikolas Nartey;VfB Stuttgart;Mittelfeld;5476237.0;+208.891 €;↑;+223.288 €;-9;-9;0;"🔒;DEAL";;;;;;;;;;-9.0;54762370.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Junior Adamu;FC Schalke 04;Sturm;5475183.0;-358.946 €;↓;-388.946 €;0;73;2;"🔒;●";;;;;;;;;;0.0;54751830.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Loïc Badé;Bayer 04 Leverkusen;Abwehr;5390071.0;-334.174 €;↓;-351.437 €;0;35;1;"🔒;DEAL";Leverkusen;4908.0;4.0;Loïc Badé;ABW;5362.0;33.99;33,99 Mio.;exact_name;0.0;53900710.0;53620.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Florian Neuhaus;Borussia Mönchengladbach;Mittelfeld;5342339.0;+194.912 €;↑;+203.389 €;118;118;1;"🔒;🔥;HOT";;;;;;;;;;118.0;53423390.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Isac Lidberg;Borussia Mönchengladbach;Sturm;5336888.0;+396.660 €;↑;+417.384 €;134;26;1;"🔒;●";;;;;;;;;;134.0;53368880.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Andrija Maksimović;RB Leipzig;Mittelfeld;5335524.0;-471.454 €;↓;-501.454 €;3;44;0;"🔒;●";;;;;;;;;;3.0;53355240.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Lukas Ullrich;Borussia Mönchengladbach;Abwehr;5327246.0;+441.938 €;↑;+469.512 €;143;74;3;"🔒;●";;;;;;;;;;143.0;53272460.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Laurin Ulrich;SC Paderborn 07;Mittelfeld;5324694.0;+228.173 €;↑;+258.173 €;109;69;4;"🔒;🔥;HOT";;;;;;;;;;109.0;53246940.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Zeno Van den Bosch;1. FC Union Berlin;Abwehr;5311245.0;-336.783 €;↘;-332.321 €;-11;30;2;"🔒;●";;;;;;;;;;-11.0;53112450.0;0.0;1. FC Union Berlin;-1.25;0.0
+Paul Nebel;1. FSV Mainz 05;Mittelfeld;5267174.0;+379.175 €;↑;+376.248 €;0;0;0;"🔒;●";;;;;;;;;;0.0;52671740.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Otávio;Eintracht Frankfurt;Abwehr;5232100.0;+446.328 €;↑;+472.261 €;0;-1;0;"🔒;●";Frankfurt;4254.0;14.0;Otávio;ABW;3605.0;3.0;3,00 Mio.;exact_name;0.0;52321000.0;36050.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+David Møller Wolfe;Hamburger SV;Abwehr;5183207.0;-209.685 €;↓;-210.362 €;65;32;3;"🔒;●";;;;;;;;;;65.0;51832070.0;0.0;Hamburger SV;54.95454545454545;0.0
+Alessio Castro-Montes;1. FC Köln;Mittelfeld;5136177.0;-355.650 €;↘;-471.263 €;19;44;4;"🔒;●";;;;;;;;;;19.0;51361770.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Emmanuel Latte Lath;1. FC Union Berlin;Sturm;5029233.0;-347.878 €;↘;-346.244 €;-17;19;4;"🔒;●";;;;;;;;;;-17.0;50292330.0;0.0;1. FC Union Berlin;-1.25;0.0
+Tiago Tomás;VfB Stuttgart;Sturm;5020767.0;+346.023 €;↑;+340.771 €;0;35;1;"🔒;🔥;HOT";;;;;;;;;;0.0;50207670.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Noel Futkeu;SV Elversberg;Sturm;4979153.0;-336.656 €;↓;-360.451 €;2;38;0;"🔒;●";;;;;;;;;;2.0;49791530.0;0.0;SV Elversberg;44.5;12801.363636363636
+Hee-Chan Hwang;FC Schalke 04;Sturm;4959143.0;+321.596 €;↑;+351.596 €;26;54;0;"🔒;●";;;;;;;;;;26.0;49591430.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Maximilian Wöber;FC Schalke 04;Abwehr;4928303.0;+435.196 €;↑;+442.144 €;26;38;0;"🔒;●";Schalke;4193.0;3.0;Maximilian Wöber;ABW;4884.0;2.07;2,07 Mio.;exact_name;26.0;49283030.0;48840.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Martin Terrier;Bayer 04 Leverkusen;Sturm;4908063.0;+396.168 €;↗;+394.951 €;0;21;0;"🔒;●";;;;;;;;;;0.0;49080630.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Terem Moffi;Hamburger SV;Sturm;4880241.0;+408.125 €;↑;+426.128 €;23;3;2;"🔒;●";;;;;;;;;;23.0;48802410.0;0.0;Hamburger SV;54.95454545454545;0.0
+Patson Daka;Hamburger SV;Sturm;4855959.0;-334.618 €;↓;-336.053 €;45;21;2;"🔒;●";;;;;;;;;;45.0;48559590.0;0.0;Hamburger SV;54.95454545454545;0.0
+Mert Kömür;FC Augsburg;Mittelfeld;4850077.0;+435.044 €;↑;+462.565 €;23;36;1;"🔒;●";;;;;;;;;;23.0;48500770.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Wael Mohya;Borussia Mönchengladbach;Mittelfeld;4814185.0;-130.186 €;↘;-100.186 €;-6;9;2;"🔒;●";;;;;;;;;;-6.0;48141850.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Eric Martel;1. FSV Mainz 05;Mittelfeld;4808523.0;+473.504 €;↑;+487.334 €;91;91;0;"🔒;DEAL";;;;;;;;;;91.0;48085230.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Rani Khedira;1. FC Union Berlin;Mittelfeld;4807489.0;-70.500 €;↘;-57.182 €;-42;14;4;"🔒;DEAL";;;;;;;;;;-42.0;48074890.0;0.0;1. FC Union Berlin;-1.25;0.0
+Carney Chukwuemeka;Borussia Dortmund;Mittelfeld;4792441.0;-420.776 €;↘;-407.297 €;0;35;0;"🔒;●";Dortmund;4754.0;13.0;Carney Chukwuemeka;MF;4148.0;50.96;50,96 Mio.;exact_name;0.0;47924410.0;41480.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Sebastiaan Bornauw;Hamburger SV;Abwehr;4775358.0;-75.229 €;↘;-45.229 €;0;38;2;"🔒;●";;;;;;;;;;0.0;47753580.0;0.0;Hamburger SV;54.95454545454545;0.0
+Jeremiaha Maluze;Eintracht Frankfurt;Abwehr;4758264.0;-267.794 €;↘;-354.143 €;0;198;2;"🔒;●";;;;;;;;;;0.0;47582640.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Marvin Pieringer;SC Paderborn 07;Sturm;4748104.0;+230.382 €;↑;+223.642 €;70;36;4;"🔒;●";;;;;;;;;;70.0;47481040.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Ayoube Amaimouni;Eintracht Frankfurt;Mittelfeld;4747158.0;-129.956 €;↘;-99.956 €;3;24;1;"🔒;●";;;;;;;;;;3.0;47471580.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Rayan Philippe;SC Paderborn 07;Sturm;4746260.0;-179.292 €;↘;-149.292 €;59;18;1;"🔒;●";;;;;;;;;;59.0;47462600.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Luca Reggiani;Borussia Dortmund;Abwehr;4693742.0;-160.439 €;↘;-130.439 €;0;57;0;"🔒;DEAL;●";;;;;;;;;;0.0;46937420.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Leo Sauer;VfB Stuttgart;Mittelfeld;4691251.0;-166.350 €;↘;-136.350 €;-8;8;0;"🔒;●";;;;;;;;;;-8.0;46912510.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Dejan Ljubičić;FC Schalke 04;Mittelfeld;4657006.0;-135.503 €;↘;-190.068 €;0;40;3;"🔒;●";;;;;;;;;;0.0;46570060.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Gabriel Vidović;SC Paderborn 07;Mittelfeld;4642051.0;-18.459 €;↘;-2.022 €;94;49;4;"🔒;🔥;HOT";Paderborn;3728.0;13.0;Gabriel Vidović;ANG;3445.0;1.49;1,49 Mio.;exact_name;94.0;46420510.0;34450.0;SC Paderborn 07;63.11538461538461;8950.0
+Jan Leszczynski;Borussia Mönchengladbach;Abwehr;4638093.0;+435.036 €;↑;+444.830 €;87;44;1;"🔒;●";Gladbach;4346.0;12.0;J. Leszczyński;ABW;4064.0;0.92;0,92 Mio.;fuzzy_name_93;87.0;46380930.0;40640.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Robin Hack;Borussia Mönchengladbach;Mittelfeld;4624942.0;-115.367 €;↘;-106.136 €;-11;-4;2;"🔒;●";;;;;;;;;;-11.0;46249420.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Daiki Hashioka;Borussia Mönchengladbach;Abwehr;4621696.0;+356.232 €;↑;+386.232 €;-11;3;1;"🔒;🔥;HOT";;;;;;;;;;-11.0;46216960.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Lukas Kübler;SC Freiburg;Abwehr;4612135.0;-114.874 €;↘;-113.804 €;22;45;1;"🔒;DEAL";Freiburg;4305.0;5.0;Lukas Kübler;ABW;4536.0;3.93;3,93 Mio.;exact_name;22.0;46121350.0;45360.0;SC Freiburg;48.40909090909091;20032.727272727272
+Joël Schmied;1. FC Köln;Abwehr;4599010.0;+359.379 €;↑;+382.664 €;0;20;0;"🔒;●";;;;;;;;;;0.0;45990100.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Aljoscha Kemlein;1. FC Union Berlin;Mittelfeld;4567491.0;-114.740 €;↘;-109.862 €;-19;14;3;"🔒;●";;;;;;;;;;-19.0;45674910.0;0.0;1. FC Union Berlin;-1.25;0.0
+Johan Bakayoko;RB Leipzig;Sturm;4553566.0;-118.967 €;↘;-141.609 €;0;24;1;🔒;Leipzig;4687.0;11.0;Johan Bakayoko;ANG;4525.0;27.82;27,82 Mio.;exact_name;0.0;45535660.0;45250.0;RB Leipzig;19.043478260869566;23180.0
+Kevin Stöger;Borussia Mönchengladbach;Mittelfeld;4553168.0;-120.340 €;↓;-135.544 €;-9;-1;2;"🔒;●";;;;;;;;;;-9.0;45531680.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Marc Guiu;RB Leipzig;Sturm;4499202.0;-145.124 €;↘;-164.661 €;0;-13;0;"🔒;●";;;;;;;;;;0.0;44992020.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Janik Haberer;1. FC Union Berlin;Mittelfeld;4461035.0;-163.658 €;↓;-166.156 €;4;11;1;"🔒;●";;;;;;;;;;4.0;44610350.0;0.0;1. FC Union Berlin;-1.25;0.0
+Eliesse Ben Seghir;Bayer 04 Leverkusen;Mittelfeld;4457222.0;-151.231 €;↘;-158.196 €;0;0;0;"🔒;●";Leverkusen;4908.0;7.0;Eliesse Ben Seghir;ANG;4944.0;68.57;68,57 Mio.;exact_name;0.0;44572220.0;49440.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Edin Džeko;FC Schalke 04;Sturm;4384657.0;-40.624 €;↘;-26.089 €;73;20;1;"🔒;DEAL";Schalke;4193.0;2.0;Edin Džeko;ANG;5086.0;0.38;0,38 Mio.;exact_name;73.0;43846570.0;50860.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Senne Lynen;SV Werder Bremen;Mittelfeld;4251390.0;+6.180 €;↑;+22.070 €;0;0;1;"🔒;🔥;HOT;DEAL";;;;;;;;;;0.0;42513900.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Rodrigo Ribeiro;FC Augsburg;Sturm;4017123.0;-136.354 €;↓;-137.519 €;5;33;0;"🔒;●";;;;;;;;;;5.0;40171230.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Jeffrey Gouweleeuw;FC Augsburg;Abwehr;3979186.0;-131.456 €;↓;-131.796 €;-8;15;0;"🔒;●";Augsburg;4251.0;6.0;Jeffrey Gouweleeuw;ABW;4447.0;2.03;2,03 Mio.;exact_name;-8.0;39791860.0;44470.0;FC Augsburg;25.714285714285715;18443.33333333333
+Ansgar Knauff;Eintracht Frankfurt;Mittelfeld;3977987.0;+409.509 €;↑;+429.431 €;38;38;0;"🔒;●";Frankfurt;4254.0;11.0;Ansgar Knauff;ANG;3910.0;19.41;19,41 Mio.;exact_name;38.0;39779870.0;39100.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Jan Thielmann;1. FC Köln;Mittelfeld;3962733.0;-137.349 €;↓;-137.732 €;0;50;2;"🔒;●";;;;;;;;;;0.0;39627330.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Lucas Vázquez;Bayer 04 Leverkusen;Abwehr;3924363.0;-98.668 €;↓;-100.868 €;18;14;1;🔒;Leverkusen;4908.0;14.0;Lucas Vázquez;ABW;4497.0;5.04;5,04 Mio.;exact_name;18.0;39243630.0;44970.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Bernardo;TSG Hoffenheim;Abwehr;3897750.0;-101.777 €;↘;-119.886 €;0;62;1;"🔒;DEAL";Hoffenheim;4403.0;1.0;Bernardo;ABW;5304.0;5.0;5,00 Mio.;exact_name;0.0;38977500.0;53040.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Max Rosenfelder;SC Freiburg;Abwehr;3866822.0;-130.444 €;↘;-127.666 €;0;37;0;"🔒;●";;;;;;;;;;0.0;38668220.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Dariusz Stalmach;SV Werder Bremen;Mittelfeld;3861848.0;-138.480 €;↘;-135.411 €;0;63;0;"🔒;●";;;;;;;;;;0.0;38618480.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Sebastian Sebulonsen;1. FC Köln;Abwehr;3802489.0;+474.159 €;↑;+493.134 €;0;18;0;"🔒;●";;;;;;;;;;0.0;38024890.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Derrick Köhn;1. FC Union Berlin;Abwehr;3783461.0;-162.750 €;↓;-164.306 €;-6;7;0;"🔒;●";;;;;;;;;;-6.0;37834610.0;0.0;1. FC Union Berlin;-1.25;0.0
+Borna Sosa;1. FC Köln;Abwehr;3775518.0;-72.415 €;↘;-60.814 €;7;7;0;"🔒;●";;;;;;;;;;7.0;37755180.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Kauã Prates;Borussia Dortmund;Abwehr;3748394.0;-140.338 €;↓;-140.644 €;0;34;0;"🔒;●";;;;;;;;;;0.0;37483940.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Cyriaque Irié;SC Freiburg;Mittelfeld;3715273.0;-141.012 €;↘;-140.202 €;0;45;0;"🔒;●";Freiburg;4305.0;12.0;Cyriaque Irié;ANG;3987.0;28.8;28,80 Mio.;exact_name;0.0;37152730.0;39870.0;SC Freiburg;48.40909090909091;20032.727272727272
+Lukas Klostermann;RB Leipzig;Abwehr;3665407.0;+421.950 €;↑;+449.883 €;0;0;0;"🔒;●";Leipzig;4687.0;15.0;Lukas Klostermann;ABW;4261.0;6.43;6,43 Mio.;exact_name;0.0;36654070.0;42610.0;RB Leipzig;19.043478260869566;23180.0
+Livan Burcu;1. FC Union Berlin;Mittelfeld;3656796.0;-130.616 €;↘;-129.621 €;-13;13;2;"🔒;●";;;;;;;;;;-13.0;36567960.0;0.0;1. FC Union Berlin;-1.25;0.0
+Stefano Marino;SC Paderborn 07;Sturm;3630005.0;+92.507 €;↑;+122.507 €;144;52;3;"🔒;🔥;HOT";;;;;;;;;;144.0;36300050.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Bakery Jatta;Hamburger SV;Mittelfeld;3617336.0;-126.329 €;↘;-125.258 €;17;11;1;"🔒;●";;;;;;;;;;17.0;36173360.0;0.0;Hamburger SV;54.95454545454545;0.0
+Robin Hranác;TSG Hoffenheim;Abwehr;3606247.0;-144.444 €;↓;-152.629 €;0;23;0;"🔒;DEAL";;;;;;;;;;0.0;36062470.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Michel Aebischer;1. FC Union Berlin;Mittelfeld;3600263.0;-35.589 €;↓;-36.736 €;-15;7;4;"🔒;●";;;;;;;;;;-15.0;36002630.0;0.0;1. FC Union Berlin;-1.25;0.0
+Jonas Hofmann;Bayer 04 Leverkusen;Mittelfeld;3565153.0;-141.338 €;↓;-143.840 €;0;43;0;"🔒;DEAL";;;;;;;;;;0.0;35651530.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Atakan Karazor;VfB Stuttgart;Mittelfeld;3563282.0;+358.338 €;↑;+388.338 €;0;0;0;🔒;Stuttgart;4750.0;12.0;Atakan Karazor;MF;4181.0;11.97;11,97 Mio.;exact_name;0.0;35632820.0;41810.0;VfB Stuttgart;19.375;24748.33333333333
+Juma Bah;FC Augsburg;Abwehr;3493987.0;-142.984 €;↓;-143.540 €;0;0;0;"🔒;●";;;;;;;;;;0.0;34939870.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Shuto Machino;Borussia Mönchengladbach;Sturm;3473916.0;+482.261 €;↑;+512.034 €;87;40;0;"🔒;●";;;;;;;;;;87.0;34739160.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Dominik Kohr;1. FSV Mainz 05;Abwehr;3454370.0;-139.870 €;↓;-200.339 €;0;96;1;"🔒;DEAL";;;;;;;;;;0.0;34543700.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Marin Ljubičić;1. FC Union Berlin;Sturm;3400024.0;-146.165 €;↓;-148.102 €;0;1;2;"🔒;●";;;;;;;;;;0.0;34000240.0;0.0;1. FC Union Berlin;-1.25;0.0
+Woo-Yeong Jeong;1. FC Union Berlin;Mittelfeld;3394910.0;-118.549 €;↘;-114.622 €;-16;30;2;"🔒;●";;;;;;;;;;-16.0;33949100.0;0.0;1. FC Union Berlin;-1.25;0.0
+Louis Lemke;Hamburger SV;Abwehr;3340032.0;-125.643 €;↓;-126.840 €;14;0;1;"🔒;●";;;;;;;;;;14.0;33400320.0;0.0;Hamburger SV;54.95454545454545;0.0
+Ameen Al Dakhil;VfB Stuttgart;Abwehr;3260330.0;+400.002 €;↑;+430.002 €;0;0;0;"🔒;●";;;;;;;;;;0.0;32603300.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Mick Schmetgens;SV Werder Bremen;Abwehr;3239899.0;-141.797 €;↓;-153.482 €;17;16;1;"🔒;●";;;;;;;;;;17.0;32398990.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Nicolas Kühn;Borussia Mönchengladbach;Mittelfeld;3151512.0;-100.916 €;↘;-112.759 €;0;21;0;"🔒;●";;;;;;;;;;0.0;31515120.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Lucas Höler;SC Freiburg;Sturm;3124701.0;-128.539 €;↓;-130.890 €;-14;19;0;"🔒;●";;;;;;;;;;-14.0;31247010.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Robert Andrich;Bayer 04 Leverkusen;Abwehr;3071221.0;-52 €;↘;+13.226 €;21;30;0;"🔒;🔥;HOT;DEAL";;;;;;;;;;21.0;30712210.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Victor Boniface;Bayer 04 Leverkusen;Sturm;3044769.0;-138.057 €;↓;-149.632 €;0;43;0;🔒;Leverkusen;4908.0;3.0;Victor Boniface;ANG;5386.0;12.06;12,06 Mio.;exact_name;0.0;30447690.0;53860.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Felix Götze;SC Paderborn 07;Abwehr;3029333.0;-72.446 €;↘;-62.733 €;40;40;0;"🔒;DEAL";Paderborn;3728.0;5.0;Felix Götze;MF;3989.0;1.39;1,39 Mio.;exact_name;40.0;30293330.0;39890.0;SC Paderborn 07;63.11538461538461;8950.0
+Rav van den Berg;1. FC Köln;Abwehr;3007865.0;+352.415 €;↑;+382.415 €;0;0;0;"🔒;●";Köln;4237.0;9.0;R. van den Berg;ABW;4170.0;6.66;6,66 Mio.;fuzzy_name_93;0.0;30078650.0;41700.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Nathan Tella;Bayer 04 Leverkusen;Mittelfeld;2984717.0;-72.302 €;↘;-78.887 €;0;0;0;🔒;;;;;;;;;;0.0;29847170.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Max Moerstedt;TSG Hoffenheim;Sturm;2978602.0;-57.609 €;↘;-32.058 €;61;-7;1;"🔒;●";;;;;;;;;;61.0;29786020.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Niklas Stark;SV Werder Bremen;Abwehr;2975585.0;-138.425 €;↘;-137.773 €;0;0;0;"🔒;●";Bremen;4176.0;14.0;Niklas Stark;ABW;3870.0;3.06;3,06 Mio.;exact_name;0.0;29755850.0;38700.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Otto Ruoppi;1. FSV Mainz 05;Mittelfeld;2961898.0;+376.868 €;↑;+394.033 €;0;28;0;"🔒;●";;;;;;;;;;0.0;29618980.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+András Schäfer;1. FC Union Berlin;Mittelfeld;2946351.0;-68.403 €;↓;-77.528 €;-8;17;2;"🔒;●";;;;;;;;;;-8.0;29463510.0;0.0;1. FC Union Berlin;-1.25;0.0
+Filippo Mane;Borussia Dortmund;Abwehr;2945265.0;-115.446 €;↘;-160.122 €;0;32;1;"🔒;●";;;;;;;;;;0.0;29452650.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Bruno Ogbus;SC Freiburg;Abwehr;2944381.0;-147.148 €;↓;-149.921 €;0;0;0;"🔒;●";;;;;;;;;;0.0;29443810.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Martin Adeline;Hamburger SV;Mittelfeld;2939800.0;-133.517 €;↓;-134.631 €;11;1;2;"🔒;●";;;;;;;;;;11.0;29398000.0;0.0;Hamburger SV;54.95454545454545;0.0
+Oscar Højlund;Eintracht Frankfurt;Mittelfeld;2876851.0;-88.567 €;↘;-86.570 €;4;3;0;"🔒;●";;;;;;;;;;4.0;28768510.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Paul Okon-Engstler;1. FC Köln;Mittelfeld;2862079.0;-146.201 €;↓;-146.815 €;0;23;2;"🔒;●";;;;;;;;;;0.0;28620790.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Vitalie Becker;FC Schalke 04;Abwehr;2823099.0;-126.520 €;↓;-128.080 €;16;12;1;"🔒;●";;;;;;;;;;16.0;28230990.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Steffen Tigges;SC Paderborn 07;Sturm;2812082.0;+110.860 €;↑;+140.860 €;151;52;0;"🔒;🔥;HOT";Paderborn;3728.0;10.0;Steffen Tigges;ANG;3717.0;1.09;1,09 Mio.;exact_name;151.0;28120820.0;37170.0;SC Paderborn 07;63.11538461538461;8950.0
+Hiroki Ito;FC Bayern München;Abwehr;2801983.0;-130.641 €;↓;-138.898 €;0;0;0;🔒;Bayern;5391.0;14.0;Hiroki Ito;ABW;5004.0;25.05;25,05 Mio.;exact_name;0.0;28019830.0;50040.0;FC Bayern München;153.95;35871.0
+Stefan Bell;1. FSV Mainz 05;Abwehr;2789313.0;+229.799 €;↑;+259.799 €;0;0;0;🔒;;;;;;;;;;0.0;27893130.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Miro Muheim;Hamburger SV;Abwehr;2754853.0;-112.285 €;↓;-115.816 €;0;0;0;🔒;;;;;;;;;;0.0;27548530.0;0.0;Hamburger SV;54.95454545454545;0.0
+Justin Njinmah;SV Werder Bremen;Sturm;2740302.0;-140.208 €;↓;-198.585 €;0;2;1;🔒;Bremen;4176.0;8.0;Justin Njinmah;ANG;4160.0;10.53;10,53 Mio.;exact_name;0.0;27403020.0;41600.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Enzo Leopold;Borussia Mönchengladbach;Mittelfeld;2642950.0;-146.915 €;↓;-206.004 €;0;0;0;🔒;;;;;;;;;;0.0;26429500.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Valentin Gendrey;TSG Hoffenheim;Abwehr;2640895.0;+338.146 €;↑;+365.975 €;0;56;0;"🔒;●";Hoffenheim;4403.0;6.0;Valentin Gendrey;ABW;4688.0;5.01;5,01 Mio.;exact_name;0.0;26408950.0;46880.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+David Herold;Borussia Mönchengladbach;Abwehr;2639739.0;-152.851 €;↓;-161.784 €;0;7;1;"🔒;DEAL";;;;;;;;;;0.0;26397390.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Lorenz Assignon;VfB Stuttgart;Abwehr;2617752.0;+381.229 €;↑;+405.378 €;0;0;0;🔒;Stuttgart;4750.0;11.0;Lorenz Assignon;ABW;4246.0;11.68;11,68 Mio.;exact_name;0.0;26177520.0;42460.0;VfB Stuttgart;19.375;24748.33333333333
+Darwin Soylu;SV Werder Bremen;Mittelfeld;2605927.0;+299.639 €;↑;+322.982 €;0;0;0;"🔒;●";;;;;;;;;;0.0;26059270.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Benedict Hollerbach;1. FSV Mainz 05;Sturm;2593533.0;+300.584 €;↑;+323.116 €;0;7;0;🔒;;;;;;;;;;0.0;25935330.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Timothy Chandler;Eintracht Frankfurt;Abwehr;2582107.0;+388.838 €;↑;+389.290 €;0;6;0;"🔒;●";;;;;;;;;;0.0;25821070.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Oliver Batista Meier;SC Paderborn 07;Mittelfeld;2559961.0;-146.595 €;↓;-152.234 €;0;-9;0;"🔒;●";;;;;;;;;;0.0;25599610.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Warmed Omari;Hamburger SV;Abwehr;2557227.0;+390.341 €;↑;+411.411 €;86;14;1;"🔒;DEAL";;;;;;;;;;86.0;25572270.0;0.0;Hamburger SV;54.95454545454545;0.0
+Timo Hübers;1. FC Köln;Abwehr;2553518.0;-156.464 €;↘;-214.478 €;0;0;0;🔒;;;;;;;;;;0.0;25535180.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Mert Can Ayhan;FC Schalke 04;Abwehr;2468770.0;-135.033 €;↓;-137.876 €;0;-7;0;🔒;;;;;;;;;;0.0;24687700.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Cédric Itten;SV Werder Bremen;Sturm;2415424.0;-139.417 €;↓;-141.210 €;0;15;0;"🔒;DEAL";;;;;;;;;;0.0;24154240.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Ron Schallenberg;FC Schalke 04;Mittelfeld;2351332.0;-121.575 €;↓;-151.575 €;9;-23;1;"🔒;DEAL";;;;;;;;;;9.0;23513320.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Andrej Ilic;1. FC Union Berlin;Sturm;2331692.0;-67.725 €;↓;-89.811 €;0;0;0;🔒;;;;;;;;;;0.0;23316920.0;0.0;1. FC Union Berlin;-1.25;0.0
+Christian Günter;SC Freiburg;Abwehr;2311668.0;-136.521 €;↓;-137.366 €;0;0;0;🔒;;;;;;;;;;0.0;23116680.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Silas;1. FSV Mainz 05;Sturm;2306538.0;+309.988 €;↑;+301.241 €;0;0;0;"🔒;●";Mainz;4431.0;13.0;Silas;ANG;4049.0;7.26;7,26 Mio.;exact_name;0.0;23065380.0;40490.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Otto Stange;Hamburger SV;Sturm;2277733.0;-142.310 €;↓;-146.160 €;0;-12;0;"🔒;●";;;;;;;;;;0.0;22777330.0;0.0;Hamburger SV;54.95454545454545;0.0
+Paul Erevbenagie;SV Werder Bremen;Sturm;2202780.0;-154.904 €;↓;-155.136 €;0;25;0;"🔒;●";;;;;;;;;;0.0;22027800.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Luca Schnellbacher;SV Elversberg;Sturm;2184581.0;-156.174 €;↓;-164.259 €;0;6;0;"🔒;●";;;;;;;;;;0.0;21845810.0;0.0;SV Elversberg;44.5;12801.363636363636
+Dan-Axel Zagadou;VfB Stuttgart;Abwehr;2099059.0;+372.391 €;↑;+367.387 €;0;0;0;"🔒;●";Stuttgart;4750.0;7.0;Dan-Axel Zagadou;ABW;4978.0;4.46;4,46 Mio.;exact_name;0.0;20990590.0;49780.0;VfB Stuttgart;19.375;24748.33333333333
+Yukhym Konoplia;Borussia Mönchengladbach;Abwehr;2060659.0;+246.263 €;↑;+276.263 €;0;0;0;"🔒;🔥;HOT";;;;;;;;;;0.0;20606590.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Salim Amani Musah;SV Werder Bremen;Sturm;2011417.0;-141.065 €;↘;-139.899 €;25;9;0;🔒;;;;;;;;;;25.0;20114170.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Keisuke Goto;SC Freiburg;Sturm;2006007.0;-132.773 €;↓;-136.597 €;3;20;0;"🔒;●";;;;;;;;;;3.0;20060070.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Jens Castrop;Borussia Mönchengladbach;Mittelfeld;1958738.0;+374.936 €;↑;+372.782 €;0;0;0;🔒;;;;;;;;;;0.0;19587380.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Luca Vozar;FC Schalke 04;Mittelfeld;1902735.0;+423.436 €;↑;+437.738 €;0;5;0;"🔒;●";;;;;;;;;;0.0;19027350.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Berkay Yilmaz;SC Freiburg;Abwehr;1890153.0;-136.452 €;↘;-133.754 €;0;24;0;"🔒;DEAL";Freiburg;4305.0;14.0;Berkay Yılmaz;ABW;3972.0;1.81;1,81 Mio.;fuzzy_name_96;0.0;18901530.0;39720.0;SC Freiburg;48.40909090909091;20032.727272727272
+Yanik Spalt;VfB Stuttgart;Mittelfeld;1827846.0;-206.471 €;↘;-195.290 €;0;20;0;"🔒;●";;;;;;;;;;0.0;18278460.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Mathieu Nguefack;Borussia Mönchengladbach;Mittelfeld;1814143.0;-154.703 €;↘;-151.824 €;0;13;1;"🔒;●";;;;;;;;;;0.0;18141430.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Alexander Prass;TSG Hoffenheim;Mittelfeld;1806627.0;+353.828 €;↑;+380.440 €;0;0;0;🔒;;;;;;;;;;0.0;18066270.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Moussa Ndiaye;SV Werder Bremen;Abwehr;1789396.0;-140.086 €;↓;-172.986 €;0;0;0;"🔒;●";;;;;;;;;;0.0;17893960.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Reigan Heskey;1. FC Köln;Mittelfeld;1778781.0;-137.945 €;↘;-135.810 €;0;-8;0;"🔒;●";;;;;;;;;;0.0;17787810.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Tom Zimmerschied;SV Elversberg;Mittelfeld;1778212.0;+326.027 €;↑;+315.800 €;0;0;0;🔒;Elversberg;3774.0;13.0;Tim Zimmerschied;ANG;3700.0;1.76;1,76 Mio.;fuzzy_name_94;0.0;17782120.0;37000.0;SV Elversberg;44.5;12801.363636363636
+Montrell Culbreath;Bayer 04 Leverkusen;Mittelfeld;1764537.0;+337.671 €;↑;+346.957 €;0;0;0;🔒;;;;;;;;;;0.0;17645370.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Kofi Amoako;Hamburger SV;Mittelfeld;1751459.0;+353.926 €;↑;+377.546 €;0;0;0;🔒;;;;;;;;;;0.0;17514590.0;0.0;Hamburger SV;54.95454545454545;0.0
+Max Finkgräfe;RB Leipzig;Abwehr;1742894.0;-139.467 €;↓;-139.852 €;0;28;0;"🔒;DEAL";;;;;;;;;;0.0;17428940.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Yussuf Poulsen;Hamburger SV;Sturm;1724354.0;+403.645 €;↑;+419.112 €;149;46;1;"🔒;●";;;;;;;;;;149.0;17243540.0;0.0;Hamburger SV;54.95454545454545;0.0
+Nicholas Mickelson;SV Elversberg;Abwehr;1696491.0;-137.057 €;↓;-138.014 €;20;39;0;"🔒;●";;;;;;;;;;20.0;16964910.0;0.0;SV Elversberg;44.5;12801.363636363636
+Christopher Trimmel;1. FC Union Berlin;Abwehr;1685262.0;+233.766 €;↑;+263.766 €;-27;-17;1;"🔒;🔥;HOT;DEAL";;;;;;;;;;-27.0;16852620.0;0.0;1. FC Union Berlin;-1.25;0.0
+Young-Woo Seol;FC Augsburg;Abwehr;1671380.0;-157.268 €;↘;-156.240 €;-16;22;0;"🔒;●";;;;;;;;;;-16.0;16713800.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Marcel Hoffmeier;SC Paderborn 07;Abwehr;1608548.0;-146.112 €;↘;-173.927 €;0;0;0;"🔒;●";Paderborn;3728.0;4.0;Marcel Hoffmeier;ABW;4018.0;0.98;0,98 Mio.;exact_name;0.0;16085480.0;40180.0;SC Paderborn 07;63.11538461538461;8950.0
+Yannik Keitel;FC Augsburg;Mittelfeld;1563520.0;+354.439 €;↑;+384.282 €;-18;1;0;🔒;;;;;;;;;;-18.0;15635200.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Bilal Nadir;Hamburger SV;Mittelfeld;1535162.0;+360.885 €;↑;+386.840 €;0;-4;1;"🔒;●";;;;;;;;;;0.0;15351620.0;0.0;Hamburger SV;54.95454545454545;0.0
+Kastriot Imeri;1. FC Union Berlin;Mittelfeld;1533149.0;-93.423 €;↘;-82.560 €;0;0;0;"🔒;●";;;;;;;;;;0.0;15331490.0;0.0;1. FC Union Berlin;-1.25;0.0
+Jonah Sticker;SC Paderborn 07;Abwehr;1500266.0;-45.954 €;↘;-15.954 €;116;44;0;"🔒;🔥;HOT";;;;;;;;;;116.0;15002660.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Adrian Gantenbein;FC Schalke 04;Abwehr;1495079.0;+411.778 €;↑;+441.778 €;0;0;0;"🔒;●";;;;;;;;;;0.0;14950790.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Zento Uno;Borussia Mönchengladbach;Mittelfeld;1421700.0;-143.249 €;↓;-144.759 €;0;0;0;"🔒;●";;;;;;;;;;0.0;14217000.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Fabio Chiarodia;Borussia Mönchengladbach;Abwehr;1375722.0;-131.190 €;↘;-128.759 €;0;0;0;🔒;;;;;;;;;;0.0;13757220.0;0.0;Borussia Mönchengladbach;31.08333333333333;5190.416666666667
+Kennet Eichhorn;Bayer 04 Leverkusen;Mittelfeld;1335790.0;-36.076 €;↘;-55.793 €;0;0;0;🔒;;;;;;;;;;0.0;13357900.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Bara Sapoko Ndiaye;FC Bayern München;Mittelfeld;1330267.0;+328.679 €;↑;+358.679 €;0;0;0;"🔒;●";;;;;;;;;;0.0;13302670.0;0.0;FC Bayern München;153.95;35871.0
+Amara Condé;SV Elversberg;Mittelfeld;1319329.0;-145.969 €;↓;-149.242 €;0;-1;0;"🔒;DEAL";;;;;;;;;;0.0;13193290.0;0.0;SV Elversberg;44.5;12801.363636363636
+Oskar Wójcik;SV Werder Bremen;Abwehr;1286248.0;+323.864 €;↑;+353.864 €;51;51;0;"🔒;🔥;HOT";;;;;;;;;;51.0;12862480.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Luca Sirch;SV Elversberg;Abwehr;1281405.0;-84.824 €;↘;-70.466 €;56;30;0;"🔒;DEAL";;;;;;;;;;56.0;12814050.0;0.0;SV Elversberg;44.5;12801.363636363636
+Florian Le Joncour;SV Elversberg;Abwehr;1250125.0;-140.353 €;↓;-141.360 €;0;20;0;"🔒;DEAL";Elversberg;3774.0;6.0;Florian Le Joncour;ABW;3888.0;0.48;0,48 Mio.;exact_name;0.0;12501250.0;38880.0;SV Elversberg;44.5;12801.363636363636
+Luca Jaquez;VfB Stuttgart;Abwehr;1247412.0;+237.553 €;↑;+225.748 €;0;0;0;"🔒;🔥;HOT";;;;;;;;;;0.0;12474120.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Kenny Quetant;SV Werder Bremen;Sturm;1236923.0;+333.700 €;↑;+363.700 €;0;0;0;"🔒;●";;;;;;;;;;0.0;12369230.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Love Arrhov;Eintracht Frankfurt;Mittelfeld;1219567.0;+338.183 €;↑;+368.183 €;0;-6;0;🔒;;;;;;;;;;0.0;12195670.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Rihito Yamamoto;SC Freiburg;Mittelfeld;1176801.0;-137.023 €;↓;-140.942 €;0;0;0;"🔒;●";;;;;;;;;;0.0;11768010.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Luca Waldschmidt;1. FC Köln;Mittelfeld;1144803.0;-128.191 €;↓;-128.407 €;-4;-4;0;"🔒;DEAL";;;;;;;;;;-4.0;11448030.0;0.0;1. FC Köln;33.68181818181818;1895.4545454545453
+Cajetan Lenz;TSG Hoffenheim;Mittelfeld;1096059.0;+316.505 €;↑;+346.505 €;0;0;0;🔒;;;;;;;;;;0.0;10960590.0;0.0;TSG Hoffenheim;47.47619047619048;22311.904761904763
+Silvan Widmer;1. FSV Mainz 05;Abwehr;1091126.0;-136.903 €;↘;-191.085 €;0;29;0;"🔒;DEAL";;;;;;;;;;0.0;10911260.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Marvin Friedrich;1. FC Union Berlin;Abwehr;1083469.0;+301.437 €;↑;+295.186 €;0;0;0;"🔒;🔥;HOT";;;;;;;;;;0.0;10834690.0;0.0;1. FC Union Berlin;-1.25;0.0
+Felix Agu;SV Werder Bremen;Abwehr;1079333.0;+245.460 €;↑;+257.383 €;0;0;0;"🔒;🔥;HOT";Bremen;4176.0;9.0;Felix Agu;ABW;4147.0;4.73;4,73 Mio.;exact_name;0.0;10793330.0;41470.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Uchenna Ogundu;FC Augsburg;Sturm;930841.0;-139.543 €;↘;-139.428 €;0;0;0;"🔒;●";;;;;;;;;;0.0;9308410.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Clemens Lippmann;SC Paderborn 07;Abwehr;926319.0;-147.731 €;↓;-151.992 €;0;-11;0;"🔒;●";;;;;;;;;;0.0;9263190.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Janik Bachmann;FC Schalke 04;Mittelfeld;918891.0;-146.878 €;↓;-149.214 €;0;17;0;🔒;;;;;;;;;;0.0;9188910.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Albert Frank Millgramm;SC Paderborn 07;Sturm;906452.0;-139.903 €;↓;-142.356 €;0;0;0;"🔒;●";;;;;;;;;;0.0;9064520.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Shafiq Nandja;Hamburger SV;Abwehr;900108.0;-140.849 €;↘;-137.796 €;0;-17;1;"🔒;●";;;;;;;;;;0.0;9001080.0;0.0;Hamburger SV;54.95454545454545;0.0
+Raif Adam;SV Elversberg;Sturm;899208.0;-140.728 €;↘;-138.344 €;0;0;0;🔒;;;;;;;;;;0.0;8992080.0;0.0;SV Elversberg;44.5;12801.363636363636
+Tim Oermann;Bayer 04 Leverkusen;Abwehr;885516.0;-136.439 €;↓;-137.119 €;0;0;0;"🔒;●";;;;;;;;;;0.0;8855160.0;0.0;Bayer 04 Leverkusen;62.458333333333336;23177.5
+Robert Skov;1. FC Union Berlin;Mittelfeld;846970.0;-133.690 €;↘;-132.482 €;0;-12;0;"🔒;●";;;;;;;;;;0.0;8469700.0;0.0;1. FC Union Berlin;-1.25;0.0
+Patrick Osterhage;SC Freiburg;Mittelfeld;845469.0;-77.169 €;↓;-80.952 €;0;0;0;🔒;;;;;;;;;;0.0;8454690.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Ruben Müller;SC Paderborn 07;Mittelfeld;789039.0;-136.755 €;↘;-134.535 €;0;0;0;🔒;;;;;;;;;;0.0;7890390.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Faik Sakar;FC Augsburg;Mittelfeld;778713.0;-132.110 €;↓;-159.872 €;0;0;0;"🔒;●";;;;;;;;;;0.0;7787130.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Oliver Burke;1. FC Union Berlin;Sturm;757452.0;-43.699 €;↘;-52.868 €;0;0;0;🔒;;;;;;;;;;0.0;7574520.0;0.0;1. FC Union Berlin;-1.25;0.0
+Lennard Maloney;1. FSV Mainz 05;Mittelfeld;750918.0;-110.553 €;↘;-103.541 €;19;21;0;🔒;;;;;;;;;;19.0;7509180.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Sota Kawasaki;1. FSV Mainz 05;Mittelfeld;745858.0;-134.391 €;↘;-131.888 €;0;0;0;🔒;;;;;;;;;;0.0;7458580.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Deniz Zeitler;SC Paderborn 07;Sturm;734081.0;-147.751 €;↘;-147.591 €;0;0;0;"🔒;●";;;;;;;;;;0.0;7340810.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Justin Lerma;Borussia Dortmund;Mittelfeld;699633.0;-128.499 €;↘;-178.688 €;0;0;0;"🔒;●";;;;;;;;;;0.0;6996330.0;0.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Alexander Røssing-Lelesiit;Hamburger SV;Sturm;686505.0;-105.516 €;↘;-128.314 €;0;0;0;🔒;;;;;;;;;;0.0;6865050.0;0.0;Hamburger SV;54.95454545454545;0.0
+Frederik Schmahl;SV Elversberg;Mittelfeld;642280.0;-126.731 €;↘;-125.822 €;0;0;0;🔒;Elversberg;3774.0;10.0;Frederik Schmahl;MF;3788.0;1.22;1,22 Mio.;exact_name;0.0;6422800.0;37880.0;SV Elversberg;44.5;12801.363636363636
+Sven Michel;SC Paderborn 07;Sturm;636710.0;-121.626 €;↓;-123.348 €;0;0;0;🔒;;;;;;;;;;0.0;6367100.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Abdoul Koné;RB Leipzig;Abwehr;612303.0;-37.764 €;↓;-41.664 €;0;0;0;"🔒;●";;;;;;;;;;0.0;6123030.0;0.0;RB Leipzig;19.043478260869566;23180.0
+Malik Pimpong;Eintracht Frankfurt;Sturm;608457.0;-124.447 €;↓;-108.457 €;0;-6;0;"🔒;●";;;;;;;;;;0.0;6084570.0;0.0;Eintracht Frankfurt;42.19047619047619;18616.666666666668
+Tom Baack;SC Paderborn 07;Mittelfeld;546667.0;-47.631 €;↘;-31.159 €;32;22;0;"🔒;●";;;;;;;;;;32.0;5466670.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Anthony Jung;SC Freiburg;Abwehr;524851.0;-108.475 €;↘;-24.851 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5248510.0;0.0;SC Freiburg;48.40909090909091;20032.727272727272
+Emre Can;Borussia Dortmund;Abwehr;504456.0;+4.456 €;↑;+7.057 €;0;0;0;"🔒;🔥;HOT";Dortmund;4754.0;6.0;Emre Can;MF;4798.0;9.31;9,31 Mio.;exact_name;0.0;5044560.0;47980.0;Borussia Dortmund;56.08695652173913;26116.52173913044
+Tim Binder;FC Bayern München;Mittelfeld;500000.0;-;→;+3.534 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;FC Bayern München;153.95;35871.0
+Justin Diehl;VfB Stuttgart;Sturm;500000.0;-;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;VfB Stuttgart;19.375;24748.33333333333
+Leonidas Stergiou;VfB Stuttgart;Abwehr;500000.0;-;→;+30.000 €;0;-8;0;"🔒;●";Stuttgart;4750.0;13.0;Leonidas Stergiou;ABW;4163.0;2.94;2,94 Mio.;exact_name;0.0;5000000.0;41630.0;VfB Stuttgart;19.375;24748.33333333333
+Keke Topp;SV Werder Bremen;Sturm;500000.0;-;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;SV Werder Bremen;64.88461538461539;13550.384615384615
+Finn Porath;FC Schalke 04;Mittelfeld;500000.0;-;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;FC Schalke 04;48.09090909090909;10462.272727272728
+Sima Suso;FC Augsburg;Mittelfeld;500000.0;-;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;FC Augsburg;25.714285714285715;18443.33333333333
+Rael-Tshimbela Nakuzola;1. FSV Mainz 05;Abwehr;500000.0;-;→;+30.000 €;0;27;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;1. FSV Mainz 05;66.34782608695652;1760.4347826086955
+Stanley Nsoki;1. FC Union Berlin;Abwehr;500000.0;-706 €;→;+13.253 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;1. FC Union Berlin;-1.25;0.0
+Linus Güther;1. FC Union Berlin;Mittelfeld;500000.0;-38.635 €;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;1. FC Union Berlin;-1.25;0.0
+Sebastian Klaas;SC Paderborn 07;Mittelfeld;500000.0;-;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Nyamekye Awortwie-Grant;SC Paderborn 07;Abwehr;500000.0;-;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Luka Duric;SC Paderborn 07;Mittelfeld;500000.0;-;→;+1.248 €;0;-16;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Timur Gayret;SC Paderborn 07;Mittelfeld;500000.0;-;→;0 €;0;0;0;"🔒;●";;;;;;;;;;0.0;5000000.0;0.0;SC Paderborn 07;63.11538461538461;8950.0
+Luca Pfeiffer;SV Elversberg;Sturm;500000.0;-;→;0 €;0;0;0;"🔒;●";Elversberg;3774.0;4.0;Luca Pfeiffer;ANG;4257.0;0.24;0,24 Mio.;exact_name;0.0;5000000.0;42570.0;SV Elversberg;44.5;12801.363636363636

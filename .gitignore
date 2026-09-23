@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local Kickbase import and analysis files
+data/raw/
+data/processed/
+data/joined.csv
+notebooks/
+src/
+
+# Obsolete local HTML/server frontend
+kickbase_finder.html
+save_maik_server.py
