@@ -1310,13 +1310,19 @@ def main() -> None:
             "marktwert",
             "punkte",
             "durchschnitt_pts",
+            "position",
+            "position",
             "im_kader",
         ]
         if col in display_df.columns
     ]
 
+    visible_columns = [
+        "im_kader",
+        *[column for column in visible_columns if column != "im_kader"],
+    ]
     editor_df = display_df[
-        ["_editor_id"] + visible_columns
+        visible_columns + ["_editor_id"]
     ].copy()
 
     # --------------------------------------------------------
@@ -1667,7 +1673,7 @@ def main() -> None:
     # Änderungsanzeige
     # --------------------------------------------------------
     original_for_display = display_df[
-        ["_editor_id"] + visible_columns
+        visible_columns + ["_editor_id"]
     ].copy()
 
     changed_rows = 0
