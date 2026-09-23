@@ -810,6 +810,8 @@ def main() -> None:
             "spieler",
             "team",
             "marktwert",
+            "punkte",
+            "durchschnitt_pts",
             "maik_score",
             "maik_kaderscore_team",
         ]
@@ -838,7 +840,8 @@ def main() -> None:
             "spieler",
             "team",
             "marktwert",
-            "trend",
+            "punkte",
+            "durchschnitt_pts",
             "maik_score",
         ]
         if col in display_df.columns
