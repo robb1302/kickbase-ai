@@ -496,6 +496,7 @@ def save_roster_overrides(updates: dict[str, dict[str, object]]) -> bool:
             "im_kader": existing[key],
         }
         for key, update in updates.items()
+        if existing[key]
     ]
 
     if github_configured():
@@ -1281,6 +1282,18 @@ def main() -> None:
                 na_position="last",
             ),
             hide_index=True,
+            use_container_width=True,
+        )
+        squad_csv = marked_players[squad_columns].to_csv(
+            index=False,
+            sep=";",
+            encoding="utf-8-sig",
+        ).encode("utf-8-sig")
+        st.download_button(
+            "Meinen Kader als CSV herunterladen",
+            data=squad_csv,
+            file_name="mein_kader.csv",
+            mime="text/csv",
             use_container_width=True,
         )
 
