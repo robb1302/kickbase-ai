@@ -1276,10 +1276,10 @@ def main() -> None:
         for col in [
             "spieler",
             "team",
+            "maik_score",
             "marktwert",
             "punkte",
             "durchschnitt_pts",
-            "maik_score",
             "maik_kaderscore_team",
         ]
         if col in df.columns
@@ -1306,10 +1306,10 @@ def main() -> None:
         for col in [
             "spieler",
             "team",
+            "maik_score",
             "marktwert",
             "punkte",
             "durchschnitt_pts",
-            "maik_score",
             "im_kader",
         ]
         if col in display_df.columns
