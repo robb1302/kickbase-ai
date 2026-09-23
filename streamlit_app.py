@@ -318,6 +318,8 @@ def save_team_score_overrides(updates: dict[str, object]) -> bool:
 
     rows = []
     for team, value in existing.items():
+        if isinstance(value, dict):
+            value = value.get("team_score")
         numeric_value = pd.to_numeric(value, errors="coerce")
         if pd.notna(numeric_value):
             rows.append({"team": team, "team_score": float(numeric_value)})
