@@ -808,7 +808,7 @@ def main() -> None:
                 st.rerun()
 
         if st.button(
-            "MAIK-Scores speichern",
+            "Änderungen speichern",
             type="primary",
             use_container_width=True,
         ):
@@ -875,7 +875,9 @@ def main() -> None:
                         st.session_state.pop("player_editor", None)
                         st.session_state.pop("team_editor_data", None)
 
-                    st.success("Spieler- und Team-Scores gespeichert.")
+                    st.success(
+                        "Maik-Scores, Kader-Markierungen und Team-Scores gespeichert."
+                    )
                     st.rerun()
 
         st.divider()
@@ -1015,7 +1017,7 @@ def main() -> None:
     st.subheader("Spielerdaten")
 
     st.caption(
-        "Nur der MAIK Score wird manuell gepflegt und separat gespeichert."
+        "MAIK Score und Kader-Markierung bearbeiten, danach links speichern."
     )
 
     disabled_columns = [
@@ -1294,7 +1296,7 @@ def main() -> None:
     if changed_rows > 0:
         st.warning(
             f"{changed_rows} Spieler geändert / {changed_cells} Werte geändert. "
-            "Zum dauerhaften Speichern links „MAIK-Scores speichern“ klicken."
+            "Zum dauerhaften Speichern links „Änderungen speichern“ klicken."
         )
     else:
         st.caption("Keine ungespeicherten Änderungen.")
