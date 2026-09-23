@@ -1561,6 +1561,86 @@ def main() -> None:
         "Korrelation und Top-10-Übereinstimmung zeigen, wie gut beide Signale zusammenpassen."
     )
 
+    st.subheader("Team-Score vs. Kickbase-Performance")
+    team_col = find_column(dashboard, ["team", "verein", "club"])
+    team_score_col = find_column(
+        dashboard,
+        ["maik_kaderscore_team", "team_score"],
+    )
+    if team_col and team_score_col:
+        team_dashboard = dashboard.copy()
+        team_dashboard[team_score_col] = pd.to_numeric(
+            team_dashboard[team_score_col], errors="coerce"
+        )
+        team_dashboard = (
+            team_dashboard.dropna(subset=[team_col])
+            .groupby(team_col, as_index=False)
+            .agg(
+                maik_team_score=(team_score_col, "mean"),
+                kickbase_avg_points=("durchschnitt_pts", "mean"),
+                players=("spieler", "count"),
+            )
+            .dropna(subset=["maik_team_score", "kickbase_avg_points"])
+        )
+        team_dashboard["maik_rank"] = team_dashboard[
+            "maik_team_score"
+        ].rank(ascending=False, method="min")
+        team_dashboard["kickbase_rank"] = team_dashboard[
+            "kickbase_avg_points"
+        ].rank(ascending=False, method="min")
+
+        t1, t2, t3, t4 = st.columns(4)
+        team_correlation = team_dashboard["maik_team_score"].corr(
+            team_dashboard["kickbase_avg_points"]
+        )
+        top_count = min(5, len(team_dashboard))
+        maik_teams = set(
+            team_dashboard.nlargest(top_count, "maik_team_score")[team_col]
+        )
+        kickbase_teams = set(
+            team_dashboard.nlargest(top_count, "kickbase_avg_points")[team_col]
+        )
+        team_overlap = len(maik_teams & kickbase_teams) / max(top_count, 1) * 100
+        t1.metric("Team-Korrelation", f"{team_correlation:.2f}")
+        t2.metric(
+            "Ø Team-Score",
+            f"{team_dashboard['maik_team_score'].mean():.0f}",
+        )
+        t3.metric(
+            "Ø Kickbase-Team-Punkte",
+            f"{team_dashboard['kickbase_avg_points'].mean():.1f}",
+        )
+        t4.metric("Top-5-Team-Übereinstimmung", f"{team_overlap:.0f}%")
+
+        team_table = team_dashboard.rename(
+            columns={
+                team_col: "Team",
+                "maik_team_score": "MAIK Team Score",
+                "kickbase_avg_points": "Kickbase Ø Punkte",
+                "players": "Spieler",
+                "maik_rank": "MAIK Rang",
+                "kickbase_rank": "Kickbase Rang",
+            }
+        )
+        st.dataframe(
+            team_table[
+                [
+                    "Team",
+                    "MAIK Team Score",
+                    "Kickbase Ø Punkte",
+                    "MAIK Rang",
+                    "Kickbase Rang",
+                    "Spieler",
+                ]
+            ].sort_values("MAIK Team Score", ascending=False),
+            hide_index=True,
+            use_container_width=True,
+        )
+        st.caption(
+            "Die Team-Korrelation zeigt, ob höhere MAIK Team Scores mit höheren "
+            "durchschnittlichen Kickbase-Punkten der Teams einhergehen."
+        )
+
     # --------------------------------------------------------
     # Änderungen sofort im Session-State aktualisieren
     # --------------------------------------------------------
