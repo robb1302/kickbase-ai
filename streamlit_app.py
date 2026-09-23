@@ -19,6 +19,7 @@ SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "maik_score_overrides.c
 TEAM_SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "team_score_overrides.csv"
 ROSTER_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "roster_overrides.csv"
 PLAYER_ADDITIONS_PATH = BASE_DIR / "data" / "processed" / "player_additions.csv"
+PLAYER_REMOVALS_PATH = BASE_DIR / "data" / "processed" / "player_removals.csv"
 GITHUB_API = "https://api.github.com"
 
 
@@ -47,7 +48,8 @@ def load_csv() -> pd.DataFrame:
     df = apply_score_overrides(df)
     df = apply_player_additions(df)
     df = apply_team_score_overrides(df)
-    return apply_roster_overrides(df)
+    df = apply_roster_overrides(df)
+    return apply_player_removals(df)
 
 
 def normalize_key_part(value: object) -> str:
@@ -185,6 +187,116 @@ def save_player_addition(player: str, team: str, score: float) -> bool:
         return True
     except (OSError, requests.RequestException) as exc:
         st.error(f"Spieler konnte nicht gespeichert werden: {exc}")
+        return False
+
+
+def load_player_removals() -> set[str]:
+    """Lädt Spieler, die aus der App ausgeblendet werden sollen."""
+    try:
+        if github_configured():
+            repo = github_setting("GITHUB_REPO")
+            branch = github_setting("GITHUB_BRANCH", "main")
+            path = github_setting(
+                "GITHUB_PLAYER_REMOVALS_PATH",
+                "data/processed/player_removals.csv",
+            )
+            response = requests.get(
+                f"{GITHUB_API}/repos/{repo}/contents/{path}",
+                headers=github_headers(),
+                params={"ref": branch},
+                timeout=10,
+            )
+            if response.status_code == 404:
+                return set()
+            response.raise_for_status()
+            content = base64.b64decode(response.json()["content"]).decode("utf-8")
+            removals = pd.read_csv(io.StringIO(content), sep=";")
+        else:
+            if not PLAYER_REMOVALS_PATH.exists():
+                return set()
+            removals = pd.read_csv(PLAYER_REMOVALS_PATH, sep=";", encoding="utf-8")
+    except (OSError, UnicodeDecodeError, pd.errors.ParserError, requests.RequestException) as exc:
+        st.error(f"Entfernte Spieler konnten nicht geladen werden: {exc}")
+        return set()
+
+    if not {"spieler", "team"}.issubset(removals.columns):
+        return set()
+    return {
+        score_key(row["spieler"], row["team"])
+        for _, row in removals.iterrows()
+    }
+
+
+def apply_player_removals(df: pd.DataFrame) -> pd.DataFrame:
+    """Entfernt gespeicherte Spieler aus der App-Ansicht."""
+    removals = load_player_removals()
+    if not removals:
+        return df
+    mask = df.apply(
+        lambda row: score_key(row.get("spieler"), row.get("team")) not in removals,
+        axis=1,
+    )
+    return df.loc[mask].copy()
+
+
+def save_player_removal(player: str, team: str) -> bool:
+    """Speichert einen Spieler als dauerhaft aus der App entfernt."""
+    removals = load_player_removals()
+    removals.add(score_key(player, team))
+    rows = [{"spieler": player, "team": team}]
+
+    try:
+        if github_configured():
+            repo = github_setting("GITHUB_REPO")
+            branch = github_setting("GITHUB_BRANCH", "main")
+            path = github_setting(
+                "GITHUB_PLAYER_REMOVALS_PATH",
+                "data/processed/player_removals.csv",
+            )
+            endpoint = f"{GITHUB_API}/repos/{repo}/contents/{path}"
+            current = requests.get(
+                endpoint,
+                headers=github_headers(),
+                params={"ref": branch},
+                timeout=10,
+            )
+            if current.status_code == 200:
+                content = base64.b64decode(current.json()["content"]).decode("utf-8")
+                old = pd.read_csv(io.StringIO(content), sep=";")
+                rows = old[["spieler", "team"]].to_dict("records")
+            rows = [
+                row for row in rows
+                if score_key(row["spieler"], row["team"]) in removals
+            ]
+            payload = {
+                "message": "Remove player",
+                "content": base64.b64encode(
+                    pd.DataFrame(rows).to_csv(index=False, sep=";").encode("utf-8")
+                ).decode("ascii"),
+                "branch": branch,
+            }
+            if current.status_code == 200:
+                payload["sha"] = current.json()["sha"]
+            requests.put(
+                endpoint,
+                headers=github_headers(),
+                json=payload,
+                timeout=10,
+            ).raise_for_status()
+            return True
+
+        existing = (
+            pd.read_csv(PLAYER_REMOVALS_PATH, sep=";", encoding="utf-8")
+            if PLAYER_REMOVALS_PATH.exists()
+            else pd.DataFrame(columns=["spieler", "team"])
+        )
+        existing = pd.concat([existing, pd.DataFrame(rows)], ignore_index=True)
+        existing = existing.drop_duplicates(subset=["spieler", "team"])
+        PLAYER_REMOVALS_PATH.parent.mkdir(parents=True, exist_ok=True)
+        existing.to_csv(PLAYER_REMOVALS_PATH, index=False, sep=";", encoding="utf-8")
+        return True
+    except (OSError, requests.RequestException) as exc:
+        st.error(f"Spieler konnte nicht entfernt werden: {exc}")
         return False
 
 
@@ -949,6 +1061,35 @@ def main() -> None:
                 st.session_state.original_df = fresh.copy()
                 st.session_state.pop("player_editor", None)
                 st.success(f"{new_player.strip()} wurde hinzugefügt.")
+                st.rerun()
+
+        st.subheader("Spieler entfernen")
+        removable_players = [
+            (str(row["spieler"]), str(row["team"]))
+            for _, row in st.session_state.df.iterrows()
+        ]
+        removable_labels = [
+            f"{player} — {team}" for player, team in removable_players
+        ]
+        with st.form("remove_player_form", clear_on_submit=True):
+            selected_label = st.selectbox(
+                "Spieler auswählen",
+                removable_labels,
+            )
+            remove_player = st.form_submit_button(
+                "Spieler entfernen",
+                use_container_width=True,
+            )
+
+        if remove_player:
+            selected_index = removable_labels.index(selected_label)
+            selected_player, selected_team = removable_players[selected_index]
+            if save_player_removal(selected_player, selected_team):
+                fresh = ensure_score_columns(load_csv())
+                st.session_state.df = fresh
+                st.session_state.original_df = fresh.copy()
+                st.session_state.pop("player_editor", None)
+                st.success(f"{selected_player} wurde entfernt.")
                 st.rerun()
 
         if st.button(
