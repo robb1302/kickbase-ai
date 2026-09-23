@@ -861,38 +861,6 @@ def main() -> None:
     # --------------------------------------------------------
     # Editor
     # --------------------------------------------------------
-    st.subheader("Team-Scores")
-
-    team_score_column = find_column(
-        display_df,
-        ["maik_kaderscore_team", "team_score"],
-    )
-    team_column = find_column(display_df, ["team", "verein", "club"])
-    if team_score_column and team_column:
-        team_editor_df = (
-            display_df[[team_column, team_score_column]]
-            .drop_duplicates(subset=[team_column])
-            .rename(columns={team_column: "team", team_score_column: "team_score"})
-            .reset_index(drop=True)
-        )
-        team_editor_df["team_score"] = pd.to_numeric(
-            team_editor_df["team_score"], errors="coerce"
-        )
-        edited_team_data = st.data_editor(
-            team_editor_df,
-            key="team_editor",
-            hide_index=True,
-            use_container_width=True,
-            num_rows="fixed",
-            disabled=["team"],
-            column_config={
-                "team_score": st.column_config.NumberColumn(
-                    "Team Score", min_value=0, step=0.1, format="%.1f"
-                )
-            },
-        )
-        st.session_state.team_editor_data = edited_team_data.copy()
-
     st.subheader("Spielerdaten")
 
     st.caption(
@@ -966,6 +934,38 @@ def main() -> None:
         disabled=disabled_columns,
         column_config=column_config,
     )
+
+    st.subheader("Team-Scores")
+
+    team_score_column = find_column(
+        display_df,
+        ["maik_kaderscore_team", "team_score"],
+    )
+    team_column = find_column(display_df, ["team", "verein", "club"])
+    if team_score_column and team_column:
+        team_editor_df = (
+            display_df[[team_column, team_score_column]]
+            .drop_duplicates(subset=[team_column])
+            .rename(columns={team_column: "team", team_score_column: "team_score"})
+            .reset_index(drop=True)
+        )
+        team_editor_df["team_score"] = pd.to_numeric(
+            team_editor_df["team_score"], errors="coerce"
+        )
+        edited_team_data = st.data_editor(
+            team_editor_df,
+            key="team_editor",
+            hide_index=True,
+            use_container_width=True,
+            num_rows="fixed",
+            disabled=["team"],
+            column_config={
+                "team_score": st.column_config.NumberColumn(
+                    "Team Score", min_value=0, step=0.1, format="%.1f"
+                )
+            },
+        )
+        st.session_state.team_editor_data = edited_team_data.copy()
 
     # --------------------------------------------------------
     # Änderungen sofort im Session-State aktualisieren
