@@ -1311,7 +1311,6 @@ def main() -> None:
             "punkte",
             "durchschnitt_pts",
             "position",
-            "position",
             "im_kader",
         ]
         if col in display_df.columns
