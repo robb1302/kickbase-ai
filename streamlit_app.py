@@ -130,7 +130,12 @@ def apply_player_additions(df: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([result, pd.DataFrame(rows, columns=result.columns)], ignore_index=True)
 
 
-def save_player_addition(player: str, team: str, score: float) -> bool:
+def save_player_addition(
+    player: str,
+    team: str,
+    position: str,
+    score: float,
+) -> bool:
     """Speichert oder aktualisiert einen manuell hinzugefügten Spieler."""
     additions = load_player_additions()
     if additions.empty:
@@ -144,7 +149,12 @@ def save_player_addition(player: str, team: str, score: float) -> bool:
         lambda row: score_key(row["spieler"], row["team"]) == key,
         axis=1,
     )
-    row = {"spieler": player, "team": team, "maik_score": score, "position": "Unbekannt"}
+    row = {
+        "spieler": player,
+        "team": team,
+        "maik_score": score,
+        "position": position,
+    }
     if matches.any():
         additions.loc[matches, list(row)] = list(row.values())
     else:
@@ -1037,9 +1047,11 @@ def main() -> None:
             str(team)
             for team in st.session_state.df["team"].dropna().unique()
         )
+        position_options = ["Torhüter", "Abwehr", "Mittelfeld", "Sturm"]
         with st.form("add_player_form", clear_on_submit=True):
             new_player = st.text_input("Spielername")
             new_team = st.selectbox("Team", team_options)
+            new_position = st.selectbox("Position", position_options)
             new_score = st.number_input(
                 "MAIK Score",
                 min_value=0.0,
@@ -1055,7 +1067,12 @@ def main() -> None:
         if add_player:
             if not new_player.strip():
                 st.warning("Bitte einen Spielernamen eingeben.")
-            elif save_player_addition(new_player.strip(), new_team, new_score):
+            elif save_player_addition(
+                new_player.strip(),
+                new_team,
+                new_position,
+                new_score,
+            ):
                 fresh = ensure_score_columns(load_csv())
                 st.session_state.df = fresh
                 st.session_state.original_df = fresh.copy()
