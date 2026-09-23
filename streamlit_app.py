@@ -17,6 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent
 CSV_PATH = BASE_DIR / "data" / "final" / "ht.csv"
 SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "maik_score_overrides.csv"
 TEAM_SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "team_score_overrides.csv"
+ROSTER_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "roster_overrides.csv"
 GITHUB_API = "https://api.github.com"
 
 
@@ -43,7 +44,8 @@ def load_csv() -> pd.DataFrame:
     )
 
     df = apply_score_overrides(df)
-    return apply_team_score_overrides(df)
+    df = apply_team_score_overrides(df)
+    return apply_roster_overrides(df)
 
 
 def normalize_key_part(value: object) -> str:
@@ -56,6 +58,63 @@ def normalize_key_part(value: object) -> str:
 def score_key(player: object, team: object) -> str:
     """Verwendet Spieler plus Team als stabilen Schlüssel ohne Spieler-ID."""
     return f"{normalize_key_part(player)}|{normalize_key_part(team)}"
+
+
+def load_roster_overrides() -> dict[str, bool]:
+    """Lädt die gespeicherten Markierungen für den eigenen Kader."""
+    try:
+        if github_configured():
+            repo = github_setting("GITHUB_REPO")
+            branch = github_setting("GITHUB_BRANCH", "main")
+            path = github_setting(
+                "GITHUB_ROSTER_OVERRIDES_PATH",
+                "data/processed/roster_overrides.csv",
+            )
+            response = requests.get(
+                f"{GITHUB_API}/repos/{repo}/contents/{path}",
+                headers=github_headers(),
+                params={"ref": branch},
+                timeout=10,
+            )
+            if response.status_code == 404:
+                return {}
+            response.raise_for_status()
+            content = base64.b64decode(response.json()["content"]).decode("utf-8")
+            overrides = pd.read_csv(io.StringIO(content), sep=";")
+        else:
+            if not ROSTER_OVERRIDES_PATH.exists():
+                return {}
+            overrides = pd.read_csv(ROSTER_OVERRIDES_PATH, sep=";", encoding="utf-8")
+    except (OSError, UnicodeDecodeError, pd.errors.ParserError, requests.RequestException) as exc:
+        st.error(f"Kader-Markierungen konnten nicht geladen werden: {exc}")
+        return {}
+
+    if not {"spieler", "team", "im_kader"}.issubset(overrides.columns):
+        return {}
+
+    return {
+        score_key(row["spieler"], row["team"]): str(
+            row["im_kader"]
+        ).strip().casefold() in {"true", "1", "yes", "ja"}
+        for _, row in overrides.iterrows()
+    }
+
+
+def apply_roster_overrides(df: pd.DataFrame) -> pd.DataFrame:
+    """Fügt die Kader-Markierung hinzu und wendet gespeicherte Werte an."""
+    df = df.copy()
+    player_col = find_column(df, ["spieler", "player", "name"])
+    team_col = find_column(df, ["team", "verein", "club"])
+    if player_col is None or team_col is None:
+        return df
+
+    overrides = load_roster_overrides()
+    df["im_kader"] = False
+    for index, row in df.iterrows():
+        key = score_key(row[player_col], row[team_col])
+        if key in overrides:
+            df.at[index, "im_kader"] = overrides[key]
+    return df
 
 
 def github_setting(name: str, default: str = "") -> str:
@@ -293,6 +352,72 @@ def save_score_overrides(updates: dict[str, dict[str, object]]) -> bool:
         return True
     except OSError as exc:
         st.error(f"Maik-Scores konnten nicht gespeichert werden: {exc}")
+        return False
+
+
+def save_roster_overrides(updates: dict[str, dict[str, object]]) -> bool:
+    """Speichert die Markierung, ob ein Spieler im eigenen Kader ist."""
+    existing = load_roster_overrides()
+    for key, update in updates.items():
+        existing[key] = bool(update["im_kader"])
+
+    rows = [
+        {
+            "spieler": update["spieler"],
+            "team": update["team"],
+            "im_kader": existing[key],
+        }
+        for key, update in updates.items()
+    ]
+
+    if github_configured():
+        try:
+            repo = github_setting("GITHUB_REPO")
+            branch = github_setting("GITHUB_BRANCH", "main")
+            path = github_setting(
+                "GITHUB_ROSTER_OVERRIDES_PATH",
+                "data/processed/roster_overrides.csv",
+            )
+            endpoint = f"{GITHUB_API}/repos/{repo}/contents/{path}"
+            current = requests.get(
+                endpoint,
+                headers=github_headers(),
+                params={"ref": branch},
+                timeout=10,
+            )
+            sha = current.json().get("sha") if current.status_code == 200 else None
+            result = pd.DataFrame(rows, columns=["spieler", "team", "im_kader"])
+            payload = {
+                "message": "Update roster marks",
+                "content": base64.b64encode(
+                    result.to_csv(index=False, sep=";").encode("utf-8")
+                ).decode("ascii"),
+                "branch": branch,
+            }
+            if sha:
+                payload["sha"] = sha
+            requests.put(
+                endpoint,
+                headers=github_headers(),
+                json=payload,
+                timeout=10,
+            ).raise_for_status()
+            return True
+        except requests.RequestException as exc:
+            st.error(f"Kader-Markierungen konnten nicht zu GitHub gespeichert werden: {exc}")
+            return False
+
+    try:
+        ROSTER_OVERRIDES_PATH.parent.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(rows, columns=["spieler", "team", "im_kader"]).to_csv(
+            ROSTER_OVERRIDES_PATH,
+            index=False,
+            sep=";",
+            encoding="utf-8",
+        )
+        return True
+    except OSError as exc:
+        st.error(f"Kader-Markierungen konnten nicht gespeichert werden: {exc}")
         return False
 
 
@@ -705,6 +830,26 @@ def main() -> None:
                             "maik_score": row.get("maik_score"),
                         }
 
+                roster_updates = {}
+                roster_source = st.session_state.df
+                for _, row in roster_source.iterrows():
+                    player = row.get("spieler", "")
+                    team = row.get("team", "")
+                    if normalize_key_part(player) and normalize_key_part(team):
+                        roster_updates[score_key(player, team)] = {
+                            "spieler": player,
+                            "team": team,
+                            "im_kader": row.get("im_kader", False),
+                        }
+                for _, row in edited.iterrows():
+                    player = row.get("spieler", "")
+                    team = row.get("team", "")
+                    key = score_key(player, team)
+                    if key in roster_updates:
+                        roster_updates[key]["im_kader"] = row.get(
+                            "im_kader", False
+                        )
+
                 team_updates = {}
                 team_editor = st.session_state.get("team_editor_data")
                 if team_editor is not None:
@@ -716,8 +861,10 @@ def main() -> None:
                                 "team_score": row.get("team_score"),
                             }
 
-                if save_score_overrides(updates) and save_team_score_overrides(
-                    team_updates
+                if (
+                    save_score_overrides(updates)
+                    and save_roster_overrides(roster_updates)
+                    and save_team_score_overrides(team_updates)
                 ):
                     fresh = load_csv()
                     if not fresh.empty:
@@ -843,6 +990,7 @@ def main() -> None:
             "punkte",
             "durchschnitt_pts",
             "maik_score",
+            "im_kader",
         ]
         if col in display_df.columns
     ]
@@ -870,7 +1018,10 @@ def main() -> None:
         "Nur der MAIK Score wird manuell gepflegt und separat gespeichert."
     )
 
-    disabled_columns = [col for col in editor_df.columns if col != "maik_score"]
+    disabled_columns = [
+        col for col in editor_df.columns
+        if col not in {"maik_score", "im_kader"}
+    ]
 
     column_config = {
         "_editor_id": st.column_config.NumberColumn(
@@ -887,6 +1038,12 @@ def main() -> None:
             max_value=10000,
             step=0.1,
             format="%.1f",
+        )
+
+    if "im_kader" in editor_df.columns:
+        column_config["im_kader"] = st.column_config.CheckboxColumn(
+            "Mein Kader",
+            help="Spieler für den eigenen Kader markieren.",
         )
 
     if "durchschnitt_pts" in editor_df.columns:
@@ -938,6 +1095,34 @@ def main() -> None:
         column_config=column_config,
     )
 
+    marked_players = df[df["im_kader"]].copy()
+    st.subheader("Mein Kader")
+    if marked_players.empty:
+        st.info("Noch keine Spieler markiert.")
+    else:
+        squad_columns = [
+            col
+            for col in [
+                "spieler",
+                "team",
+                "position",
+                "marktwert",
+                "punkte",
+                "durchschnitt_pts",
+                "maik_score",
+            ]
+            if col in marked_players.columns
+        ]
+        st.dataframe(
+            marked_players[squad_columns].sort_values(
+                ["position", "maik_score"],
+                ascending=[True, False],
+                na_position="last",
+            ),
+            hide_index=True,
+            use_container_width=True,
+        )
+
     st.subheader("Team-Scores")
 
     team_score_column = find_column(
@@ -969,6 +1154,97 @@ def main() -> None:
             },
         )
         st.session_state.team_editor_data = edited_team_data.copy()
+
+    st.subheader("MAIK Score nach Position")
+    position_col = find_column(display_df, ["position", "pos"])
+    if position_col:
+        position_columns = [
+            col
+            for col in ["spieler", "team", "maik_score", "marktwert"]
+            if col in display_df.columns
+        ]
+        for position, position_players in (
+            df.groupby(position_col, dropna=False, sort=True)
+        ):
+            position_name = str(position) if pd.notna(position) else "Ohne Position"
+            position_players = position_players.sort_values(
+                "maik_score", ascending=False, na_position="last"
+            )
+            with st.expander(position_name):
+                st.dataframe(
+                    position_players[position_columns],
+                    hide_index=True,
+                    use_container_width=True,
+                )
+
+    st.subheader("MAIK- und Kickbase-Value-Dashboard")
+    dashboard = df.copy()
+    dashboard["maik_score"] = pd.to_numeric(
+        dashboard["maik_score"], errors="coerce"
+    )
+    dashboard["punkte"] = pd.to_numeric(
+        dashboard["punkte"], errors="coerce"
+    )
+    dashboard["durchschnitt_pts"] = pd.to_numeric(
+        dashboard["durchschnitt_pts"], errors="coerce"
+    )
+    dashboard["marktwert_num"] = pd.to_numeric(
+        dashboard["marktwert"], errors="coerce"
+    )
+    if dashboard["marktwert_num"].median() > 100000:
+        dashboard["marktwert_mio"] = dashboard["marktwert_num"] / 1_000_000
+    else:
+        dashboard["marktwert_mio"] = dashboard["marktwert_num"]
+
+    valid_value = dashboard[
+        (dashboard["marktwert_mio"] > 0)
+        & dashboard["maik_score"].notna()
+        & dashboard["durchschnitt_pts"].notna()
+    ].copy()
+    valid_value["maik_value"] = (
+        valid_value["maik_score"] / valid_value["marktwert_mio"]
+    )
+    valid_value["kickbase_value"] = (
+        valid_value["durchschnitt_pts"] / valid_value["marktwert_mio"]
+    )
+
+    d1, d2, d3, d4 = st.columns(4)
+    if valid_value.empty:
+        d1.metric("Maik Score / Mio.", "-")
+        d2.metric("Ø Punkte / Mio.", "-")
+        d3.metric("Korrelation", "-")
+        d4.metric("Top-10 Übereinstimmung", "-")
+    else:
+        d1.metric("Maik Score / Mio.", f"{valid_value['maik_value'].median():.1f}")
+        d2.metric(
+            "Ø Punkte / Mio.",
+            f"{valid_value['kickbase_value'].median():.1f}",
+        )
+        correlation = valid_value["maik_score"].corr(
+            valid_value["durchschnitt_pts"]
+        )
+        d3.metric(
+            "Korrelation Maik / Ø Punkte",
+            f"{correlation:.2f}" if pd.notna(correlation) else "-",
+        )
+        maik_top = set(
+            valid_value.nlargest(min(10, len(valid_value)), "maik_value")[
+                "spieler"
+            ]
+        )
+        kickbase_top = set(
+            valid_value.nlargest(min(10, len(valid_value)), "kickbase_value")[
+                "spieler"
+            ]
+        )
+        overlap = len(maik_top & kickbase_top) / max(len(maik_top), 1) * 100
+        d4.metric("Top-10 Übereinstimmung", f"{overlap:.0f}%")
+
+    st.caption(
+        "Maik Value = Maik Score / Marktwert in Mio. | "
+        "Kickbase Value = durchschnittliche Kickbase-Punkte / Marktwert in Mio. | "
+        "Korrelation und Top-10-Übereinstimmung zeigen, wie gut beide Signale zusammenpassen."
+    )
 
     # --------------------------------------------------------
     # Änderungen sofort im Session-State aktualisieren
