@@ -18,21 +18,11 @@ CSV_PATH = BASE_DIR / "data" / "final" / "ht.csv"
 SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "maik_score_overrides.csv"
 TEAM_SCORE_OVERRIDES_PATH = BASE_DIR / "data" / "processed" / "team_score_overrides.csv"
 GITHUB_API = "https://api.github.com"
-SERVER = "http://localhost:8000"
 
 
 # ============================================================
 # Hilfsfunktionen
 # ============================================================
-
-def server_available(timeout: float = 1.0) -> bool:
-    """Prüft, ob der optionale lokale Server erreichbar ist."""
-    try:
-        requests.get(SERVER, timeout=timeout)
-        return True
-    except requests.RequestException:
-        return False
-
 
 def load_csv() -> pd.DataFrame:
     """Lädt die Spieler-CSV robust."""
@@ -746,11 +736,6 @@ def main() -> None:
         st.caption(f"CSV: `{CSV_PATH}`")
         st.caption(f"MAIK-Overrides: `{SCORE_OVERRIDES_PATH}`")
         st.caption(f"Team-Overrides: `{TEAM_SCORE_OVERRIDES_PATH}`")
-
-        if server_available():
-            st.success("Lokaler Server erreichbar")
-        else:
-            st.info("Lokaler Server nicht erreichbar")
 
     # --------------------------------------------------------
     # Daten vorbereiten
