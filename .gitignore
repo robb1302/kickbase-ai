@@ -222,8 +222,11 @@ data/raw/
 data/processed/
 data/joined.csv
 notebooks/
-src/
+# src/
 
 # Obsolete local HTML/server frontend
 kickbase_finder.html
 save_maik_server.py
+
+html/
+output/
