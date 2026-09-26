@@ -94,12 +94,12 @@ with sync_playwright() as p:
             seen.add(name)
 
             players.append({
-                "Verein": team,
-                "Position": len(players)+1,
-                "Spieler": name,
-                "Slug": slug,
-                "Spieler_ID": int(pid),
-                "Profil_URL": f"https://www.ligainsider.de{href}"
+                "verein": team,
+                "position": len(players)+1,
+                "spieler": name,
+                "slug": slug,
+                "spieler_ID": int(pid),
+                "profil_URL": f"https://www.ligainsider.de{href}"
             })
 
         all_players.extend(players[:11])
@@ -115,7 +115,8 @@ df = pd.DataFrame(all_players)
 df.to_csv(
     "C:/Users/rober/development/projects/kickbase-ai/data/matchday/bundesliga_startelf.csv",
     index=False,
-    encoding="utf-8-sig"
+    encoding="utf-8-sig",
+    sep=";"
 )
 
 print(df)
