@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config("Kickbase Bargain Finder", "⚽", layout="wide")
+st.set_page_config("Kickbase Assistant", "⚽", layout="wide")
 
 # -----------------------
 # Daten laden
@@ -21,7 +21,7 @@ def load_data():
         "punkte", "url", "startelf"
     ]].copy()
 
-    df["maik_score"] = pd.to_numeric(df["maik_score"], errors="coerce") / 10
+    df["maik_score"] = pd.to_numeric(df["maik_score"], errors="coerce") 
     df["marktwert"] = pd.to_numeric(df["marktwert"], errors="coerce")
     df["punkte"] = pd.to_numeric(df["punkte"], errors="coerce")
 
