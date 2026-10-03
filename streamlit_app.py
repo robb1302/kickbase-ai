@@ -15,6 +15,10 @@ def load_data():
         encoding="utf-8-sig"
     )
 
+    last_update = pd.to_datetime(
+        df["retrieved_at"], errors="coerce", utc=True
+    ).max()
+
     df = df[[
         "spieler", "team", "position",
         "maik_score", "marktwert",
@@ -28,10 +32,10 @@ def load_data():
     df["marktwert_mio"] = df["marktwert"] / 1_000_000
     df["value"] = df["maik_score"] / df["marktwert_mio"]
 
-    return df
+    return df, last_update
 
 
-df = load_data()
+df, last_update = load_data()
 
 # -----------------------
 # Sidebar
@@ -72,6 +76,11 @@ if only_startelf:
 # -----------------------
 # KPIs
 # -----------------------
+if pd.notna(last_update):
+    st.caption(f"Letztes Pipeline-Update: {last_update.strftime('%d.%m.%Y')}")
+else:
+    st.caption("Kein `retrieved_at`-Datum in der CSV gefunden")
+
 c1, c2, c3 = st.columns(3)
 c1.metric("Spieler", len(view))
 c2.metric("Ø MAIK", round(view.maik_score.mean(), 1))
