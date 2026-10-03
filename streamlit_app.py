@@ -7,7 +7,7 @@ st.set_page_config("Kickbase Assistant", "⚽", layout="wide")
 # -----------------------
 # Daten laden
 # -----------------------
-@st.cache_data
+@st.cache_data(ttl=300)
 def load_data():
     df = pd.read_csv(
         "data/final/final.csv",
