@@ -51,6 +51,7 @@ kb["startelf"] = kb["_key"].isin(se_keys)
 kb = kb.drop(columns="_key")
 
 # Speichern
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 kb.to_csv(
     OUTPUT,
     sep=";",

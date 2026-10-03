@@ -58,6 +58,7 @@ def merge_player_csvs(
     )
 
     result = result.drop(columns="_key")
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
 
     result.to_csv(
         output_file,

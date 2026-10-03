@@ -1,4 +1,5 @@
 import re
+from pathlib import Path
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -50,7 +51,9 @@ for slug, team_id in teams:
             })
 
 df = pd.DataFrame(rows).drop_duplicates("url")
-df.to_csv("data/raw/ligainsider_spielerlinks.csv", index=False, encoding="utf-8-sig",sep=";")
+output_path = Path("data/raw/ligainsider_spielerlinks.csv")
+output_path.parent.mkdir(parents=True, exist_ok=True)
+df.to_csv(output_path, index=False, encoding="utf-8-sig", sep=";")
 
 print(df.head())
 print(f"{len(df)} Spieler gespeichert.")

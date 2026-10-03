@@ -51,6 +51,7 @@ result = kb.merge(
     how="left"
 )
 
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 result.drop(columns="_key").to_csv(
     OUTPUT,
     sep=";",

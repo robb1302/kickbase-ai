@@ -28,6 +28,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install Playwright browser
+        run: python -m playwright install --with-deps chromium
+
+      - name: Run MAIK score downloader
+        run: python src/maiks_score_downloader.py
+
       - name: Run Ligainsider player downloader
         run: python src/ligainsider_player_downloader.py
 
@@ -37,8 +43,8 @@ jobs:
       - name: Run Kickbase downloader
         run: python src/kickbase_downloader.py
 
-      - name: Run merger/update step
-        run: python src/merge_player_files.py
+      - name: Merge downloaded player data
+        run: python src/merger.py
 
       - name: Run starter update
         run: python src/set_starter.py

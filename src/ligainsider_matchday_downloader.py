@@ -34,7 +34,7 @@ all_players = []
 
 with sync_playwright() as p:
 
-    browser = p.chromium.launch(headless=False)
+    browser = p.chromium.launch(headless=True)
     context = browser.new_context(
         viewport={"width":1600,"height":1200},
         locale="de-DE"
@@ -112,8 +112,10 @@ with sync_playwright() as p:
 
 df = pd.DataFrame(all_players)
 
+output_path = Path("data/matchday/bundesliga_startelf.csv")
+output_path.parent.mkdir(parents=True, exist_ok=True)
 df.to_csv(
-    "C:/Users/rober/development/projects/kickbase-ai/data/matchday/bundesliga_startelf.csv",
+    output_path,
     index=False,
     encoding="utf-8-sig",
     sep=";"
