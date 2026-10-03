@@ -79,7 +79,10 @@ if position:
     view = view[view.position.isin(position)]
 
 if minimum_maik_score > 0:
-    view = view[view.maik_score >= minimum_maik_score]
+    view = view[
+        view["maik_score"].isna()
+        | (view["maik_score"] >= minimum_maik_score)
+    ]
 
 if only_startelf:
     view = view[view.startelf == True]
