@@ -54,6 +54,14 @@ position = st.sidebar.multiselect(
     sorted(df.position.dropna().unique())
 )
 
+minimum_maik_score = st.sidebar.number_input(
+    "Mindest-MAIK-Punkte",
+    min_value=0,
+    value=0,
+    step=100,
+    format="%d",
+)
+
 only_startelf = st.sidebar.checkbox("Nur Startelf", True)
 
 # -----------------------
@@ -69,6 +77,9 @@ if team:
 
 if position:
     view = view[view.position.isin(position)]
+
+if minimum_maik_score > 0:
+    view = view[view.maik_score >= minimum_maik_score]
 
 if only_startelf:
     view = view[view.startelf == True]
