@@ -74,10 +74,25 @@ with sync_playwright() as p:
 
         seen = set()
         players = []
+        position_columns = soup.select(".stadium_container_bg .player_position_column")
 
-        for a in soup.select("a[href]"):
+        for column in position_columns:
+            player_link = column.select_one(
+                '.sub_child[style*="display: block"] .player_name a[href]'
+            )
+            if player_link is None:
+                player_link = next(
+                    (
+                        link
+                        for link in column.select(".player_name a[href]")
+                        if link.find_parent(class_="sub_child") is None
+                    ),
+                    None,
+                )
+            if player_link is None:
+                continue
 
-            href = a.get("href","")
+            href = player_link.get("href", "")
 
             m = re.fullmatch(r"/([a-z0-9-]+)_(\d+)/?", href)
 
@@ -85,26 +100,29 @@ with sync_playwright() as p:
                 continue
 
             slug, pid = m.groups()
-
-            name = " ".join(x.capitalize() for x in slug.split("-"))
-
-            if name in seen:
+            if pid in seen:
                 continue
 
-            seen.add(name)
+            seen.add(pid)
+            name = " ".join(x.capitalize() for x in slug.split("-"))
 
             players.append({
                 "verein": team,
-                "position": len(players)+1,
+                "position": len(players) + 1,
                 "spieler": name,
                 "slug": slug,
                 "spieler_ID": int(pid),
                 "profil_URL": f"https://www.ligainsider.de{href}"
             })
 
-        all_players.extend(players[:11])
+        if len(players) != 11:
+            raise RuntimeError(
+                f"{team}: expected 11 lineup players, found {len(players)}"
+            )
 
-        print(f"  -> {len(players[:11])} Spieler")
+        all_players.extend(players)
+
+        print(f"  -> {len(players)} Aufstellungsspieler")
 
         time.sleep(1)
 
