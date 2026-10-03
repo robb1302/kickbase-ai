@@ -1,15 +1,15 @@
-name: Daily Kickbase data update
+name: Weekly Kickbase data update
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 8 * * 4"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  daily-update:
+  weekly-update:
     runs-on: ubuntu-latest
 
     steps:
