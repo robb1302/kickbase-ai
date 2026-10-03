@@ -77,7 +77,7 @@ if only_startelf:
 # KPIs
 # -----------------------
 if pd.notna(last_update):
-    st.caption(f"Letztes Pipeline-Update: {last_update.strftime('%d.%m.%Y')}")
+    st.caption(f"Letztes Pipeline-Update: {last_update.strftime('%d.%m.%Y %H:%M UTC')}")
 else:
     st.caption("Kein `retrieved_at`-Datum in der CSV gefunden")
 

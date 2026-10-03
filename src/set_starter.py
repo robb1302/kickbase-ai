@@ -23,6 +23,7 @@ def normalize(name):
         .encode("ascii", "ignore")
         .decode("ascii")
     )
+    name = name.replace("ae", "a").replace("oe", "o").replace("ue", "u")
     return re.sub(r"[^a-z0-9]", "", name)
 
 
@@ -46,6 +47,7 @@ se_keys = set(se["spieler"].map(normalize))
 
 # Startelf-Flag setzen
 kb["startelf"] = kb["_key"].isin(se_keys)
+unmatched = se.loc[~se["spieler"].map(normalize).isin(kb["_key"]), "spieler"].drop_duplicates()
 
 # Hilfsspalte entfernen
 kb = kb.drop(columns="_key")
@@ -60,3 +62,5 @@ kb.to_csv(
 )
 
 print(f"Startelf: {kb['startelf'].sum()} / {len(kb)} Spieler")
+if not unmatched.empty:
+    print(f"Nicht in der Spielerdatenbank: {', '.join(unmatched)}")
