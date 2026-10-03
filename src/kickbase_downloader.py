@@ -6,6 +6,7 @@ import argparse
 import csv
 import json
 import sys
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -117,12 +118,17 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    print(f"[BaseXI 1/3] Lade Spielerdaten von {SOURCE_URL} ...", flush=True)
     retrieved_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     rows = [to_row(player, retrieved_at) for player in fetch_players()]
+    print(f"[BaseXI 1/3] {len(rows)} Spieler empfangen.", flush=True)
+
     ids = [row["spieler_id"] for row in rows]
     if len(ids) != len(set(ids)):
-        raise SystemExit("BaseXI lieferte doppelte Spieler-IDs.")
+        duplicate_ids = [player_id for player_id, count in Counter(ids).items() if count > 1]
+        raise SystemExit(f"BaseXI lieferte doppelte Spieler-IDs: {duplicate_ids[:10]}")
 
+    print("[BaseXI 2/3] Sortiere und prüfe Datensätze ...", flush=True)
     rows.sort(
         key=lambda row: (
             str(row["team"] or ""),
@@ -132,14 +138,17 @@ def main() -> None:
     )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
+    print(f"[BaseXI 3/3] Schreibe CSV: {args.output}", flush=True)
     with args.output.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=FIELDS, delimiter=";")
         writer.writeheader()
         writer.writerows(rows)
 
-    print(f"Gespeichert: {args.output}")
-    print(f"Spieler: {len(rows)}")
-    print(f"Vereine: {len({row['team'] for row in rows})}")
+    print(
+        f"[BaseXI] Fertig: {len(rows)} Spieler aus "
+        f"{len({row['team'] for row in rows})} Vereinen.",
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

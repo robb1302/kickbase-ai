@@ -56,28 +56,44 @@ def latest_score(scores: list[float | None], dates: list[str]) -> tuple[float, s
 
 
 def collect_rows() -> list[dict[str, object]]:
+    print(f"[MAIK 1/3] Lade Bundesliga-Kader ({LEAGUE}) ...", flush=True)
     roster = fetch_json("/kader")
     teams = roster.get("ligen", {}).get(LEAGUE, {}).get("rows", [])
     if not teams:
         raise RuntimeError("Keine Bundesliga-Vereine im MAIK-Kader-Endpunkt gefunden.")
+    print(f"[MAIK 1/3] {len(teams)} Vereine gefunden.", flush=True)
 
     retrieved_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     rows: list[dict[str, object]] = []
-    for team in teams:
+    active_players = 0
+    players_without_score = 0
+    for team_number, team in enumerate(teams, start=1):
         slug = team.get("slug")
         if not slug:
             raise RuntimeError("Verein ohne Slug im MAIK-Kader-Endpunkt gefunden.")
 
+        team_name = team.get("name") or slug
+        print(
+            f"[MAIK 2/3] [{team_number}/{len(teams)}] {team_name}: "
+            "lade Score-Verlauf ...",
+            flush=True,
+        )
         history = fetch_json(f"/score-history?team={slug}")
         dates = history.get("dates", [])
         source_url = f"{API_BASE}/score-history?team={slug}"
+        team_active_players = 0
+        team_players_with_score = 0
         for player in history.get("players", []):
             if not player.get("active"):
                 continue
+            active_players += 1
+            team_active_players += 1
             score = latest_score(player.get("scores", []), dates)
             if score is None:
+                players_without_score += 1
                 continue
             value, score_date, change = score
+            team_players_with_score += 1
             rows.append(
                 {
                     "score_date": score_date,
@@ -94,8 +110,13 @@ def collect_rows() -> list[dict[str, object]]:
                     "retrieved_at": retrieved_at,
                 }
             )
+        print(
+            f"             {team_players_with_score}/{team_active_players} aktive "
+            "Spieler mit Score",
+            flush=True,
+        )
 
-    return sorted(
+    sorted_rows = sorted(
         rows,
         key=lambda row: (
             int(row["team_rank"]) if row["team_rank"] is not None else 999,
@@ -104,6 +125,12 @@ def collect_rows() -> list[dict[str, object]]:
             str(row["spieler"]),
         ),
     )
+    print(
+        f"[MAIK 3/3] Fertig: {len(sorted_rows)} Scores aus {len(teams)} Vereinen; "
+        f"{active_players} aktive Spieler, {players_without_score} ohne Score.",
+        flush=True,
+    )
+    return sorted_rows
 
 
 def main() -> None:
@@ -127,9 +154,9 @@ def main() -> None:
         writer.writerows(rows)
 
     teams = {row["team_slug"] for row in rows}
-    print(f"Gespeichert: {args.output}")
-    print(f"Vereine: {len(teams)}")
-    print(f"Aktive Spieler mit Score: {len(rows)}")
+    print(f"[MAIK] Gespeichert: {args.output}", flush=True)
+    print(f"[MAIK] Vereine mit Score: {len(teams)}", flush=True)
+    print(f"[MAIK] Aktive Spieler mit Score: {len(rows)}", flush=True)
 
 
 if __name__ == "__main__":

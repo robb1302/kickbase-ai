@@ -31,7 +31,12 @@ TEAMS = {
 Path("html").mkdir(exist_ok=True)
 
 all_players = []
+team_count = len(TEAMS)
 
+print(
+    f"[LigaInsider Startelf 1/3] Starte Chromium für {team_count} Vereine ...",
+    flush=True,
+)
 with sync_playwright() as p:
 
     browser = p.chromium.launch(headless=True)
@@ -44,9 +49,13 @@ with sync_playwright() as p:
 
     cookie_done = False
 
-    for team, url in TEAMS.items():
+    for team_number, (team, url) in enumerate(TEAMS.items(), start=1):
 
-        print(f"Download: {team}")
+        print(
+            f"[LigaInsider Startelf 2/3] [{team_number}/{team_count}] "
+            f"Lade Aufstellung: {team} ...",
+            flush=True,
+        )
 
         page.goto(url, wait_until="domcontentloaded")
 
@@ -56,6 +65,7 @@ with sync_playwright() as p:
                     .get_by_role("button", name="ZUSTIMMEN")\
                     .click(timeout=10000)
                 cookie_done = True
+                print("             Cookie-Abfrage bestätigt.", flush=True)
                 page.wait_for_timeout(2000)
             except:
                 pass
@@ -117,12 +127,17 @@ with sync_playwright() as p:
 
         if len(players) != 11:
             raise RuntimeError(
-                f"{team}: expected 11 lineup players, found {len(players)}"
+                f"{team}: 11 Startelfspieler erwartet, {len(players)} gefunden. "
+                f"Seite: {url}"
             )
 
         all_players.extend(players)
 
-        print(f"  -> {len(players)} Aufstellungsspieler")
+        preview = ", ".join(player["spieler"] for player in players[:5])
+        print(
+            f"             {len(players)} Spieler: {preview} ...",
+            flush=True,
+        )
 
         time.sleep(1)
 
@@ -132,6 +147,7 @@ df = pd.DataFrame(all_players)
 
 output_path = Path("data/matchday/bundesliga_startelf.csv")
 output_path.parent.mkdir(parents=True, exist_ok=True)
+print(f"[LigaInsider Startelf 3/3] Schreibe CSV: {output_path}", flush=True)
 df.to_csv(
     output_path,
     index=False,
@@ -139,5 +155,8 @@ df.to_csv(
     sep=";"
 )
 
-print(df)
-print(f"\nFertig: {len(df)} Spieler")
+print(
+    f"[LigaInsider Startelf] Fertig: {len(df)} Spieler aus "
+    f"{team_count} Vereinen gespeichert.",
+    flush=True,
+)
