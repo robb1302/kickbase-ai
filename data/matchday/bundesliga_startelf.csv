@@ -3,13 +3,13 @@ Bayern München;1;Manuel Neuer;manuel-neuer;114;https://www.ligainsider.de/manue
 Bayern München;2;Josip Stanisic;josip-stanisic;20102;https://www.ligainsider.de/josip-stanisic_20102/
 Bayern München;3;Dayot Upamecano;dayot-upamecano;11541;https://www.ligainsider.de/dayot-upamecano_11541/
 Bayern München;4;Jonathan Tah;jonathan-tah;2385;https://www.ligainsider.de/jonathan-tah_2385/
-Bayern München;5;Alphonso Davies;alphonso-davies;20098;https://www.ligainsider.de/alphonso-davies_20098/
+Bayern München;5;Nathaniel Brown;nathaniel-brown;35857;https://www.ligainsider.de/nathaniel-brown_35857/
 Bayern München;6;Aleksandar Pavlovic;aleksandar-pavlovic;35918;https://www.ligainsider.de/aleksandar-pavlovic_35918/
-Bayern München;7;Ismael Saibari;ismael-saibari;25609;https://www.ligainsider.de/ismael-saibari_25609/
+Bayern München;7;Serge Gnabry;serge-gnabry;4815;https://www.ligainsider.de/serge-gnabry_4815/
 Bayern München;8;Tom Bischof;tom-bischof;26133;https://www.ligainsider.de/tom-bischof_26133/
 Bayern München;9;Michael Olise;michael-olise;37170;https://www.ligainsider.de/michael-olise_37170/
 Bayern München;10;Harry Kane;harry-kane;4828;https://www.ligainsider.de/harry-kane_4828/
-Bayern München;11;Luis Diaz;luis-diaz;22566;https://www.ligainsider.de/luis-diaz_22566/
+Bayern München;11;Alphonso Davies;alphonso-davies;20098;https://www.ligainsider.de/alphonso-davies_20098/
 Borussia Dortmund;1;Gregor Kobel;gregor-kobel;9357;https://www.ligainsider.de/gregor-kobel_9357/
 Borussia Dortmund;2;Joane Gadou;joane-gadou;37021;https://www.ligainsider.de/joane-gadou_37021/
 Borussia Dortmund;3;Waldemar Anton;waldemar-anton;5837;https://www.ligainsider.de/waldemar-anton_5837/
@@ -22,7 +22,7 @@ Borussia Dortmund;9;Marcel Sabitzer;marcel-sabitzer;2020;https://www.ligainsider
 Borussia Dortmund;10;Serhou Guirassy;serhou-guirassy;10454;https://www.ligainsider.de/serhou-guirassy_10454/
 Borussia Dortmund;11;Maximilian Beier;maximilian-beier;20804;https://www.ligainsider.de/maximilian-beier_20804/
 RB Leipzig;1;Maarten Vandevoordt;maarten-vandevoordt;21774;https://www.ligainsider.de/maarten-vandevoordt_21774/
-RB Leipzig;2;Ridle Baku;ridle-baku;15835;https://www.ligainsider.de/ridle-baku_15835/
+RB Leipzig;2;Benjamin Henrichs;benjamin-henrichs;5680;https://www.ligainsider.de/benjamin-henrichs_5680/
 RB Leipzig;3;Willi Orban;willi-orban;1667;https://www.ligainsider.de/willi-orban_1667/
 RB Leipzig;4;Castello Lukeba;castello-lukeba;27079;https://www.ligainsider.de/castello-lukeba_27079/
 RB Leipzig;5;David Raum;david-raum;12557;https://www.ligainsider.de/david-raum_12557/
@@ -30,7 +30,7 @@ RB Leipzig;6;Neil El Aynaoui;neil-el-aynaoui;36433;https://www.ligainsider.de/ne
 RB Leipzig;7;Christopher Nkunku;christopher-nkunku;12446;https://www.ligainsider.de/christopher-nkunku_12446/
 RB Leipzig;8;Rocco Reitz;rocco-reitz;24546;https://www.ligainsider.de/rocco-reitz_24546/
 RB Leipzig;9;Brajan Gruda;brajan-gruda;35733;https://www.ligainsider.de/brajan-gruda_35733/
-RB Leipzig;10;Romulo Cardoso;romulo-cardoso;38565;https://www.ligainsider.de/romulo-cardoso_38565/
+RB Leipzig;10;Tidiam Gomis;tidiam-gomis;36962;https://www.ligainsider.de/tidiam-gomis_36962/
 RB Leipzig;11;Antonio Nusa;antonio-nusa;37124;https://www.ligainsider.de/antonio-nusa_37124/
 Bayer Leverkusen;1;Mark Flekken;mark-flekken;4530;https://www.ligainsider.de/mark-flekken_4530/
 Bayer Leverkusen;2;Jarell Quansah;jarell-quansah;36489;https://www.ligainsider.de/jarell-quansah_36489/
@@ -85,7 +85,7 @@ Gladbach;6;Zento Uno;zento-uno;38869;https://www.ligainsider.de/zento-uno_38869/
 Gladbach;7;Florian Neuhaus;florian-neuhaus;10416;https://www.ligainsider.de/florian-neuhaus_10416/
 Gladbach;8;Lukas Ullrich;lukas-ullrich;27518;https://www.ligainsider.de/lukas-ullrich_27518/
 Gladbach;9;Hugo Bolin;hugo-bolin;37888;https://www.ligainsider.de/hugo-bolin_37888/
-Gladbach;10;Isac Lidberg;isac-lidberg;37438;https://www.ligainsider.de/isac-lidberg_37438/
+Gladbach;10;Shuto Machino;shuto-machino;36130;https://www.ligainsider.de/shuto-machino_36130/
 Gladbach;11;Wael Mohya;wael-mohya;38636;https://www.ligainsider.de/wael-mohya_38636/
 1. FC Köln;1;Marvin Schwaebe;marvin-schwaebe;2626;https://www.ligainsider.de/marvin-schwaebe_2626/
 1. FC Köln;2;Sebastian Sebulonsen;sebastian-sebulonsen;38632;https://www.ligainsider.de/sebastian-sebulonsen_38632/
@@ -194,6 +194,6 @@ FC Schalke;5;Adrian Gantenbein;adrian-gantenbein;37275;https://www.ligainsider.d
 FC Schalke;6;Soufiane El Faouzi;soufiane-el-faouzi;26067;https://www.ligainsider.de/soufiane-el-faouzi_26067/
 FC Schalke;7;Satoshi Tanaka;satoshi-tanaka;38876;https://www.ligainsider.de/satoshi-tanaka_38876/
 FC Schalke;8;Robin Gosens;robin-gosens;16537;https://www.ligainsider.de/robin-gosens_16537/
-FC Schalke;9;Kenan Karaman;kenan-karaman;2676;https://www.ligainsider.de/kenan-karaman_2676/
-FC Schalke;10;Junior Adamu;junior-adamu;24620;https://www.ligainsider.de/junior-adamu_24620/
+FC Schalke;9;Junior Adamu;junior-adamu;24620;https://www.ligainsider.de/junior-adamu_24620/
+FC Schalke;10;Edin Dzeko;edin-dzeko;4755;https://www.ligainsider.de/edin-dzeko_4755/
 FC Schalke;11;Adil Aouchiche;adil-aouchiche;22176;https://www.ligainsider.de/adil-aouchiche_22176/
