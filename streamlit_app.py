@@ -62,6 +62,14 @@ minimum_maik_score = st.sidebar.number_input(
     format="%d",
 )
 
+maximum_market_value = st.sidebar.number_input(
+    "Maximaler Marktwert (€)",
+    min_value=0,
+    value=0,
+    step=100_000,
+    format="%d",
+)
+
 only_startelf = st.sidebar.checkbox("Nur Startelf", True)
 
 # -----------------------
@@ -82,6 +90,12 @@ if minimum_maik_score > 0:
     view = view[
         view["maik_score"].isna()
         | (view["maik_score"] >= minimum_maik_score)
+    ]
+
+if maximum_market_value > 0:
+    view = view[
+        view["marktwert"].isna()
+        | (view["marktwert"] <= maximum_market_value)
     ]
 
 if only_startelf:
