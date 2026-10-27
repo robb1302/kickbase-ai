@@ -28,12 +28,15 @@ def load_data():
     df = df[[
         "spieler", "team", "position",
         "maik_score", "marktwert",
-        "punkte", "url", "startelf", "ligainsider_id"
+        "punkte", "durchschnitt_punkte", "url", "startelf", "ligainsider_id"
     ]].copy()
 
     df["maik_score"] = pd.to_numeric(df["maik_score"], errors="coerce") 
     df["marktwert"] = pd.to_numeric(df["marktwert"], errors="coerce")
     df["punkte"] = pd.to_numeric(df["punkte"], errors="coerce")
+    df["durchschnitt_punkte"] = pd.to_numeric(
+        df["durchschnitt_punkte"], errors="coerce"
+    )
     df["alternative"] = (
         pd.to_numeric(df["ligainsider_id"], errors="coerce")
         .astype("Int64")
@@ -141,12 +144,13 @@ st.divider()
 st.subheader("Bargain Finder")
 
 show = view.sort_values(
-    "value",
-    ascending=False
+    "marktwert",
+    ascending=True,
+    na_position="last",
 )[[
     "spieler", "team", "position",
     "maik_score", "marktwert",
-    "punkte", "url"
+    "punkte", "durchschnitt_punkte", "url"
 ]]
 
 st.dataframe(
@@ -160,6 +164,10 @@ st.dataframe(
         ),
         "maik_score": st.column_config.NumberColumn(
             "MAIK",
+            format="%.1f"
+        ),
+        "durchschnitt_punkte": st.column_config.NumberColumn(
+            "Ø Punkte",
             format="%.1f"
         ),
         "url": st.column_config.LinkColumn(
