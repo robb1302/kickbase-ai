@@ -40,6 +40,9 @@ jobs:
       - name: Run Ligainsider matchday downloader
         run: python src/ligainsider_matchday_downloader.py
 
+      - name: Parse Ligainsider alternatives
+        run: python src/ligainsider_alternative_parser.py
+
       - name: Run Kickbase downloader
         run: python src/kickbase_downloader.py
 

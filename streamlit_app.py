@@ -14,6 +14,12 @@ def load_data():
         sep=";",
         encoding="utf-8-sig"
     )
+    alternatives = pd.read_csv(
+        "data/matchday/bundesliga_alternativen.csv",
+        sep=";",
+        encoding="utf-8-sig",
+        dtype={"ligainsider_id": "string"},
+    )
 
     last_update = pd.to_datetime(
         df["retrieved_at"], errors="coerce", utc=True
@@ -22,12 +28,21 @@ def load_data():
     df = df[[
         "spieler", "team", "position",
         "maik_score", "marktwert",
-        "punkte", "url", "startelf"
+        "punkte", "url", "startelf", "ligainsider_id"
     ]].copy()
 
     df["maik_score"] = pd.to_numeric(df["maik_score"], errors="coerce") 
     df["marktwert"] = pd.to_numeric(df["marktwert"], errors="coerce")
     df["punkte"] = pd.to_numeric(df["punkte"], errors="coerce")
+    df["alternative"] = (
+        pd.to_numeric(df["ligainsider_id"], errors="coerce")
+        .astype("Int64")
+        .astype("string")
+        .isin(
+            alternatives["ligainsider_id"].dropna().str.strip()
+        )
+    )
+    df = df.drop(columns="ligainsider_id")
 
     df["marktwert_mio"] = df["marktwert"] / 1_000_000
     df["value"] = df["maik_score"] / df["marktwert_mio"]
@@ -71,6 +86,7 @@ maximum_market_value = st.sidebar.number_input(
 )
 
 only_startelf = st.sidebar.checkbox("Nur Startelf", True)
+only_alternatives = st.sidebar.checkbox("Nur Alternativen", False)
 
 # -----------------------
 # Filter anwenden
@@ -98,8 +114,11 @@ if maximum_market_value > 0:
         | (view["marktwert"] <= maximum_market_value)
     ]
 
-if only_startelf:
-    view = view[view.startelf == True]
+if only_startelf or only_alternatives:
+    view = view[
+        (only_startelf & view["startelf"])
+        | (only_alternatives & view["alternative"])
+    ]
 
 # -----------------------
 # KPIs
@@ -127,7 +146,7 @@ show = view.sort_values(
 )[[
     "spieler", "team", "position",
     "maik_score", "marktwert",
-    "punkte", "startelf", "url"
+    "punkte", "url"
 ]]
 
 st.dataframe(
