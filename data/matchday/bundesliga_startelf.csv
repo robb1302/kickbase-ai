@@ -1,8 +1,8 @@
 ﻿verein;position;spieler;slug;spieler_ID;profil_URL
-Bayern München;1;Manuel Neuer;manuel-neuer;114;https://www.ligainsider.de/manuel-neuer_114/
+Bayern München;1;Jonas Urbig;jonas-urbig;26101;https://www.ligainsider.de/jonas-urbig_26101/
 Bayern München;2;Konrad Laimer;konrad-laimer;6324;https://www.ligainsider.de/konrad-laimer_6324/
 Bayern München;3;Dayot Upamecano;dayot-upamecano;11541;https://www.ligainsider.de/dayot-upamecano_11541/
-Bayern München;4;Jonathan Tah;jonathan-tah;2385;https://www.ligainsider.de/jonathan-tah_2385/
+Bayern München;4;Minjae Kim;minjae-kim;27022;https://www.ligainsider.de/minjae-kim_27022/
 Bayern München;5;Alphonso Davies;alphonso-davies;20098;https://www.ligainsider.de/alphonso-davies_20098/
 Bayern München;6;Joshua Kimmich;joshua-kimmich;5768;https://www.ligainsider.de/joshua-kimmich_5768/
 Bayern München;7;Ismael Saibari;ismael-saibari;25609;https://www.ligainsider.de/ismael-saibari_25609/
@@ -40,7 +40,7 @@ Bayer Leverkusen;5;Miguel Gutierrez;miguel-gutierrez;24219;https://www.ligainsid
 Bayer Leverkusen;6;Equi Fernandez;equi-fernandez;38674;https://www.ligainsider.de/equi-fernandez_38674/
 Bayer Leverkusen;7;Malik Tillman;malik-tillman;23862;https://www.ligainsider.de/malik-tillman_23862/
 Bayer Leverkusen;8;Aleix Garcia;aleix-garcia;7138;https://www.ligainsider.de/aleix-garcia_7138/
-Bayer Leverkusen;9;Nathan Tella;nathan-tella;36300;https://www.ligainsider.de/nathan-tella_36300/
+Bayer Leverkusen;9;Afonso Moreira;afonso-moreira;36841;https://www.ligainsider.de/afonso-moreira_36841/
 Bayer Leverkusen;10;Patrik Schick;patrik-schick;7794;https://www.ligainsider.de/patrik-schick_7794/
 Bayer Leverkusen;11;Ibrahim Maza;ibrahim-maza;35905;https://www.ligainsider.de/ibrahim-maza_35905/
 VfB Stuttgart;1;Dennis Seimen;dennis-seimen;35226;https://www.ligainsider.de/dennis-seimen_35226/
@@ -58,7 +58,7 @@ TSG Hoffenheim;1;Oliver Baumann;oliver-baumann;567;https://www.ligainsider.de/ol
 TSG Hoffenheim;2;Ozan Kabak;ozan-kabak;20416;https://www.ligainsider.de/ozan-kabak_20416/
 TSG Hoffenheim;3;Koki Machida;koki-machida;35863;https://www.ligainsider.de/koki-machida_35863/
 TSG Hoffenheim;4;Bernardo;bernardo;11324;https://www.ligainsider.de/bernardo_11324/
-TSG Hoffenheim;5;Vladimir Coufal;vladimir-coufal;11929;https://www.ligainsider.de/vladimir-coufal_11929/
+TSG Hoffenheim;5;Natnael Abraha;natnael-abraha;38435;https://www.ligainsider.de/natnael-abraha_38435/
 TSG Hoffenheim;6;Leon Avdullahu;leon-avdullahu;38223;https://www.ligainsider.de/leon-avdullahu_38223/
 TSG Hoffenheim;7;Wouter Burger;wouter-burger;22632;https://www.ligainsider.de/wouter-burger_22632/
 TSG Hoffenheim;8;Mats Rots;mats-rots;37794;https://www.ligainsider.de/mats-rots_37794/
@@ -66,8 +66,8 @@ TSG Hoffenheim;9;Fisnik Asllani;fisnik-asllani;21986;https://www.ligainsider.de/
 TSG Hoffenheim;10;Adam Hlozek;adam-hlozek;24095;https://www.ligainsider.de/adam-hlozek_24095/
 TSG Hoffenheim;11;Adam Daghim;adam-daghim;37622;https://www.ligainsider.de/adam-daghim_37622/
 Mainz 05;1;Robin Zentner;robin-zentner;3298;https://www.ligainsider.de/robin-zentner_3298/
-Mainz 05;2;Danny Da Costa;danny-da-costa;650;https://www.ligainsider.de/danny-da-costa_650/
-Mainz 05;3;Stefan Posch;stefan-posch;12798;https://www.ligainsider.de/stefan-posch_12798/
+Mainz 05;2;Stefan Posch;stefan-posch;12798;https://www.ligainsider.de/stefan-posch_12798/
+Mainz 05;3;Fabio Gruber;fabio-gruber;26579;https://www.ligainsider.de/fabio-gruber_26579/
 Mainz 05;4;Kacper Potulski;kacper-potulski;38608;https://www.ligainsider.de/kacper-potulski_38608/
 Mainz 05;5;Anthony Caci;anthony-caci;26102;https://www.ligainsider.de/anthony-caci_26102/
 Mainz 05;6;Nadiem Amiri;nadiem-amiri;5815;https://www.ligainsider.de/nadiem-amiri_5815/
@@ -77,8 +77,8 @@ Mainz 05;9;Phillipp Mwene;phillipp-mwene;2723;https://www.ligainsider.de/phillip
 Mainz 05;10;Phillip Tietz;phillip-tietz;7480;https://www.ligainsider.de/phillip-tietz_7480/
 Mainz 05;11;Sheraldo Becker;sheraldo-becker;20640;https://www.ligainsider.de/sheraldo-becker_20640/
 Gladbach;1;Moritz Nicolas;moritz-nicolas;6295;https://www.ligainsider.de/moritz-nicolas_6295/
-Gladbach;2;Daiki Hashioka;daiki-hashioka;36955;https://www.ligainsider.de/daiki-hashioka_36955/
-Gladbach;3;Philipp Sander;philipp-sander;18612;https://www.ligainsider.de/philipp-sander_18612/
+Gladbach;2;Philipp Sander;philipp-sander;18612;https://www.ligainsider.de/philipp-sander_18612/
+Gladbach;3;Ko Itakura;ko-itakura;27204;https://www.ligainsider.de/ko-itakura_27204/
 Gladbach;4;Fabio Chiarodia;fabio-chiarodia;26588;https://www.ligainsider.de/fabio-chiarodia_26588/
 Gladbach;5;Joe Scally;joe-scally;23700;https://www.ligainsider.de/joe-scally_23700/
 Gladbach;6;Zento Uno;zento-uno;38869;https://www.ligainsider.de/zento-uno_38869/
@@ -125,12 +125,12 @@ Union Berlin;2;Janik Haberer;janik-haberer;3616;https://www.ligainsider.de/janik
 Union Berlin;3;Zeno Van Den Bosch;zeno-van-den-bosch;25990;https://www.ligainsider.de/zeno-van-den-bosch_25990/
 Union Berlin;4;Leopold Querfeld;leopold-querfeld;27234;https://www.ligainsider.de/leopold-querfeld_27234/
 Union Berlin;5;Tom Rothe;tom-rothe;26243;https://www.ligainsider.de/tom-rothe_26243/
-Union Berlin;6;Wooyeong Jeong;wooyeong-jeong;14145;https://www.ligainsider.de/wooyeong-jeong_14145/
-Union Berlin;7;Andras Schaefer;andras-schaefer;27369;https://www.ligainsider.de/andras-schaefer_27369/
+Union Berlin;6;Andras Schaefer;andras-schaefer;27369;https://www.ligainsider.de/andras-schaefer_27369/
+Union Berlin;7;Michel Aebischer;michel-aebischer;12508;https://www.ligainsider.de/michel-aebischer_12508/
 Union Berlin;8;Rani Khedira;rani-khedira;2122;https://www.ligainsider.de/rani-khedira_2122/
-Union Berlin;9;Michel Aebischer;michel-aebischer;12508;https://www.ligainsider.de/michel-aebischer_12508/
+Union Berlin;9;Wooyeong Jeong;wooyeong-jeong;14145;https://www.ligainsider.de/wooyeong-jeong_14145/
 Union Berlin;10;Emmanuel Latte Lath;emmanuel-latte-lath;24183;https://www.ligainsider.de/emmanuel-latte-lath_24183/
-Union Berlin;11;Tim Skarke;tim-skarke;6374;https://www.ligainsider.de/tim-skarke_6374/
+Union Berlin;11;Livan Burcu;livan-burcu;36114;https://www.ligainsider.de/livan-burcu_36114/
 Eintracht Frankfurt;1;Noah Atubolu;noah-atubolu;22000;https://www.ligainsider.de/noah-atubolu_22000/
 Eintracht Frankfurt;2;Elias Baum;elias-baum;35727;https://www.ligainsider.de/elias-baum_35727/
 Eintracht Frankfurt;3;Robin Koch;robin-koch;12490;https://www.ligainsider.de/robin-koch_12490/
@@ -143,9 +143,9 @@ Eintracht Frankfurt;9;Ritsu Doan;ritsu-doan;22974;https://www.ligainsider.de/rit
 Eintracht Frankfurt;10;Jonathan Burkardt;jonathan-burkardt;19272;https://www.ligainsider.de/jonathan-burkardt_19272/
 Eintracht Frankfurt;11;Fares Chaibi;fares-chaibi;35910;https://www.ligainsider.de/fares-chaibi_35910/
 Hamburger SV;1;Daniel Heuer Fernandes;daniel-heuer-fernandes;6379;https://www.ligainsider.de/daniel-heuer-fernandes_6379/
-Hamburger SV;2;Warmed Omari;warmed-omari;25626;https://www.ligainsider.de/warmed-omari_25626/
+Hamburger SV;2;Shafiq Nandja;shafiq-nandja;38678;https://www.ligainsider.de/shafiq-nandja_38678/
 Hamburger SV;3;Sebastiaan Bornauw;sebastiaan-bornauw;18822;https://www.ligainsider.de/sebastiaan-bornauw_18822/
-Hamburger SV;4;Shafiq Nandja;shafiq-nandja;38678;https://www.ligainsider.de/shafiq-nandja_38678/
+Hamburger SV;4;Warmed Omari;warmed-omari;25626;https://www.ligainsider.de/warmed-omari_25626/
 Hamburger SV;5;Zakaria El Ouahdi;zakaria-el-ouahdi;38592;https://www.ligainsider.de/zakaria-el-ouahdi_38592/
 Hamburger SV;6;Albert Sambi Lokonga;albert-sambi-lokonga;18447;https://www.ligainsider.de/albert-sambi-lokonga_18447/
 Hamburger SV;7;Miro Muheim;miro-muheim;26094;https://www.ligainsider.de/miro-muheim_26094/
@@ -171,13 +171,13 @@ SC Paderborn;4;Mattes Hansen;mattes-hansen;35894;https://www.ligainsider.de/matt
 SC Paderborn;5;Laurin Curda;laurin-curda;36261;https://www.ligainsider.de/laurin-curda_36261/
 SC Paderborn;6;Laurin Ulrich;laurin-ulrich;27568;https://www.ligainsider.de/laurin-ulrich_27568/
 SC Paderborn;7;Santiago Castaneda;santiago-castaneda;37450;https://www.ligainsider.de/santiago-castaneda_37450/
-SC Paderborn;8;Gabriel Vidovic;gabriel-vidovic;26231;https://www.ligainsider.de/gabriel-vidovic_26231/
+SC Paderborn;8;Tom Baack;tom-baack;7463;https://www.ligainsider.de/tom-baack_7463/
 SC Paderborn;9;Raphael Obermair;raphael-obermair;12780;https://www.ligainsider.de/raphael-obermair_12780/
 SC Paderborn;10;Stefano Marino;stefano-marino;27339;https://www.ligainsider.de/stefano-marino_27339/
 SC Paderborn;11;Steffen Tigges;steffen-tigges;15810;https://www.ligainsider.de/steffen-tigges_15810/
 SV Elversberg;1;Nicolas Kristof;nicolas-kristof;26473;https://www.ligainsider.de/nicolas-kristof_26473/
 SV Elversberg;2;Luca Sirch;luca-sirch;26346;https://www.ligainsider.de/luca-sirch_26346/
-SV Elversberg;3;Lukas Pinckert;lukas-pinckert;38539;https://www.ligainsider.de/lukas-pinckert_38539/
+SV Elversberg;3;Florian Le Joncour;florian-le-joncour;37052;https://www.ligainsider.de/florian-le-joncour_37052/
 SV Elversberg;4;Maximilian Rohr;maximilian-rohr;24711;https://www.ligainsider.de/maximilian-rohr_24711/
 SV Elversberg;5;Lasse Guenther;lasse-guenther;26087;https://www.ligainsider.de/lasse-guenther_26087/
 SV Elversberg;6;Felix Keidel;felix-keidel;27483;https://www.ligainsider.de/felix-keidel_27483/
@@ -187,13 +187,13 @@ SV Elversberg;9;Lukas Petkov;lukas-petkov;20088;https://www.ligainsider.de/lukas
 SV Elversberg;10;David Mokwa;david-mokwa;35765;https://www.ligainsider.de/david-mokwa_35765/
 SV Elversberg;11;Maurice Krattenmacher;maurice-krattenmacher;36255;https://www.ligainsider.de/maurice-krattenmacher_36255/
 FC Schalke;1;Loris Karius;loris-karius;1641;https://www.ligainsider.de/loris-karius_1641/
-FC Schalke;2;Timo Becker;timo-becker;11068;https://www.ligainsider.de/timo-becker_11068/
+FC Schalke;2;Mertcan Ayhan;mertcan-ayhan;38514;https://www.ligainsider.de/mertcan-ayhan_38514/
 FC Schalke;3;Nikola Katic;nikola-katic;23002;https://www.ligainsider.de/nikola-katic_23002/
 FC Schalke;4;Hasan Kurucay;hasan-kurucay;35927;https://www.ligainsider.de/hasan-kurucay_35927/
-FC Schalke;5;Junior Dina Ebimbe;junior-dina-ebimbe;26881;https://www.ligainsider.de/junior-dina-ebimbe_26881/
-FC Schalke;6;Luca Vozar;luca-vozar;38892;https://www.ligainsider.de/luca-vozar_38892/
+FC Schalke;5;Timo Becker;timo-becker;11068;https://www.ligainsider.de/timo-becker_11068/
+FC Schalke;6;Junior Dina Ebimbe;junior-dina-ebimbe;26881;https://www.ligainsider.de/junior-dina-ebimbe_26881/
 FC Schalke;7;Satoshi Tanaka;satoshi-tanaka;38876;https://www.ligainsider.de/satoshi-tanaka_38876/
 FC Schalke;8;Adil Aouchiche;adil-aouchiche;22176;https://www.ligainsider.de/adil-aouchiche_22176/
-FC Schalke;9;Robin Gosens;robin-gosens;16537;https://www.ligainsider.de/robin-gosens_16537/
+FC Schalke;9;Vitalie Becker;vitalie-becker;37365;https://www.ligainsider.de/vitalie-becker_37365/
 FC Schalke;10;Kenan Karaman;kenan-karaman;2676;https://www.ligainsider.de/kenan-karaman_2676/
 FC Schalke;11;Junior Adamu;junior-adamu;24620;https://www.ligainsider.de/junior-adamu_24620/
