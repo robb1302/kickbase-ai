@@ -1,59 +1,72 @@
 ﻿ligainsider_id;spieler;alternative_fuer_id;quelle
-22736;Castro-Montes;38632;1_fc_köln.html
-23949;Lochoshvili;38328;1_fc_köln.html
-35249;Jóhannesson;38448;1_fc_köln.html
-7631;Lucas V.;2362;bayer_leverkusen.html
-26101;Urbig;114;bayern_münchen.html
-23034;Boey;6324;bayern_münchen.html
-2385;Tah;27022;bayern_münchen.html
-11541;Upamecano;26128;bayern_münchen.html
-39009;Binder;20102;bayern_münchen.html
+38448;Moore;35249;1_fc_köln.html
+23720;Ache;19202;1_fc_köln.html
+35823;Badé;36418;bayer_leverkusen.html
+38674;Fernández;2590;bayer_leverkusen.html
+23862;Tillman;2362;bayer_leverkusen.html
+36300;Tella;36841;bayer_leverkusen.html
 26133;Bischof;35918;bayern_münchen.html
-20098;Davies;37170;bayern_münchen.html
-36869;Nwaneri;25090;borussia_dortmund.html
-20804;Beier;38304;borussia_dortmund.html
-38153;Jobe;38406;borussia_dortmund.html
-10454;Guirassy;22570;borussia_dortmund.html
-2020;Sabitzer;26083;borussia_dortmund.html
-38581;Maluze;12490;eintracht_frankfurt.html
-24116;Collins;12490;eintracht_frankfurt.html
-24398;Knauff;38762;eintracht_frankfurt.html
-38489;Ebnoutalib;19272;eintracht_frankfurt.html
+35857;Brown;20098;bayern_münchen.html
+7791;Bensebaini;5837;borussia_dortmund.html
+38153;Jobe;18478;borussia_dortmund.html
+22570;Silva;10454;borussia_dortmund.html
+2020;Sabitzer;20804;borussia_dortmund.html
+24116;Collins;24398;eintracht_frankfurt.html
+38581;Maluze;38762;eintracht_frankfurt.html
+501;Götze;36931;eintracht_frankfurt.html
+37210;Højlund;36931;eintracht_frankfurt.html
+35949;Uzun;38489;eintracht_frankfurt.html
+22010;Keitel;12771;fc_augsburg.html
 27435;Ribeiro;1512;fc_augsburg.html
-20630;Claude-Maurice;27354;fc_augsburg.html
-37365;V. Becker;16537;fc_schalke.html
-38514;Ayhan;26067;fc_schalke.html
-24620;Adamu;24396;fc_schalke.html
-12138;Hee Chan;4755;fc_schalke.html
-11591;Diks;27204;gladbach.html
-6513;Torunarigha;18822;hamburger_sv.html
-38811;Lemke;38592;hamburger_sv.html
-16774;Daka;26094;hamburger_sv.html
-521;Bell;26579;mainz_05.html
-20728;Martel;21202;mainz_05.html
-20674;Nebel;21202;mainz_05.html
-23911;Königsdörffer;7480;mainz_05.html
-15835;Baku;5680;rb_leipzig.html
-38801;Abdoul Koné;27079;rb_leipzig.html
-38383;Banzuzi;12446;rb_leipzig.html
-35733;Gruda;36962;rb_leipzig.html
+27354;Ibrahimović;20630;fc_augsburg.html
+5670;Wolf;20630;fc_augsburg.html
+11068;T. Becker;38514;fc_schalke.html
+37275;Gantenbein;38514;fc_schalke.html
+26881;Dina Ebimbe;24396;fc_schalke.html
+12138;Hee Chan;24620;fc_schalke.html
+4755;Džeko;24620;fc_schalke.html
+499;Batz;6295;gladbach.html
+36955;Hashioka;26588;gladbach.html
+26866;Konoplya;34927;gladbach.html
+37438;Lidberg;36130;gladbach.html
+38678;Nandja;26628;hamburger_sv.html
+24438;Fábio Vieira;38937;hamburger_sv.html
+39019;Moffi;26094;hamburger_sv.html
+16774;Daka;5765;hamburger_sv.html
+26579;Gruber;650;mainz_05.html
+21202;Lee;20674;mainz_05.html
+5680;Henrichs;15835;rb_leipzig.html
+24619;Seiwald;36433;rb_leipzig.html
+24546;Reitz;38383;rb_leipzig.html
 18640;Baumgartner;38565;rb_leipzig.html
-37867;Maksimović;37124;rb_leipzig.html
-1935;Kübler;20344;sc_freiburg.html
-26203;Rosenfelder;20344;sc_freiburg.html
+36962;Gomis;38565;rb_leipzig.html
 27568;Ulrich;7463;sc_paderborn.html
-20424;Pieringer;15810;sc_paderborn.html
+15810;Tigges;20424;sc_paderborn.html
+37563;Müller;20424;sc_paderborn.html
+5825;Gyamerah;26346;sv_elversberg.html
+37052;Le Joncour;38539;sv_elversberg.html
+36018;Darvich;36948;sv_elversberg.html
+24815;Futkeu;35765;sv_elversberg.html
 36946;Campbell;36255;sv_elversberg.html
-38435;Abraha;11929;tsg_hoffenheim.html
-37794;Rots;11324;tsg_hoffenheim.html
+11324;Bernardo;37794;tsg_hoffenheim.html
+27420;Conté;2439;tsg_hoffenheim.html
+37622;Daghim;22632;tsg_hoffenheim.html
 24095;Hložek;23854;tsg_hoffenheim.html
-22632;Burger;37622;tsg_hoffenheim.html
-14145;Jeong;36339;union_berlin.html
-27560;Kemlein;36339;union_berlin.html
-11325;Burke;6374;union_berlin.html
-38305;Jaquez;36816;vfb_stuttgart.html
-21336;Leweling;25114;vfb_stuttgart.html
-13737;Nartey;5816;vfb_stuttgart.html
-10442;Karazor;38662;vfb_stuttgart.html
-19154;Undav;37086;vfb_stuttgart.html
+36339;Imeri;7041;union_berlin.html
+26979;Juranović;3616;union_berlin.html
+5713;Trimmel;3616;union_berlin.html
+14145;Jeong;2122;union_berlin.html
+26243;Rothe;14385;union_berlin.html
+6374;Skarke;11325;union_berlin.html
+24183;Latte Lath;11325;union_berlin.html
+36114;Burcu;37532;union_berlin.html
+25114;Assignon;21336;vfb_stuttgart.html
+10442;Karazor;20766;vfb_stuttgart.html
+38662;Spalt;20766;vfb_stuttgart.html
+24512;Tiago Tomás;37086;vfb_stuttgart.html
+36816;Jeltsch;24166;vfb_stuttgart.html
+38305;Jaquez;24166;vfb_stuttgart.html
 26158;Pejčinović;24166;vfb_stuttgart.html
+35359;Lynen;38831;werder_bremen.html
+27480;Njinmah;22008;werder_bremen.html
+37129;Schmetgens;26702;werder_bremen.html
