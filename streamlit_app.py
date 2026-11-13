@@ -206,6 +206,38 @@ if pd.notna(last_update):
 # Filters stay in the main page so they are immediately reachable on mobile.
 with st.container(border=True):
     st.subheader("Filter", anchor=False)
+    range_row = st.columns(3, gap="small")
+    market_values = df["marktwert_mio"].dropna()
+    market_bounds = (
+        float(market_values.min()),
+        float(market_values.max()),
+    ) if not market_values.empty else (0.0, 0.0)
+    maik_values = df["maik_score"].dropna()
+    maik_bounds = (
+        float(maik_values.min()),
+        float(maik_values.max()),
+    ) if not maik_values.empty else (0.0, 0.0)
+    point_values = df["durchschnitt_punkte"].dropna()
+    point_bounds = (
+        float(point_values.min()),
+        float(point_values.max()),
+    ) if not point_values.empty else (0.0, 0.0)
+    with range_row[0]:
+        market_range = st.slider(
+            "Marktwert (Mio. €)", *market_bounds, value=market_bounds,
+            step=0.5, format="%.1f",
+        )
+    with range_row[1]:
+        maik_range = st.slider(
+            "MAIK Score", *maik_bounds, value=maik_bounds,
+            step=100.0, format="%.0f",
+        )
+    with range_row[2]:
+        points_range = st.slider(
+            "Durchschnittliche Punkte", *point_bounds, value=point_bounds,
+            step=10.0, format="%.0f",
+        )
+
     filter_row = st.columns([1.3, 1, 1], gap="small")
     with filter_row[0]:
         search = st.text_input("Spieler suchen", placeholder="Name oder Verein")
@@ -261,6 +293,11 @@ with st.container(border=True):
 # Apply common filters first. The mover lists deliberately ignore direction and
 # minimum movement so risers and decliners remain visible side by side.
 scope = df.copy()
+scope = scope[
+    scope["marktwert_mio"].between(*market_range, inclusive="both")
+    & scope["maik_score"].between(*maik_range, inclusive="both")
+    & scope["durchschnitt_punkte"].between(*points_range, inclusive="both")
+]
 if search:
     scope = scope[
         scope["spieler"].astype("string").str.contains(search, case=False, na=False)
