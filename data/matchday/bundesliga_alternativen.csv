@@ -5,6 +5,7 @@
 38674;Fernández;2590;bayer_leverkusen.html
 23862;Tillman;2362;bayer_leverkusen.html
 36300;Tella;36841;bayer_leverkusen.html
+27022;Minjae;11541;bayern_münchen.html
 26133;Bischof;35918;bayern_münchen.html
 35857;Brown;20098;bayern_münchen.html
 7791;Bensebaini;5837;borussia_dortmund.html
@@ -25,16 +26,15 @@
 26881;Dina Ebimbe;24396;fc_schalke.html
 12138;Hee Chan;24620;fc_schalke.html
 4755;Džeko;24620;fc_schalke.html
-499;Batz;6295;gladbach.html
-36955;Hashioka;26588;gladbach.html
-26866;Konoplya;34927;gladbach.html
+24405;Castrop;34927;gladbach.html
+37888;Bolin;14139;gladbach.html
 37438;Lidberg;36130;gladbach.html
 38678;Nandja;26628;hamburger_sv.html
 24438;Fábio Vieira;38937;hamburger_sv.html
 39019;Moffi;26094;hamburger_sv.html
 27549;Amoako;26094;hamburger_sv.html
-16774;Daka;5765;hamburger_sv.html
-38517;Stange;5765;hamburger_sv.html
+5765;Poulsen;16774;hamburger_sv.html
+38517;Stange;16774;hamburger_sv.html
 26579;Gruber;650;mainz_05.html
 21202;Lee;20674;mainz_05.html
 5680;Henrichs;15835;rb_leipzig.html
@@ -42,6 +42,7 @@
 24546;Reitz;38383;rb_leipzig.html
 18640;Baumgartner;38565;rb_leipzig.html
 36962;Gomis;38565;rb_leipzig.html
+7609;Müller;27467;sc_freiburg.html
 27568;Ulrich;7463;sc_paderborn.html
 15810;Tigges;20424;sc_paderborn.html
 37563;Müller;20424;sc_paderborn.html
@@ -50,7 +51,6 @@
 36018;Darvich;36948;sv_elversberg.html
 24815;Futkeu;35765;sv_elversberg.html
 36946;Campbell;36255;sv_elversberg.html
-11324;Bernardo;37794;tsg_hoffenheim.html
 27420;Conté;2439;tsg_hoffenheim.html
 37622;Daghim;22632;tsg_hoffenheim.html
 24095;Hložek;23854;tsg_hoffenheim.html
