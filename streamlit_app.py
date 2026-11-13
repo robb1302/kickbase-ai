@@ -162,22 +162,30 @@ def player_table(
 ) -> None:
     """Render a compact, consistently formatted player table."""
     visible = data[[column for column in columns if column in data]].copy()
+    if "marktwert" in visible:
+        visible["marktwert"] = visible["marktwert"] / 1_000_000
+    if "trend_value" in visible and "Tsd." in trend_label:
+        visible["trend_value"] = visible["trend_value"] / 1_000
     labels = {
         "spieler": "Spieler",
         "team": "Team",
         "position": "Pos.",
-        "marktwert": "Marktwert",
+        "marktwert": "MW (Mio €)",
         "maik_score": "MAIK",
+        "durchschnitt_punkte": "Ø KB",
+        "punkte": "KB gesamt",
         "trend_value": trend_label,
-        "value_ratio": "Punkte je Mio €",
+        "value_ratio": "Score/Mio €",
         "url": "LigaInsider",
     }
     visible = visible.rename(columns=labels)
     config = {
-        "Marktwert": st.column_config.NumberColumn(format="%.0f €"),
+        "MW (Mio €)": st.column_config.NumberColumn(format="%.2f"),
         "MAIK": st.column_config.NumberColumn(format="%.1f"),
+        "Ø KB": st.column_config.NumberColumn(format="%.1f"),
+        "KB gesamt": st.column_config.NumberColumn(format="%.0f"),
         trend_label: st.column_config.NumberColumn(format=trend_format),
-        "Punkte je Mio €": st.column_config.NumberColumn(format="%.1f"),
+        "Score/Mio €": st.column_config.NumberColumn(format="%.1f"),
         "LigaInsider": st.column_config.LinkColumn(display_text="Öffnen"),
     }
     st.dataframe(
@@ -293,8 +301,8 @@ if min_move > 0:
 st.subheader("Spielerauswahl")
 metric_options = {
     "MAIK-Score": "maik_score",
-    "Ø Kickbase-Punkte": "durchschnitt_punkte",
-    "Kickbase-Punkte gesamt": "punkte",
+    "Ø Kickbase-Score": "durchschnitt_punkte",
+    "Kickbase-Gesamt-Score": "punkte",
 }
 selected_metric = st.segmented_control(
     "Kennzahl",
@@ -303,8 +311,8 @@ selected_metric = st.segmented_control(
     key="value_metric",
 )
 metric_column = metric_options[selected_metric]
-trend_display_label = "Trend (EUR)" if trend_unit == "Euro" else "Trend (%)"
-trend_display_format = "%+.0f EUR" if trend_unit == "Euro" else "%+.2f %%"
+trend_display_label = "Trend (Tsd. €)" if trend_unit == "Euro" else "Trend (%)"
+trend_display_format = "%+.1f" if trend_unit == "Euro" else "%+.2f %%"
 view["value_ratio"] = view[metric_column] / view["marktwert_mio"].where(
     view["marktwert_mio"] > 0
 )
@@ -312,7 +320,18 @@ main_table = view.sort_values("value_ratio", ascending=False, na_position="last"
 main_table = main_table.assign(trend_value=main_table["trend_measure"])
 player_table(
     main_table,
-    ["spieler", "team", "position", "marktwert", "maik_score", "trend_value", "value_ratio", "url"],
+    [
+        "spieler",
+        "team",
+        "position",
+        "marktwert",
+        "maik_score",
+        "durchschnitt_punkte",
+        "punkte",
+        "trend_value",
+        "value_ratio",
+        "url",
+    ],
     height=480,
     trend_label=trend_display_label,
     trend_format=trend_display_format,
@@ -372,8 +391,8 @@ if chart_data.empty:
 else:
     metric_label = {
         "maik_score": "MAIK-Score",
-        "durchschnitt_punkte": "Ø Kickbase-Punkte",
-        "punkte": "Kickbase-Punkte gesamt",
+        "durchschnitt_punkte": "Ø Kickbase-Score",
+        "punkte": "Kickbase-Gesamt-Score",
     }[metric_column]
     fig = px.scatter(
         chart_data,
@@ -417,14 +436,23 @@ with st.expander("Weitere Rohdaten einblenden", icon=":material/database:"):
     )
     detail_columns = ["spieler", "team", *selected_details]
     detail_table = view.sort_values("marktwert", ascending=False, na_position="last")
+    for column in ("marktwert_trend_24h", "marktwert_trend_7t"):
+        if column in selected_details:
+            detail_table[column] = detail_table[column] / 1_000
+    if "marktwert_fair_value" in selected_details:
+        detail_table["marktwert_fair_value"] = detail_table["marktwert_fair_value"] / 1_000_000
     detail_table = detail_table.rename(columns=DETAIL_COLUMNS)
     detail_labels = {"spieler": "Spieler", "team": "Team"}
     detail_table = detail_table.rename(columns=detail_labels)
+    detail_table = detail_table.rename(columns={
+        "Trend 24h": "Trend 24h (Tsd. €)",
+        "Trend 7 Tage": "Trend 7 Tage (Tsd. €)",
+        "Fair Value": "Fair Value (Mio. €)",
+    })
     detail_config = {
-        "Marktwert": st.column_config.NumberColumn(format="%.0f €"),
-        "Trend 24h": st.column_config.NumberColumn(format="%+.0f €"),
-        "Trend 7 Tage": st.column_config.NumberColumn(format="%+.0f €"),
-        "Fair Value": st.column_config.NumberColumn(format="%.0f €"),
+        "Trend 24h (Tsd. €)": st.column_config.NumberColumn(format="%+.1f"),
+        "Trend 7 Tage (Tsd. €)": st.column_config.NumberColumn(format="%+.1f"),
+        "Fair Value (Mio. €)": st.column_config.NumberColumn(format="%.2f"),
         "LigaInsider": st.column_config.LinkColumn(display_text="Öffnen"),
     }
     if selected_details:
