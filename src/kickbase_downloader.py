@@ -31,10 +31,17 @@ FIELDS = [
     "ki_trend_status",
     "punkte",
     "durchschnitt_punkte",
+    "roh_punkte",
+    "roh_durchschnitt",
+    "form_5",
     "median_punkte",
     "punkte_pro_mio",
     "einsaetze",
     "startelf_einsaetze",
+    "tore",
+    "assists",
+    "gelbe_karten",
+    "rote_karten",
     "durchschnitt_minuten",
     "marktwert_fair_value",
     "hot",
@@ -67,6 +74,30 @@ def fetch_players() -> list[dict[str, object]]:
     return payload
 
 
+def first_present(player: dict[str, object], *keys: str) -> object:
+    """Return the first available source field, preserving valid zero values."""
+    for key in keys:
+        if key in player:
+            return player[key]
+    return None
+
+
+def first_player_stat(player: dict[str, object], *keys: str) -> object:
+    """Read a season-stat field from the player or its stats sub-object."""
+    sources = [player]
+    for container in ("stats", "seasonStats", "currentSeasonStats", "performance"):
+        nested = player.get(container)
+        if isinstance(nested, dict):
+            sources.append(nested)
+
+    for source in sources:
+        for key in keys:
+            value = source.get(key)
+            if value is not None:
+                return value
+    return None
+
+
 def to_row(player: dict[str, object], retrieved_at: str) -> dict[str, object]:
     next_match = player.get("next_match") or {}
     return {
@@ -85,10 +116,34 @@ def to_row(player: dict[str, object], retrieved_at: str) -> dict[str, object]:
         "ki_trend_status": player.get("kiTrendStatus"),
         "punkte": player.get("totalPoints"),
         "durchschnitt_punkte": player.get("avgPoints"),
+        "roh_punkte": first_present(
+            player, "totalPointsRaw", "rawTotalPoints", "rawPoints", "pointsRaw"
+        ),
+        "roh_durchschnitt": first_present(
+            player, "avgPointsRaw", "rawAvgPoints", "avgRawPoints", "rawAveragePoints"
+        ),
+        "form_5": first_present(player, "form5", "form"),
         "median_punkte": player.get("medianPoints"),
         "punkte_pro_mio": player.get("pointsPerMio"),
         "einsaetze": player.get("matchesPlayed"),
         "startelf_einsaetze": player.get("starts"),
+        "tore": first_player_stat(
+            player, "goals", "totalGoals", "goalsSeason", "goalCount"
+        ),
+        "assists": first_player_stat(
+            player, "assists", "totalAssists", "assistsSeason", "assistCount"
+        ),
+        "gelbe_karten": first_player_stat(
+            player,
+            "yellowCards",
+            "yellow_cards",
+            "yellowCard",
+            "yellow",
+            "yellows",
+        ),
+        "rote_karten": first_player_stat(
+            player, "redCards", "red_cards", "redCard", "red", "reds"
+        ),
         "durchschnitt_minuten": player.get("avgMinutes"),
         "marktwert_fair_value": player.get("fairValue"),
         "hot": player.get("isHot"),
