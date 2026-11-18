@@ -87,7 +87,12 @@ def decode_status(value: object) -> str:
 
 @st.cache_data(ttl=300)
 def load_data() -> tuple[pd.DataFrame, pd.Timestamp]:
-    players = pd.read_csv("data/final/final.csv", sep=";", encoding="utf-8-sig")
+    players = pd.read_csv(
+        "data/final/final.csv",
+        sep=";",
+        encoding="utf-8-sig",
+        dtype={"ligainsider_id": "string"},
+    )
     alternatives = pd.read_csv(
         "data/matchday/bundesliga_alternativen.csv",
         sep=";",
@@ -140,12 +145,20 @@ def load_data() -> tuple[pd.DataFrame, pd.Timestamp]:
         .div(players["einsaetze"].where(players["einsaetze"] > 0))
         .mul(100)
     )
-    players["alternative"] = (
+    player_ids = (
         players["ligainsider_id"]
         .astype("string")
         .str.strip()
-        .isin(alternatives["ligainsider_id"].dropna().astype("string").str.strip())
+        .str.replace(r"\.0$", "", regex=True)
     )
+    alternative_ids = (
+        alternatives["ligainsider_id"]
+        .dropna()
+        .astype("string")
+        .str.strip()
+        .str.replace(r"\.0$", "", regex=True)
+    )
+    players["alternative"] = player_ids.isin(alternative_ids)
     players = players.drop(columns="ligainsider_id")
 
     players["marktwert_mio"] = players["marktwert"] / 1_000_000
@@ -240,7 +253,13 @@ with st.container(border=True):
 
     filter_row = st.columns([1.3, 1, 1], gap="small")
     with filter_row[0]:
-        search = st.text_input("Spieler suchen", placeholder="Name oder Verein")
+        with st.form("player_search_form", clear_on_submit=False):
+            search = st.text_input(
+                "Spieler oder Verein suchen",
+                placeholder="Name oder Verein",
+                key="player_search_query",
+            )
+            st.form_submit_button("Suchen", icon=":material/search:")
     with filter_row[1]:
         teams = st.multiselect("Team", sorted(df["team"].dropna().unique()))
     with filter_row[2]:
