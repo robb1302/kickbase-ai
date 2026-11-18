@@ -179,12 +179,15 @@ def player_table(
         visible["marktwert"] = visible["marktwert"] / 1_000_000
     if "trend_value" in visible and "Tsd." in trend_label:
         visible["trend_value"] = visible["trend_value"] / 1_000
+    if "ki_trend" in visible:
+        visible["ki_trend"] = visible["ki_trend"] / 1_000
     labels = {
         "spieler": "Spieler",
         "team": "Team",
         "position": "Pos.",
         "marktwert": "MW (Mio €)",
         "maik_score": "MAIK",
+        "ki_trend": "KI-Trend (Tsd. \u20ac)",
         "durchschnitt_punkte": "Ø KB",
         "punkte": "KB gesamt",
         "trend_value": trend_label,
@@ -195,6 +198,7 @@ def player_table(
     config = {
         "MW (Mio €)": st.column_config.NumberColumn(format="%.2f"),
         "MAIK": st.column_config.NumberColumn(format="%.1f"),
+        "KI-Trend (Tsd. \u20ac)": st.column_config.NumberColumn(format="%+.1f"),
         "Ø KB": st.column_config.NumberColumn(format="%.1f"),
         "KB gesamt": st.column_config.NumberColumn(format="%.0f"),
         trend_label: st.column_config.NumberColumn(format=trend_format),
@@ -356,14 +360,15 @@ if min_move > 0:
 
 st.subheader("Spielerauswahl")
 metric_options = {
-    "MAIK-Score": "maik_score",
     "Ø Kickbase-Score": "durchschnitt_punkte",
     "Kickbase-Gesamt-Score": "punkte",
+    "KI-Trend": "ki_trend",
+    "MAIK-Score": "maik_score",
 }
 selected_metric = st.segmented_control(
     "Kennzahl",
     list(metric_options),
-    default="MAIK-Score",
+    default="\u00d8 Kickbase-Score",
     key="value_metric",
 )
 metric_column = metric_options[selected_metric]
@@ -381,11 +386,12 @@ player_table(
         "team",
         "position",
         "marktwert",
-        "maik_score",
+        "trend_value",
+        "ki_trend",
+        "value_ratio",
         "durchschnitt_punkte",
         "punkte",
-        "trend_value",
-        "value_ratio",
+        "maik_score",
         "url",
     ],
     height=480,
