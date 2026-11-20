@@ -285,9 +285,9 @@ else:
 if pd.notna(last_update):
     st.caption(f"Datenstand: {last_update.strftime('%d.%m.%Y %H:%M UTC')}")
 
-st.subheader("LigaInsider-Datenstatus")
+status_expander = st.expander("LigaInsider-Datenstatus", expanded=False)
 if ligainsider_status.empty:
-    st.info("Abrufstatus wird beim nächsten Datenlauf erfasst.")
+    status_expander.info("Abrufstatus wird beim nächsten Datenlauf erfasst.")
 else:
     status_columns = [
         "verein", "kader_status", "startelf_status", "alternativen_status", "details"
@@ -308,13 +308,13 @@ else:
         ["Kader / Spielerdaten", "Voraussichtliche Startelf", "Alternativen"]
     ].isin(["Vorversion verwendet", "Fehlt", "Nicht geladen"]).any(axis=1).sum()
     if stale_count:
-        st.warning(
+        status_expander.warning(
             f"{stale_count} Vereine haben mindestens eine veraltete, fehlende "
             "oder nicht geladene LigaInsider-Quelle. Details stehen in der Tabelle."
         )
     else:
-        st.success("Kader, Startelf und Alternativen sind für alle erfassten Vereine aktuell.")
-    st.dataframe(
+        status_expander.success("Kader, Startelf und Alternativen sind für alle erfassten Vereine aktuell.")
+    status_expander.dataframe(
         visible_status.sort_values("Verein"),
         width="content",
         hide_index=True,
