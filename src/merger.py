@@ -171,20 +171,53 @@ def merge_player_csvs(
 
 def main() -> None:
     print("Kickbase-Datenmerge gestartet", flush=True)
-    merge_player_csvs(
-        base_file="data/raw/basexi-bundesliga-players.csv",
-        merge_file="data/raw/maik-bundesliga-scores.csv",
-        output_file="data/processed/kickbase_spieler_datenbank_merged.csv",
-    )
+    base_file = Path("data/raw/basexi-bundesliga-players.csv")
+    maik_file = Path("data/raw/maik-bundesliga-scores.csv")
+    ligainsider_file = Path("data/raw/ligainsider_spielerlinks.csv")
+    merged_file = Path("data/processed/kickbase_spieler_datenbank_merged.csv")
+    player_file = Path("data/processed/kickbase_maik_ligainsider.csv")
+    failures = []
 
-    merge_player_csvs(
-        base_file="data/processed/kickbase_spieler_datenbank_merged.csv",
-        merge_file="data/raw/ligainsider_spielerlinks.csv",
-        output_file="data/processed/kickbase_maik_ligainsider.csv",
-        base_source="kickbase",
-        merge_source="ligainsider",
-    )
+    if not base_file.exists():
+        raise FileNotFoundError(f"Kickbase-Basisdatei fehlt: {base_file}")
+
+    try:
+        if not maik_file.exists():
+            raise FileNotFoundError(f"MAIK-Datei fehlt: {maik_file}")
+        merge_player_csvs(base_file=base_file, merge_file=maik_file, output_file=merged_file)
+    except Exception as error:
+        failures.append(f"MAIK: {error}")
+        print(f"WARNUNG: MAIK-Merge fehlgeschlagen; Kickbase-Basisdaten bleiben erhalten: {error}", flush=True)
+        base = pd.read_csv(base_file, sep=";", encoding="utf-8-sig")
+        for column in ("maik_score", "maik_score_change", "maik_rolle"):
+            if column not in base:
+                base[column] = pd.NA
+        merged_file.parent.mkdir(parents=True, exist_ok=True)
+        base.to_csv(merged_file, sep=";", index=False, encoding="utf-8-sig")
+
+    try:
+        if not ligainsider_file.exists():
+            raise FileNotFoundError(f"LigaInsider-Datei fehlt: {ligainsider_file}")
+        merge_player_csvs(
+            base_file=merged_file,
+            merge_file=ligainsider_file,
+            output_file=player_file,
+            base_source="kickbase",
+            merge_source="ligainsider",
+        )
+    except Exception as error:
+        failures.append(f"LigaInsider: {error}")
+        print(f"WARNUNG: LigaInsider-Merge fehlgeschlagen; Kickbase-Daten werden trotzdem ausgegeben: {error}", flush=True)
+        base = pd.read_csv(merged_file, sep=";", encoding="utf-8-sig")
+        for column in ("ligainsider_id", "url", "verein", "verein_id"):
+            if column not in base:
+                base[column] = pd.NA
+        player_file.parent.mkdir(parents=True, exist_ok=True)
+        base.to_csv(player_file, sep=";", index=False, encoding="utf-8-sig")
+
     print("Kickbase-Datenmerge abgeschlossen", flush=True)
+    if failures:
+        raise SystemExit("Teilweise angereichert; neue Kickbase-Daten wurden gespeichert. " + "; ".join(failures))
 
 
 if __name__ == "__main__":

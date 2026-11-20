@@ -1,9 +1,10 @@
 from pathlib import Path
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError, sync_playwright
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
 import time
+from ligainsider_status import reset_status, update_status
 
 TEAMS = {
     "Bayern München":      "https://www.ligainsider.de/bundesliga/team/fc-bayern-muenchen/1/",
@@ -31,7 +32,14 @@ TEAMS = {
 Path("html").mkdir(exist_ok=True)
 
 all_players = []
+failed_teams = []
 team_count = len(TEAMS)
+status_teams = []
+for team, url in TEAMS.items():
+    team_id = re.search(r"/(\d+)/+?$", url).group(1)
+    filename = team.lower().replace(" ", "_").replace(".", "") + ".html"
+    status_teams.append((team_id, team, filename))
+reset_status(status_teams, "startelf_status")
 
 print(
     f"[LigaInsider Startelf 1/3] Starte Chromium für {team_count} Vereine ...",
@@ -50,6 +58,7 @@ with sync_playwright() as p:
     cookie_done = False
 
     for team_number, (team, url) in enumerate(TEAMS.items(), start=1):
+        team_id = re.search(r"/(\d+)/+?$", url).group(1)
 
         print(
             f"[LigaInsider Startelf 2/3] [{team_number}/{team_count}] "
@@ -57,7 +66,29 @@ with sync_playwright() as p:
             flush=True,
         )
 
-        page.goto(url, wait_until="domcontentloaded")
+        # Some LigaInsider pages keep loading third-party resources long enough
+        # to exceed Playwright's navigation timeout. Navigate until the response
+        # commits, then allow the DOM to finish loading without aborting the run.
+        try:
+            page.goto(url, wait_until="commit", timeout=60000)
+        except Exception as error:
+            failed_teams.append(team)
+            filename = team.lower().replace(" ", "_").replace(".", "") + ".html"
+            cached_html = Path("html") / filename
+            status = "Vorversion verwendet" if cached_html.exists() else "Fehlt"
+            update_status(
+                team_id, team, "startelf_status", status,
+                html_file=filename, details=type(error).__name__,
+            )
+            print(f"             Abruf fehlgeschlagen; Status: {status} ({error}).", flush=True)
+            continue
+        try:
+            page.wait_for_load_state("domcontentloaded", timeout=10000)
+        except PlaywrightTimeoutError:
+            print(
+                "             DOM-Ladevorgang dauert an; lese den aktuellen Seitenstand.",
+                flush=True,
+            )
 
         if not cookie_done:
             try:
@@ -126,10 +157,16 @@ with sync_playwright() as p:
             })
 
         if len(players) != 11:
-            raise RuntimeError(
-                f"{team}: 11 Startelfspieler erwartet, {len(players)} gefunden. "
-                f"Seite: {url}"
+            failed_teams.append(team)
+            update_status(
+                team_id, team, "startelf_status", "Fehlt",
+                html_file=path.name,
+                details=f"{len(players)} statt 11 Spieler erkannt",
             )
+            print(f"             Unvollständige Startelf: {len(players)} Spieler.", flush=True)
+            continue
+
+        update_status(team_id, team, "startelf_status", "Aktuell", html_file=path.name)
 
         all_players.extend(players)
 
@@ -143,7 +180,10 @@ with sync_playwright() as p:
 
     browser.close()
 
-df = pd.DataFrame(all_players)
+df = pd.DataFrame(
+    all_players,
+    columns=["verein", "position", "spieler", "slug", "spieler_ID", "profil_URL"],
+)
 
 output_path = Path("data/matchday/bundesliga_startelf.csv")
 output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -160,3 +200,6 @@ print(
     f"{team_count} Vereinen gespeichert.",
     flush=True,
 )
+if failed_teams:
+    print(f"[LigaInsider Startelf] Unvollständig: {', '.join(failed_teams)}", flush=True)
+    raise SystemExit(1)

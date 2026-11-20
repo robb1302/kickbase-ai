@@ -1,0 +1,22 @@
+step;status;updated_at
+Update;running;2026-11-20T14:14:46Z
+Download Kickbase player data;pending;2026-11-20T14:14:46Z
+Download MAIK scores;pending;2026-11-20T14:14:46Z
+Download LigaInsider player links;pending;2026-11-20T14:14:46Z
+Download LigaInsider matchday lineups;pending;2026-11-20T14:14:46Z
+Download Kicker matchday lineups;pending;2026-11-20T14:14:46Z
+Parse LigaInsider alternatives;pending;2026-11-20T14:14:46Z
+Merge player data;pending;2026-11-20T14:14:46Z
+Update starting lineup flags;pending;2026-11-20T14:14:46Z
+Upgrade pip;success;2026-11-20T14:14:47Z
+Install Python dependencies;success;2026-11-20T14:14:47Z
+Install Playwright Chromium;success;2026-11-20T14:14:48Z
+Download Kickbase player data;success;2026-11-20T14:14:49Z
+Download MAIK scores;success;2026-11-20T14:14:51Z
+Download LigaInsider player links;success;2026-11-20T14:18:44Z
+Download LigaInsider matchday lineups;failed;2026-11-20T14:24:17Z
+Download Kicker matchday lineups;failed;2026-11-20T14:24:21Z
+Parse LigaInsider alternatives;failed;2026-11-20T14:24:23Z
+Merge player data;success;2026-11-20T14:24:24Z
+Update starting lineup flags;success;2026-11-20T14:24:24Z
+Update;partial;2026-11-20T14:24:24Z

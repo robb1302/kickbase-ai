@@ -85,20 +85,42 @@ def decode_status(value: object) -> str:
     return STATUS_LABELS.get(code, "Unbekannt")
 
 
+@st.cache_data(ttl=60)
+def load_update_status() -> pd.DataFrame:
+    try:
+        return pd.read_csv("data/update_status.csv", sep=";", encoding="utf-8-sig")
+    except FileNotFoundError:
+        return pd.DataFrame(columns=["step", "status", "updated_at"])
+
+
 @st.cache_data(ttl=300)
-def load_data() -> tuple[pd.DataFrame, pd.Timestamp]:
+def load_data() -> tuple[pd.DataFrame, pd.Timestamp, pd.DataFrame]:
     players = pd.read_csv(
         "data/final/final.csv",
         sep=";",
         encoding="utf-8-sig",
         dtype={"ligainsider_id": "string"},
     )
-    alternatives = pd.read_csv(
-        "data/matchday/bundesliga_alternativen.csv",
-        sep=";",
-        encoding="utf-8-sig",
-        dtype={"ligainsider_id": "string"},
-    )
+    try:
+        alternatives = pd.read_csv(
+            "data/matchday/bundesliga_alternativen.csv",
+            sep=";",
+            encoding="utf-8-sig",
+            dtype={"ligainsider_id": "string"},
+        )
+    except FileNotFoundError:
+        alternatives = pd.DataFrame(columns=["ligainsider_id"])
+    if "ligainsider_id" not in alternatives:
+        alternatives["ligainsider_id"] = pd.Series(dtype="string")
+    try:
+        ligainsider_status = pd.read_csv(
+            "data/matchday/ligainsider_status.csv",
+            sep=";",
+            encoding="utf-8-sig",
+            dtype={"team_id": "string"},
+        )
+    except FileNotFoundError:
+        ligainsider_status = pd.DataFrame()
 
     last_update = pd.to_datetime(
         players.get("retrieved_at"), errors="coerce", utc=True
@@ -118,6 +140,7 @@ def load_data() -> tuple[pd.DataFrame, pd.Timestamp]:
         "punkte",
         "durchschnitt_punkte",
         "startelf",
+        "startelf_kicker",
         "ligainsider_id",
     ]
     for column in required_columns:
@@ -137,6 +160,9 @@ def load_data() -> tuple[pd.DataFrame, pd.Timestamp]:
             players[column] = pd.to_numeric(players[column], errors="coerce")
 
     players["startelf"] = players["startelf"].map(
+        lambda value: str(value).strip().casefold() in {"true", "1", "yes"}
+    )
+    players["startelf_kicker"] = players["startelf_kicker"].map(
         lambda value: str(value).strip().casefold() in {"true", "1", "yes"}
     )
     players["status"] = players["status_code"].map(decode_status)
@@ -162,7 +188,7 @@ def load_data() -> tuple[pd.DataFrame, pd.Timestamp]:
     players = players.drop(columns="ligainsider_id")
 
     players["marktwert_mio"] = players["marktwert"] / 1_000_000
-    return players, last_update
+    return players, last_update, ligainsider_status
 
 
 def player_table(
@@ -192,6 +218,7 @@ def player_table(
         "punkte": "KB gesamt",
         "trend_value": trend_label,
         "value_ratio": "Score/Mio €",
+        "startelf_kicker": "Startelf Kicker",
         "url": "LigaInsider",
     }
     visible = visible.rename(columns=labels)
@@ -214,11 +241,84 @@ def player_table(
     )
 
 
-df, last_update = load_data()
+df, last_update, ligainsider_status = load_data()
 
 st.title("Kickbase Markt & Spieler", icon=":material/sports_soccer:")
+update_status = load_update_status()
+if not update_status.empty and {"step", "status"}.issubset(update_status.columns):
+    latest = update_status.loc[update_status["step"] == "Update"].tail(1)
+    if not latest.empty:
+        result = str(latest.iloc[0]["status"])
+        result_label = {
+            "complete": "✅ vollständig",
+            "partial": "⚠️ teilweise abgeschlossen",
+            "failed": "❌ fehlgeschlagen",
+            "running": "🔄 läuft gerade",
+        }.get(result, result)
+        timestamp = latest.iloc[0].get("updated_at")
+        time_label = ""
+        if pd.notna(timestamp):
+            parsed_time = pd.to_datetime(timestamp, errors="coerce", utc=True)
+            if pd.notna(parsed_time):
+                time_label = f" · {parsed_time.strftime('%d.%m. %H:%M UTC')}"
+        st.markdown(f"**Letztes Update: {result_label}{time_label}**")
+
+        latest_steps = update_status.drop_duplicates("step", keep="last").set_index("step")["status"]
+        step_labels = {
+            "Download Kickbase player data": "Kickbase",
+            "Download MAIK scores": "MAIK",
+            "Download LigaInsider player links": "LI Kader",
+            "Download LigaInsider matchday lineups": "LI Startelf",
+            "Parse LigaInsider alternatives": "LI Alternativen",
+            "Download Kicker matchday lineups": "Kicker",
+            "Merge player data": "Merge",
+            "Update starting lineup flags": "Flags",
+        }
+        icons = {"success": "✅", "failed": "❌", "pending": "⏳", "running": "🔄"}
+        summary = [
+            f"{label} {icons.get(str(latest_steps.get(step, 'pending')), '❔')}"
+            for step, label in step_labels.items()
+        ]
+        st.caption(" · ".join(summary))
+else:
+    st.caption("Update-Status noch nicht vorhanden; sichtbar nach dem nächsten Lauf.")
 if pd.notna(last_update):
     st.caption(f"Datenstand: {last_update.strftime('%d.%m.%Y %H:%M UTC')}")
+
+st.subheader("LigaInsider-Datenstatus")
+if ligainsider_status.empty:
+    st.info("Abrufstatus wird beim nächsten Datenlauf erfasst.")
+else:
+    status_columns = [
+        "verein", "kader_status", "startelf_status", "alternativen_status", "details"
+    ]
+    for column in status_columns:
+        if column not in ligainsider_status:
+            ligainsider_status[column] = "Unbekannt"
+    visible_status = ligainsider_status[status_columns].fillna("Unbekannt").rename(
+        columns={
+            "verein": "Verein",
+            "kader_status": "Kader / Spielerdaten",
+            "startelf_status": "Voraussichtliche Startelf",
+            "alternativen_status": "Alternativen",
+            "details": "Hinweis",
+        }
+    )
+    stale_count = visible_status[
+        ["Kader / Spielerdaten", "Voraussichtliche Startelf", "Alternativen"]
+    ].isin(["Vorversion verwendet", "Fehlt", "Nicht geladen"]).any(axis=1).sum()
+    if stale_count:
+        st.warning(
+            f"{stale_count} Vereine haben mindestens eine veraltete, fehlende "
+            "oder nicht geladene LigaInsider-Quelle. Details stehen in der Tabelle."
+        )
+    else:
+        st.success("Kader, Startelf und Alternativen sind für alle erfassten Vereine aktuell.")
+    st.dataframe(
+        visible_status.sort_values("Verein"),
+        width="content",
+        hide_index=True,
+    )
 
 # Filters stay in the main page so they are immediately reachable on mobile.
 with st.container(border=True):
@@ -291,7 +391,7 @@ with st.container(border=True):
             "Trendrichtung", ["Alle", "Anstieg", "Abstieg"]
         )
 
-    options_row = st.columns([1, 1, 1], gap="small")
+    options_row = st.columns([1.4, 1, 1, 1], gap="small")
     with options_row[0]:
         min_move = st.number_input(
             "Mindestbewegung (€, bzw. %)",
@@ -301,9 +401,11 @@ with st.container(border=True):
             format="%.2f" if trend_unit == "Prozent" else "%.0f",
         )
     with options_row[1]:
-        only_startelf = st.checkbox("Nur Startelf", value=True)
+        only_startelf = st.checkbox("Startelf LigaInsider", value=True)
     with options_row[2]:
-        only_alternatives = st.checkbox("Nur Alternativen", value=False)
+        only_alternatives = st.checkbox("Alternativen LigaInsider", value=False)
+    with options_row[3]:
+        only_kicker_startelf = st.checkbox("Startelf Kicker", value=False)
 
     status_options = sorted(df["status"].dropna().unique())
     selected_statuses = st.multiselect(
@@ -332,10 +434,11 @@ if positions:
     scope = scope[scope["position"].isin(positions)]
 if selected_statuses:
     scope = scope[scope["status"].isin(selected_statuses)]
-if only_startelf or only_alternatives:
+if only_startelf or only_alternatives or only_kicker_startelf:
     scope = scope[
         (only_startelf & scope["startelf"])
         | (only_alternatives & scope["alternative"])
+        | (only_kicker_startelf & scope["startelf_kicker"])
     ]
 
 trend_column = (
@@ -392,6 +495,7 @@ player_table(
         "durchschnitt_punkte",
         "punkte",
         "maik_score",
+        "startelf_kicker",
         "url",
     ],
     height=480,

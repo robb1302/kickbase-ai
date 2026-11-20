@@ -1,0 +1,19 @@
+﻿team_id;verein;html_file;kader_status;startelf_status;alternativen_status;details
+1;Bayern München;bayern_münchen.html;Aktuell;Aktuell;Aktuell;
+14;Borussia Dortmund;borussia_dortmund.html;Aktuell;Fehlt;Vorversion verwendet;RuntimeError
+1311;RB Leipzig;rb_leipzig.html;Aktuell;Aktuell;Aktuell;
+12;VfB Stuttgart;vfb_stuttgart.html;Aktuell;Aktuell;Aktuell;
+10;TSG Hoffenheim;tsg_hoffenheim.html;Aktuell;Aktuell;Aktuell;
+4;Bayer Leverkusen;bayer_leverkusen.html;Aktuell;Aktuell;Aktuell;
+18;SC Freiburg;sc_freiburg.html;Aktuell;Aktuell;Aktuell;
+3;Eintracht Frankfurt;eintracht_frankfurt.html;Aktuell;Fehlt;Vorversion verwendet;RuntimeError
+21;FC Augsburg;fc_augsburg.html;Aktuell;Fehlt;Vorversion verwendet;RuntimeError
+17;Mainz 05;mainz_05.html;Aktuell;Aktuell;Aktuell;
+1246;Union Berlin;union_berlin.html;Aktuell;Aktuell;Aktuell;
+5;Gladbach;gladbach.html;Aktuell;Aktuell;Aktuell;
+9;Hamburger SV;hamburger_sv.html;Aktuell;Aktuell;Aktuell;
+15;1. FC Köln;1_fc_köln.html;Aktuell;Aktuell;Aktuell;
+2;Werder Bremen;werder_bremen.html;Aktuell;Fehlt;Vorversion verwendet;RuntimeError
+13;FC Schalke;fc_schalke.html;Aktuell;Aktuell;Aktuell;
+1331;SV Elversberg;sv_elversberg.html;Aktuell;Aktuell;Aktuell;
+1249;SC Paderborn;sc_paderborn.html;Aktuell;Aktuell;Aktuell;
