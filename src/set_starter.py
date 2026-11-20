@@ -5,7 +5,6 @@ import re
 
 PLAYER_DATA = Path("data/processed/kickbase_maik_ligainsider.csv")
 STARTELF = Path("data/matchday/bundesliga_startelf.csv")
-KICKER_STARTELF = Path("data/matchday/kicker_startelf.csv")
 OUTPUT = Path("data/final/final.csv")
 ALIASES = Path("config/player_name_aliases.csv")
 
@@ -50,11 +49,6 @@ se = (
     if STARTELF.exists()
     else pd.DataFrame(columns=["spieler", "verein"])
 )
-kicker = (
-    pd.read_csv(KICKER_STARTELF, sep=";", encoding="utf-8-sig")
-    if KICKER_STARTELF.exists()
-    else pd.DataFrame(columns=["spieler", "verein"])
-)
 previous = (
     pd.read_csv(OUTPUT, sep=";", encoding="utf-8-sig", dtype={"spieler_id": "string"})
     if OUTPUT.exists()
@@ -65,11 +59,8 @@ alias_keys = load_alias_keys(ALIASES)
 # Spalten bereinigen
 kb.columns = kb.columns.str.strip()
 se.columns = se.columns.str.strip()
-kicker.columns = kicker.columns.str.strip()
 if "spieler" not in se:
     se["spieler"] = pd.Series(dtype="string")
-if "spieler" not in kicker:
-    kicker["spieler"] = pd.Series(dtype="string")
 
 # Spieler-Spalte vereinheitlichen
 if "pieler" in se.columns:
@@ -83,9 +74,6 @@ kb["_key"] = kb["spieler"].map(
 )
 se_keys = se["spieler"].map(
     lambda name: player_key(name, "ligainsider", alias_keys)
-)
-kicker_keys = kicker["spieler"].map(
-    lambda name: player_key(name, "kicker", alias_keys)
 )
 
 # Startelf-Flag setzen
@@ -102,13 +90,7 @@ def previous_flag(column):
 kb["startelf"] = (
     kb["_key"].isin(set(se_keys)) if not se.empty else previous_flag("startelf")
 )
-kb["startelf_kicker"] = (
-    kb["_key"].isin(set(kicker_keys))
-    if not kicker.empty
-    else previous_flag("startelf_kicker")
-)
 unmatched = se.loc[~se_keys.isin(kb["_key"]), "spieler"].drop_duplicates()
-unmatched_kicker = kicker.loc[~kicker_keys.isin(kb["_key"]), "spieler"].drop_duplicates()
 
 # Hilfsspalte entfernen
 kb = kb.drop(columns="_key")
@@ -123,8 +105,5 @@ kb.to_csv(
 )
 
 print(f"Startelf: {kb['startelf'].sum()} / {len(kb)} Spieler")
-print(f"Kicker-Startelf: {kb['startelf_kicker'].sum()} / {len(kb)} Spieler")
 if not unmatched.empty:
     print(f"Nicht in der Spielerdatenbank: {', '.join(unmatched)}")
-if not unmatched_kicker.empty:
-    print(f"Kicker-Spieler ohne Match: {', '.join(unmatched_kicker)}")

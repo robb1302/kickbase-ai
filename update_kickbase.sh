@@ -26,7 +26,6 @@ for step in \
     "Download MAIK scores" \
     "Download LigaInsider player links" \
     "Download LigaInsider matchday lineups" \
-    "Download Kicker matchday lineups" \
     "Parse LigaInsider alternatives" \
     "Merge player data" \
     "Update starting lineup flags"; do
@@ -117,7 +116,6 @@ run_step "Download Kickbase player data" "$PYTHON_BIN" src/kickbase_downloader.p
 run_step "Download MAIK scores" "$PYTHON_BIN" src/maiks_score_downloader.py
 run_step "Download LigaInsider player links" "$PYTHON_BIN" src/ligainsider_player_downloader.py
 run_step "Download LigaInsider matchday lineups" "$PYTHON_BIN" src/ligainsider_matchday_downloader.py
-run_step "Download Kicker matchday lineups" "$PYTHON_BIN" src/kicker_matchday_downloader.py
 run_step "Parse LigaInsider alternatives" "$PYTHON_BIN" src/ligainsider_alternative_parser.py
 run_step "Merge player data" "$PYTHON_BIN" src/merger.py
 run_step "Update starting lineup flags" "$PYTHON_BIN" src/set_starter.py

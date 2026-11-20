@@ -140,7 +140,6 @@ def load_data() -> tuple[pd.DataFrame, pd.Timestamp, pd.DataFrame]:
         "punkte",
         "durchschnitt_punkte",
         "startelf",
-        "startelf_kicker",
         "ligainsider_id",
     ]
     for column in required_columns:
@@ -160,9 +159,6 @@ def load_data() -> tuple[pd.DataFrame, pd.Timestamp, pd.DataFrame]:
             players[column] = pd.to_numeric(players[column], errors="coerce")
 
     players["startelf"] = players["startelf"].map(
-        lambda value: str(value).strip().casefold() in {"true", "1", "yes"}
-    )
-    players["startelf_kicker"] = players["startelf_kicker"].map(
         lambda value: str(value).strip().casefold() in {"true", "1", "yes"}
     )
     players["status"] = players["status_code"].map(decode_status)
@@ -218,7 +214,6 @@ def player_table(
         "punkte": "KB gesamt",
         "trend_value": trend_label,
         "value_ratio": "Score/Mio €",
-        "startelf_kicker": "Startelf Kicker",
         "url": "LigaInsider",
     }
     visible = visible.rename(columns=labels)
@@ -244,6 +239,11 @@ def player_table(
 df, last_update, ligainsider_status = load_data()
 
 st.title("Kickbase Markt & Spieler", icon=":material/sports_soccer:")
+quick_links = st.columns(2, gap="small")
+with quick_links[0]:
+    st.link_button("LigaInsider Spieltage", "https://www.ligainsider.de/bundesliga/spieltage/", use_container_width=True)
+with quick_links[1]:
+    st.link_button("Kicker Spieltag", "https://www.kicker.de/bundesliga/spieltag/", use_container_width=True)
 update_status = load_update_status()
 if not update_status.empty and {"step", "status"}.issubset(update_status.columns):
     latest = update_status.loc[update_status["step"] == "Update"].tail(1)
@@ -270,7 +270,6 @@ if not update_status.empty and {"step", "status"}.issubset(update_status.columns
             "Download LigaInsider player links": "LI Kader",
             "Download LigaInsider matchday lineups": "LI Startelf",
             "Parse LigaInsider alternatives": "LI Alternativen",
-            "Download Kicker matchday lineups": "Kicker",
             "Merge player data": "Merge",
             "Update starting lineup flags": "Flags",
         }
@@ -391,7 +390,7 @@ with st.container(border=True):
             "Trendrichtung", ["Alle", "Anstieg", "Abstieg"]
         )
 
-    options_row = st.columns([1.4, 1, 1, 1], gap="small")
+    options_row = st.columns([1.4, 1, 1], gap="small")
     with options_row[0]:
         min_move = st.number_input(
             "Mindestbewegung (€, bzw. %)",
@@ -404,9 +403,6 @@ with st.container(border=True):
         only_startelf = st.checkbox("Startelf LigaInsider", value=True)
     with options_row[2]:
         only_alternatives = st.checkbox("Alternativen LigaInsider", value=False)
-    with options_row[3]:
-        only_kicker_startelf = st.checkbox("Startelf Kicker", value=False)
-
     status_options = sorted(df["status"].dropna().unique())
     selected_statuses = st.multiselect(
         "Spielerstatus",
@@ -434,11 +430,10 @@ if positions:
     scope = scope[scope["position"].isin(positions)]
 if selected_statuses:
     scope = scope[scope["status"].isin(selected_statuses)]
-if only_startelf or only_alternatives or only_kicker_startelf:
+if only_startelf or only_alternatives:
     scope = scope[
         (only_startelf & scope["startelf"])
         | (only_alternatives & scope["alternative"])
-        | (only_kicker_startelf & scope["startelf_kicker"])
     ]
 
 trend_column = (
@@ -495,7 +490,6 @@ player_table(
         "durchschnitt_punkte",
         "punkte",
         "maik_score",
-        "startelf_kicker",
         "url",
     ],
     height=480,
