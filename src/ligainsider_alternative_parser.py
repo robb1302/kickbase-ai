@@ -37,6 +37,19 @@ def main() -> None:
         ],
         "alternativen_status",
     )
+    registered_files = {
+        str(row.html_file).strip()
+        for row in load_status().itertuples(index=False)
+        if str(row.team_id).strip() and str(row.html_file).strip()
+    }
+    html_files = sorted(
+        path for path in HTML_DIR.glob("*.html") if path.name in registered_files
+    )
+    if not html_files:
+        raise FileNotFoundError(
+            f"Keine registrierten LigaInsider-Teamseiten in {HTML_DIR} gefunden."
+        )
+
     for row in load_status().itertuples(index=False):
         if str(row.team_id).strip() and (
             not str(row.html_file).strip()
