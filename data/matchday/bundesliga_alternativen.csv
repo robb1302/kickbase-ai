@@ -1,4 +1,5 @@
 ﻿ligainsider_id;spieler;alternative_fuer_id;quelle
+<<<<<<< HEAD
 22736;Castro-Montes;38632;1_fc_köln.html
 35249;Jóhannesson;38936;1_fc_köln.html
 19202;Bülter;38448;1_fc_köln.html
@@ -20,6 +21,23 @@
 38572;Albert;22570;borussia_dortmund.html
 36869;Nwaneri;20804;borussia_dortmund.html
 24116;Collins;24398;eintracht_frankfurt.html
+=======
+38936;Okon-Engstler;22736;1_fc_köln.html
+23949;Lochoshvili;22736;1_fc_köln.html
+38448;Moore;35249;1_fc_köln.html
+35823;Badé;36418;bayer_leverkusen.html
+2590;Andrich;38674;bayer_leverkusen.html
+23862;Tillman;35905;bayer_leverkusen.html
+2362;Hofmann;20616;bayer_leverkusen.html
+27022;Minjae;2385;bayern_münchen.html
+26133;Bischof;35918;bayern_münchen.html
+7791;Bensebaini;5837;borussia_dortmund.html
+2020;Sabitzer;37180;borussia_dortmund.html
+10454;Guirassy;22570;borussia_dortmund.html
+18478;Ryerson;20804;borussia_dortmund.html
+38581;Maluze;38762;eintracht_frankfurt.html
+501;Götze;36931;eintracht_frankfurt.html
+>>>>>>> ebd102b5bcbc9959284e72474705ab75ed17d99e
 37210;Højlund;36931;eintracht_frankfurt.html
 501;Götze;38489;eintracht_frankfurt.html
 38920;Pimpong;19272;eintracht_frankfurt.html
@@ -36,6 +54,7 @@
 23248;Honorat;24405;gladbach.html
 34927;Herold;14139;gladbach.html
 37438;Lidberg;36130;gladbach.html
+<<<<<<< HEAD
 39019;Moffi;38495;hamburger_sv.html
 38517;Stange;38495;hamburger_sv.html
 27549;Amoako;38495;hamburger_sv.html
@@ -68,6 +87,32 @@
 36318;Moerstedt;27057;tsg_hoffenheim.html
 38833;Güther;12508;union_berlin.html
 27560;Kemlein;27369;union_berlin.html
+=======
+38495;Røssing-Lelesiit;39019;hamburger_sv.html
+38517;Stange;39019;hamburger_sv.html
+27549;Amoako;39019;hamburger_sv.html
+38678;Nandja;39019;hamburger_sv.html
+26579;Gruber;650;mainz_05.html
+21202;Lee;20674;mainz_05.html
+5680;Henrichs;15835;rb_leipzig.html
+18640;Baumgartner;12446;rb_leipzig.html
+24546;Reitz;38383;rb_leipzig.html
+36962;Gomis;37124;rb_leipzig.html
+10508;Götze;36890;sc_paderborn.html
+27568;Ulrich;37563;sc_paderborn.html
+7463;Baack;37563;sc_paderborn.html
+15810;Tigges;20424;sc_paderborn.html
+5825;Gyamerah;26346;sv_elversberg.html
+38539;Pinckert;37052;sv_elversberg.html
+36018;Darvich;36948;sv_elversberg.html
+24815;Futkeu;35765;sv_elversberg.html
+36946;Campbell;36255;sv_elversberg.html
+27420;Conté;2439;tsg_hoffenheim.html
+27057;Prass;37622;tsg_hoffenheim.html
+24095;Hložek;23854;tsg_hoffenheim.html
+5713;Trimmel;3616;union_berlin.html
+26243;Rothe;14385;union_berlin.html
+>>>>>>> ebd102b5bcbc9959284e72474705ab75ed17d99e
 14145;Jeong;36339;union_berlin.html
 38708;Gray;37532;union_berlin.html
 6374;Skarke;11325;union_berlin.html
