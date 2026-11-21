@@ -6,6 +6,9 @@ import re
 import time
 from ligainsider_status import reset_status, update_status
 
+CONTENT_ATTEMPTS = 5
+OUTPUT_PATH = Path("data/matchday/bundesliga_startelf.csv")
+
 TEAMS = {
     "Bayern München":      "https://www.ligainsider.de/bundesliga/team/fc-bayern-muenchen/1/",
     "Borussia Dortmund":   "https://www.ligainsider.de/bundesliga/team/borussia-dortmund/14/",
@@ -31,8 +34,89 @@ TEAMS = {
 }
 Path("html").mkdir(exist_ok=True)
 
+
+def team_html_path(team: str) -> Path:
+    filename = team.lower().replace(" ", "_").replace(".", "") + ".html"
+    return Path("html") / filename
+
+
+def parse_lineup(html: str, team: str) -> list[dict]:
+    """Parse one team's projected starting XI from LigaInsider HTML."""
+    soup = BeautifulSoup(html, "html.parser")
+    seen = set()
+    players = []
+    position_columns = soup.select(".stadium_container_bg .player_position_column")
+
+    for column in position_columns:
+        player_link = column.select_one(
+            '.sub_child[style*="display: block"] .player_name a[href]'
+        )
+        if player_link is None:
+            player_link = next(
+                (
+                    link
+                    for link in column.select(".player_name a[href]")
+                    if link.find_parent(class_="sub_child") is None
+                ),
+                None,
+            )
+        if player_link is None:
+            continue
+
+        href = player_link.get("href", "")
+        match = re.fullmatch(r"/([a-z0-9-]+)_(\d+)/?", href)
+        if not match:
+            continue
+
+        slug, player_id = match.groups()
+        if player_id in seen:
+            continue
+        seen.add(player_id)
+        players.append({
+            "verein": team,
+            "position": len(players) + 1,
+            "spieler": " ".join(part.capitalize() for part in slug.split("-")),
+            "slug": slug,
+            "spieler_ID": int(player_id),
+            "profil_URL": f"https://www.ligainsider.de{href}",
+        })
+
+    return players
+
+
+def valid_lineup(players: list[dict]) -> bool:
+    return len(players) == 11 and len({player["spieler_ID"] for player in players}) == 11
+
+
+def cached_csv_lineup(cached: pd.DataFrame, team: str) -> list[dict] | None:
+    if cached.empty or "verein" not in cached:
+        return None
+    rows = cached.loc[cached["verein"].astype(str) == team].copy()
+    if rows.empty:
+        return None
+    key = "spieler_ID" if "spieler_ID" in rows else "spieler"
+    rows = rows.drop_duplicates(key)
+    if len(rows) != 11:
+        return None
+    return rows.to_dict("records")
+
+
+def cached_html_lineup(path: Path, team: str) -> list[dict] | None:
+    if not path.exists():
+        return None
+    try:
+        players = parse_lineup(path.read_text(encoding="utf-8"), team)
+    except (OSError, UnicodeError):
+        return None
+    return players if valid_lineup(players) else None
+
 all_players = []
 failed_teams = []
+cached_startelf = (
+    pd.read_csv(OUTPUT_PATH, sep=";", encoding="utf-8-sig")
+    if OUTPUT_PATH.exists()
+    else pd.DataFrame()
+)
 team_count = len(TEAMS)
 status_teams = []
 for team, url in TEAMS.items():
@@ -66,115 +150,96 @@ with sync_playwright() as p:
             flush=True,
         )
 
-        # Some LigaInsider pages keep loading third-party resources long enough
-        # to exceed Playwright's navigation timeout. Navigate until the response
-        # commits, then allow the DOM to finish loading without aborting the run.
-        try:
-            page.goto(url, wait_until="commit", timeout=60000)
-        except Exception as error:
-            failed_teams.append(team)
-            filename = team.lower().replace(" ", "_").replace(".", "") + ".html"
-            cached_html = Path("html") / filename
-            status = "Vorversion verwendet" if cached_html.exists() else "Fehlt"
-            update_status(
-                team_id, team, "startelf_status", status,
-                html_file=filename, details=type(error).__name__,
-            )
-            print(f"             Abruf fehlgeschlagen; Status: {status} ({error}).", flush=True)
-            continue
-        try:
-            page.wait_for_load_state("domcontentloaded", timeout=10000)
-        except PlaywrightTimeoutError:
+        path = team_html_path(team)
+        players = None
+        valid_html = None
+        last_error = None
+
+        for attempt in range(1, CONTENT_ATTEMPTS + 1):
+            try:
+                page.goto(url, wait_until="commit", timeout=60000)
+            except Exception as error:
+                last_error = f"{type(error).__name__}: {error}"
+                print(f"             Laden fehlgeschlagen (Versuch {attempt}/{CONTENT_ATTEMPTS}): {error}", flush=True)
+                if attempt < CONTENT_ATTEMPTS:
+                    page.wait_for_timeout(min(2 ** (attempt - 1), 8) * 1000)
+                continue
+
+            if f"/{url.rstrip('/').split('/')[-2]}/{team_id}/" not in page.url:
+                last_error = f"Unerwartete Zielseite geladen: {page.url}"
+                print(f"             {last_error}", flush=True)
+                if attempt < CONTENT_ATTEMPTS:
+                    page.wait_for_timeout(min(2 ** (attempt - 1), 8) * 1000)
+                continue
+
+            try:
+                page.wait_for_load_state("domcontentloaded", timeout=10000)
+            except PlaywrightTimeoutError:
+                print(
+                    "             DOM-Ladevorgang dauert an; pruefe den aktuellen Seitenstand.",
+                    flush=True,
+                )
+
+            if not cookie_done:
+                try:
+                    page.frame_locator("iframe[title='Privacy Manager']")\
+                        .get_by_role("button", name="ZUSTIMMEN")\
+                        .click(timeout=10000)
+                    cookie_done = True
+                    print("             Cookie-Abfrage bestaetigt.", flush=True)
+                    page.wait_for_timeout(2000)
+                except Exception:
+                    pass
+
+            page.wait_for_timeout(4000)
+            html = page.evaluate("() => document.documentElement.outerHTML")
+            candidate_players = parse_lineup(html, team)
+            if valid_lineup(candidate_players):
+                players = candidate_players
+                valid_html = html
+                break
+
+            last_error = f"{len(candidate_players)} statt 11 eindeutiger Spieler erkannt"
             print(
-                "             DOM-Ladevorgang dauert an; lese den aktuellen Seitenstand.",
+                f"             Unvollstaendige Startelf: {last_error} "
+                f"(Versuch {attempt}/{CONTENT_ATTEMPTS}).",
                 flush=True,
             )
+            if attempt < CONTENT_ATTEMPTS:
+                page.wait_for_timeout(min(2 ** (attempt - 1), 8) * 1000)
 
-        if not cookie_done:
-            try:
-                page.frame_locator("iframe[title='Privacy Manager']")\
-                    .get_by_role("button", name="ZUSTIMMEN")\
-                    .click(timeout=10000)
-                cookie_done = True
-                print("             Cookie-Abfrage bestätigt.", flush=True)
-                page.wait_for_timeout(2000)
-            except:
-                pass
+        if players is not None:
+            # Keep only a known-good HTML snapshot for future fallback runs.
+            path.write_text(valid_html, encoding="utf-8")
+            update_status(team_id, team, "startelf_status", "Aktuell", html_file=path.name)
+            all_players.extend(players)
+            preview = ", ".join(player["spieler"] for player in players[:5])
+            print(f"             11 Spieler: {preview} ...", flush=True)
+        else:
+            cached_players = cached_csv_lineup(cached_startelf, team)
+            fallback_source = "CSV-Vorversion"
+            if cached_players is None:
+                cached_players = cached_html_lineup(path, team)
+                fallback_source = "HTML-Vorversion"
 
-        page.wait_for_timeout(4000)
-
-        # -------- HTML DOWNLOAD --------
-        html = page.evaluate("() => document.documentElement.outerHTML")
-
-        filename = team.lower().replace(" ", "_").replace(".", "")
-        path = Path("html") / f"{filename}.html"
-        path.write_text(html, encoding="utf-8")
-
-        # -------- PARSEN --------
-        soup = BeautifulSoup(html, "html.parser")
-
-        seen = set()
-        players = []
-        position_columns = soup.select(".stadium_container_bg .player_position_column")
-
-        for column in position_columns:
-            player_link = column.select_one(
-                '.sub_child[style*="display: block"] .player_name a[href]'
-            )
-            if player_link is None:
-                player_link = next(
-                    (
-                        link
-                        for link in column.select(".player_name a[href]")
-                        if link.find_parent(class_="sub_child") is None
-                    ),
-                    None,
+            if cached_players is not None:
+                all_players.extend(cached_players)
+                update_status(
+                    team_id, team, "startelf_status", "Vorversion verwendet",
+                    html_file=path.name, details=last_error or "Aktueller Abruf unvollstaendig",
                 )
-            if player_link is None:
-                continue
-
-            href = player_link.get("href", "")
-
-            m = re.fullmatch(r"/([a-z0-9-]+)_(\d+)/?", href)
-
-            if not m:
-                continue
-
-            slug, pid = m.groups()
-            if pid in seen:
-                continue
-
-            seen.add(pid)
-            name = " ".join(x.capitalize() for x in slug.split("-"))
-
-            players.append({
-                "verein": team,
-                "position": len(players) + 1,
-                "spieler": name,
-                "slug": slug,
-                "spieler_ID": int(pid),
-                "profil_URL": f"https://www.ligainsider.de{href}"
-            })
-
-        if len(players) != 11:
-            failed_teams.append(team)
-            update_status(
-                team_id, team, "startelf_status", "Fehlt",
-                html_file=path.name,
-                details=f"{len(players)} statt 11 Spieler erkannt",
-            )
-            print(f"             Unvollständige Startelf: {len(players)} Spieler.", flush=True)
-            continue
-
-        update_status(team_id, team, "startelf_status", "Aktuell", html_file=path.name)
-
-        all_players.extend(players)
-
-        preview = ", ".join(player["spieler"] for player in players[:5])
-        print(
-            f"             {len(players)} Spieler: {preview} ...",
-            flush=True,
-        )
+                failed_teams.append(team)
+                print(
+                    f"             {last_error}; {fallback_source} mit 11 Spielern verwendet.",
+                    flush=True,
+                )
+            else:
+                update_status(
+                    team_id, team, "startelf_status", "Fehlt",
+                    html_file=path.name, details=last_error or "Keine gueltige Startelf gefunden",
+                )
+                failed_teams.append(team)
+                print(f"             {last_error}; keine g?ltige Vorversion vorhanden.", flush=True)
 
         time.sleep(1)
 
@@ -185,15 +250,16 @@ df = pd.DataFrame(
     columns=["verein", "position", "spieler", "slug", "spieler_ID", "profil_URL"],
 )
 
-output_path = Path("data/matchday/bundesliga_startelf.csv")
-output_path.parent.mkdir(parents=True, exist_ok=True)
-print(f"[LigaInsider Startelf 3/3] Schreibe CSV: {output_path}", flush=True)
-df.to_csv(
-    output_path,
-    index=False,
-    encoding="utf-8-sig",
-    sep=";"
-)
+if not all_players:
+    raise RuntimeError(
+        "Keine gueltigen Startelfdaten verfuegbar; vorhandene Ausgabedatei bleibt erhalten."
+    )
+
+OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+temporary_output = OUTPUT_PATH.with_suffix(OUTPUT_PATH.suffix + ".tmp")
+print(f"[LigaInsider Startelf 3/3] Schreibe CSV: {OUTPUT_PATH}", flush=True)
+df.to_csv(temporary_output, index=False, encoding="utf-8-sig", sep=";")
+temporary_output.replace(OUTPUT_PATH)
 
 print(
     f"[LigaInsider Startelf] Fertig: {len(df)} Spieler aus "

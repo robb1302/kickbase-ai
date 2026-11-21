@@ -1,0 +1,75 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Update: Kickbase player data",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/kickbase_downloader.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Update: MAIK scores",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/maiks_score_downloader.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Update: LigaInsider player links",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/ligainsider_player_downloader.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Update: LigaInsider matchday lineups",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/ligainsider_matchday_downloader.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Update: LigaInsider alternatives",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/ligainsider_alternative_parser.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Update: Merge player data",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/merger.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Update: Starting lineup flags",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/set_starter.py",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Update: Everything",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "\"C:\\Program Files\\Git\\bin\\bash.exe\" \"${workspaceFolder}/update_kickbase.sh\"",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
