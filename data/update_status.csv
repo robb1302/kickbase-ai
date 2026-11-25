@@ -1,20 +1,20 @@
 step;status;updated_at
-Update;running;2026-11-25T09:52:08Z
-Download Kickbase player data;pending;2026-11-25T09:52:08Z
-Download MAIK scores;pending;2026-11-25T09:52:08Z
-Download LigaInsider player links;pending;2026-11-25T09:52:08Z
-Download LigaInsider matchday lineups;pending;2026-11-25T09:52:08Z
-Parse LigaInsider alternatives;pending;2026-11-25T09:52:08Z
-Merge player data;pending;2026-11-25T09:52:08Z
-Update starting lineup flags;pending;2026-11-25T09:52:08Z
-Upgrade pip;success;2026-11-25T09:52:11Z
-Install Python dependencies;success;2026-11-25T09:52:25Z
-Install Playwright Chromium and Linux dependencies;success;2026-11-25T09:52:38Z
-Download Kickbase player data;success;2026-11-25T09:52:40Z
-Download MAIK scores;success;2026-11-25T09:52:51Z
-Download LigaInsider player links;success;2026-11-25T09:53:44Z
-Download LigaInsider matchday lineups;success;2026-11-25T09:57:20Z
-Parse LigaInsider alternatives;success;2026-11-25T09:57:23Z
-Merge player data;success;2026-11-25T09:57:23Z
-Update starting lineup flags;success;2026-11-25T09:57:23Z
-Update;complete;2026-11-25T09:57:23Z
+Update;running;2026-11-25T21:05:48Z
+Download Kickbase player data;pending;2026-11-25T21:05:48Z
+Download MAIK scores;pending;2026-11-25T21:05:48Z
+Download LigaInsider player links;pending;2026-11-25T21:05:48Z
+Download LigaInsider matchday lineups;pending;2026-11-25T21:05:48Z
+Parse LigaInsider alternatives;pending;2026-11-25T21:05:48Z
+Merge player data;pending;2026-11-25T21:05:48Z
+Update starting lineup flags;pending;2026-11-25T21:05:48Z
+Upgrade pip;success;2026-11-25T21:05:53Z
+Install Python dependencies;success;2026-11-25T21:06:12Z
+Install Playwright Chromium and Linux dependencies;success;2026-11-25T21:06:28Z
+Download Kickbase player data;success;2026-11-25T21:06:30Z
+Download MAIK scores;success;2026-11-25T21:06:38Z
+Download LigaInsider player links;success;2026-11-25T21:06:50Z
+Download LigaInsider matchday lineups;success;2026-11-25T21:08:43Z
+Parse LigaInsider alternatives;success;2026-11-25T21:08:46Z
+Merge player data;success;2026-11-25T21:08:47Z
+Update starting lineup flags;success;2026-11-25T21:08:47Z
+Update;complete;2026-11-25T21:08:47Z
